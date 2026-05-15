@@ -1,0 +1,22 @@
+# BasicMeetingListFlow
+
+main: kit: flow: BasicMeetingListFlow:
+{
+  entity: "meeting_list",
+  kind: "basic",
+  name: "BasicMeetingListFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "meeting_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMeetingListFlow"
+}

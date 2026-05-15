@@ -1,0 +1,1606 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "国会会議録検索API",
+    "description": "国会会議録検索システムに登録されているデータを検索するためのAPIです。HTTPのGETメソッドを使用して、指定された条件で会議録や発言情報をXMLまたはJSON形式で取得できます。検索結果は、会議開催日の新しい順にソートされます。",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://kokkai.ndl.go.jp/api.html"
+    },
+    "termsOfService": "https://kokkai.ndl.go.jp/api.html"
+  },
+  "servers": [
+    {
+      "url": "https://kokkai.ndl.go.jp/api",
+      "description": "国会会議録検索システム APIサーバー"
+    }
+  ],
+  "paths": {
+    "/meeting_list": {
+      "get": {
+        "summary": "会議単位簡易出力",
+        "description": "指定した検索条件でヒットした会議録の情報（回次、院、会議名、号、開催日、ID、URL等）を、1リクエストに対し最大100件まで、XML形式又はJSON形式で返戻します。本文のテキストデータは返戻しません。",
+        "operationId": "getMeetingList",
+        "parameters": [
+          {
+            "name": "startRecord",
+            "in": "query",
+            "description": "検索結果の取得開始位置（1～検索件数の範囲）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "maximumRecords",
+            "in": "query",
+            "description": "一回のリクエストで取得できるレコード数（1～100の範囲）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 30
+            }
+          },
+          {
+            "name": "nameOfHouse",
+            "in": "query",
+            "description": "院名（衆議院、参議院、両院、両院協議会のいずれか）",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "衆議院",
+                "参議院",
+                "両院",
+                "両院協議会"
+              ]
+            }
+          },
+          {
+            "name": "nameOfMeeting",
+            "in": "query",
+            "description": "会議名（本会議、委員会等の会議名。部分一致検索。半角スペース区切りで複数指定可能（OR検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "any",
+            "in": "query",
+            "description": "検索語（発言内容等に含まれる言葉。部分一致検索。半角スペース区切りで複数指定可能（AND検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speaker",
+            "in": "query",
+            "description": "発言者名（部分一致検索。半角スペース区切りで複数指定可能（OR検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "開会日付の始点（YYYY-MM-DD形式）",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "until",
+            "in": "query",
+            "description": "開会日付の終点（YYYY-MM-DD形式）",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "supplementAndAppendix",
+            "in": "query",
+            "description": "検索対象を追録・附録に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "contentsAndIndex",
+            "in": "query",
+            "description": "検索対象を目次・索引に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "searchRange",
+            "in": "query",
+            "description": "検索語を指定した際の検索対象箇所",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "冒頭",
+                "本文",
+                "冒頭・本文"
+              ],
+              "default": "冒頭・本文"
+            }
+          },
+          {
+            "name": "closing",
+            "in": "query",
+            "description": "検索対象を閉会中の会議録に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "speechNumber",
+            "in": "query",
+            "description": "発言番号（0以上の整数。完全一致検索）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "speakerPosition",
+            "in": "query",
+            "description": "発言者の肩書き（部分一致検索）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerGroup",
+            "in": "query",
+            "description": "発言者の所属会派（部分一致検索）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerRole",
+            "in": "query",
+            "description": "発言者の役割",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "証人",
+                "参考人",
+                "公述人"
+              ]
+            }
+          },
+          {
+            "name": "speechID",
+            "in": "query",
+            "description": "発言ID（会議録ID_発言番号の書式。完全一致検索）",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{21}_[0-9]{3,4}$"
+            }
+          },
+          {
+            "name": "issueID",
+            "in": "query",
+            "description": "会議録ID（21桁の英数字。完全一致検索）",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{21}$"
+            }
+          },
+          {
+            "name": "sessionFrom",
+            "in": "query",
+            "description": "国会回次の始まり（3桁までの自然数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "sessionTo",
+            "in": "query",
+            "description": "国会回次の終わり（3桁までの自然数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "issueFrom",
+            "in": "query",
+            "description": "号数の始まり（3桁までの整数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "issueTo",
+            "in": "query",
+            "description": "号数の終わり（3桁までの整数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "recordPacking",
+            "in": "query",
+            "description": "応答ファイルの形式",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xml",
+                "json"
+              ],
+              "default": "xml"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功時のレスポンス",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeetingListResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeetingListResponseJSON"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "エラー発生時のレスポンス",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseJSON"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meeting": {
+      "get": {
+        "summary": "会議単位出力",
+        "description": "指定した検索条件でヒットした会議録の情報（回次、院、会議名、号、開催日、ID、URL等）と、当該会議録の全ての発言本文のテキストデータ（発言者等の情報を含む）を、1リクエストに対し最大10件まで、XML形式又はJSON形式で返戻します。",
+        "operationId": "getMeeting",
+        "parameters": [
+          {
+            "name": "startRecord",
+            "in": "query",
+            "description": "検索結果の取得開始位置（1～検索件数の範囲）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "maximumRecords",
+            "in": "query",
+            "description": "一回のリクエストで取得できるレコード数（1～10の範囲）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "default": 3
+            }
+          },
+          {
+            "name": "nameOfHouse",
+            "in": "query",
+            "description": "院名（衆議院、参議院、両院、両院協議会のいずれか）",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "衆議院",
+                "参議院",
+                "両院",
+                "両院協議会"
+              ]
+            }
+          },
+          {
+            "name": "nameOfMeeting",
+            "in": "query",
+            "description": "会議名（本会議、委員会等の会議名。部分一致検索。半角スペース区切りで複数指定可能（OR検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "any",
+            "in": "query",
+            "description": "検索語（発言内容等に含まれる言葉。部分一致検索。半角スペース区切りで複数指定可能（AND検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speaker",
+            "in": "query",
+            "description": "発言者名（部分一致検索。半角スペース区切りで複数指定可能（OR検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "開会日付の始点（YYYY-MM-DD形式）",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "until",
+            "in": "query",
+            "description": "開会日付の終点（YYYY-MM-DD形式）",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "supplementAndAppendix",
+            "in": "query",
+            "description": "検索対象を追録・附録に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "contentsAndIndex",
+            "in": "query",
+            "description": "検索対象を目次・索引に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "searchRange",
+            "in": "query",
+            "description": "検索語を指定した際の検索対象箇所",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "冒頭",
+                "本文",
+                "冒頭・本文"
+              ],
+              "default": "冒頭・本文"
+            }
+          },
+          {
+            "name": "closing",
+            "in": "query",
+            "description": "検索対象を閉会中の会議録に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "speechNumber",
+            "in": "query",
+            "description": "発言番号（0以上の整数。完全一致検索）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "speakerPosition",
+            "in": "query",
+            "description": "発言者の肩書き（部分一致検索）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerGroup",
+            "in": "query",
+            "description": "発言者の所属会派（部分一致検索）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerRole",
+            "in": "query",
+            "description": "発言者の役割",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "証人",
+                "参考人",
+                "公述人"
+              ]
+            }
+          },
+          {
+            "name": "speechID",
+            "in": "query",
+            "description": "発言ID（会議録ID_発言番号の書式。完全一致検索）",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{21}_[0-9]{3,4}$"
+            }
+          },
+          {
+            "name": "issueID",
+            "in": "query",
+            "description": "会議録ID（21桁の英数字。完全一致検索）",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{21}$"
+            }
+          },
+          {
+            "name": "sessionFrom",
+            "in": "query",
+            "description": "国会回次の始まり（3桁までの自然数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "sessionTo",
+            "in": "query",
+            "description": "国会回次の終わり（3桁までの自然数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "issueFrom",
+            "in": "query",
+            "description": "号数の始まり（3桁までの整数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "issueTo",
+            "in": "query",
+            "description": "号数の終わり（3桁までの整数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "recordPacking",
+            "in": "query",
+            "description": "応答ファイルの形式",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xml",
+                "json"
+              ],
+              "default": "xml"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功時のレスポンス",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeetingResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeetingResponseJSON"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "エラー発生時のレスポンス",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseJSON"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/speech": {
+      "get": {
+        "summary": "発言単位出力",
+        "description": "指定した検索条件でヒットした発言本文のテキストデータ（発言者の情報を含む）を、その発言が含まれる会議録の情報（回次、院、会議名、号、開催日、ID、URL等）と共に、1リクエストに対し最大100件まで、XML形式又はJSON形式で返戻します。",
+        "operationId": "getSpeech",
+        "parameters": [
+          {
+            "name": "startRecord",
+            "in": "query",
+            "description": "検索結果の取得開始位置（1～検索件数の範囲）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "maximumRecords",
+            "in": "query",
+            "description": "一回のリクエストで取得できるレコード数（1～100の範囲）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 30
+            }
+          },
+          {
+            "name": "nameOfHouse",
+            "in": "query",
+            "description": "院名（衆議院、参議院、両院、両院協議会のいずれか）",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "衆議院",
+                "参議院",
+                "両院",
+                "両院協議会"
+              ]
+            }
+          },
+          {
+            "name": "nameOfMeeting",
+            "in": "query",
+            "description": "会議名（本会議、委員会等の会議名。部分一致検索。半角スペース区切りで複数指定可能（OR検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "any",
+            "in": "query",
+            "description": "検索語（発言内容等に含まれる言葉。部分一致検索。半角スペース区切りで複数指定可能（AND検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speaker",
+            "in": "query",
+            "description": "発言者名（部分一致検索。半角スペース区切りで複数指定可能（OR検索））",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "開会日付の始点（YYYY-MM-DD形式）",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "until",
+            "in": "query",
+            "description": "開会日付の終点（YYYY-MM-DD形式）",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "supplementAndAppendix",
+            "in": "query",
+            "description": "検索対象を追録・附録に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "contentsAndIndex",
+            "in": "query",
+            "description": "検索対象を目次・索引に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "searchRange",
+            "in": "query",
+            "description": "検索語を指定した際の検索対象箇所",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "冒頭",
+                "本文",
+                "冒頭・本文"
+              ],
+              "default": "冒頭・本文"
+            }
+          },
+          {
+            "name": "closing",
+            "in": "query",
+            "description": "検索対象を閉会中の会議録に限定するか否か",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "speechNumber",
+            "in": "query",
+            "description": "発言番号（0以上の整数。完全一致検索）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "speakerPosition",
+            "in": "query",
+            "description": "発言者の肩書き（部分一致検索）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerGroup",
+            "in": "query",
+            "description": "発言者の所属会派（部分一致検索）",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "speakerRole",
+            "in": "query",
+            "description": "発言者の役割",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "証人",
+                "参考人",
+                "公述人"
+              ]
+            }
+          },
+          {
+            "name": "speechID",
+            "in": "query",
+            "description": "発言ID（会議録ID_発言番号の書式。完全一致検索）",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{21}_[0-9]{3,4}$"
+            }
+          },
+          {
+            "name": "issueID",
+            "in": "query",
+            "description": "会議録ID（21桁の英数字。完全一致検索）",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9]{21}$"
+            }
+          },
+          {
+            "name": "sessionFrom",
+            "in": "query",
+            "description": "国会回次の始まり（3桁までの自然数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "sessionTo",
+            "in": "query",
+            "description": "国会回次の終わり（3桁までの自然数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "issueFrom",
+            "in": "query",
+            "description": "号数の始まり（3桁までの整数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "issueTo",
+            "in": "query",
+            "description": "号数の終わり（3桁までの整数）",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          {
+            "name": "recordPacking",
+            "in": "query",
+            "description": "応答ファイルの形式",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "xml",
+                "json"
+              ],
+              "default": "xml"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功時のレスポンス",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeechResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeechResponseJSON"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "エラー発生時のレスポンス",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseJSON"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MeetingListResponse": {
+        "type": "object",
+        "properties": {
+          "numberOfRecords": {
+            "type": "integer",
+            "description": "総結果件数"
+          },
+          "numberOfReturn": {
+            "type": "integer",
+            "description": "返戻件数"
+          },
+          "startRecord": {
+            "type": "integer",
+            "description": "開始位置"
+          },
+          "nextRecordPosition": {
+            "type": "integer",
+            "description": "次開始位置"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingRecord"
+            }
+          }
+        }
+      },
+      "MeetingListResponseJSON": {
+        "type": "object",
+        "properties": {
+          "numberOfRecords": {
+            "type": "integer",
+            "description": "総結果件数"
+          },
+          "numberOfReturn": {
+            "type": "integer",
+            "description": "返戻件数"
+          },
+          "startRecord": {
+            "type": "integer",
+            "description": "開始位置"
+          },
+          "nextRecordPosition": {
+            "type": "integer",
+            "description": "次開始位置"
+          },
+          "meetingRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingRecordJSON"
+            }
+          }
+        }
+      },
+      "MeetingResponse": {
+        "type": "object",
+        "properties": {
+          "numberOfRecords": {
+            "type": "integer",
+            "description": "総結果件数"
+          },
+          "numberOfReturn": {
+            "type": "integer",
+            "description": "返戻件数"
+          },
+          "startRecord": {
+            "type": "integer",
+            "description": "開始位置"
+          },
+          "nextRecordPosition": {
+            "type": "integer",
+            "description": "次開始位置"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingRecordFull"
+            }
+          }
+        }
+      },
+      "MeetingResponseJSON": {
+        "type": "object",
+        "properties": {
+          "numberOfRecords": {
+            "type": "integer",
+            "description": "総結果件数"
+          },
+          "numberOfReturn": {
+            "type": "integer",
+            "description": "返戻件数"
+          },
+          "startRecord": {
+            "type": "integer",
+            "description": "開始位置"
+          },
+          "nextRecordPosition": {
+            "type": "integer",
+            "description": "次開始位置"
+          },
+          "meetingRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingRecordFullJSON"
+            }
+          }
+        }
+      },
+      "SpeechResponse": {
+        "type": "object",
+        "properties": {
+          "numberOfRecords": {
+            "type": "integer",
+            "description": "総結果件数"
+          },
+          "numberOfReturn": {
+            "type": "integer",
+            "description": "返戻件数"
+          },
+          "startRecord": {
+            "type": "integer",
+            "description": "開始位置"
+          },
+          "nextRecordPosition": {
+            "type": "integer",
+            "description": "次開始位置"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeechRecord"
+            }
+          }
+        }
+      },
+      "SpeechResponseJSON": {
+        "type": "object",
+        "properties": {
+          "numberOfRecords": {
+            "type": "integer",
+            "description": "総結果件数"
+          },
+          "numberOfReturn": {
+            "type": "integer",
+            "description": "返戻件数"
+          },
+          "startRecord": {
+            "type": "integer",
+            "description": "開始位置"
+          },
+          "nextRecordPosition": {
+            "type": "integer",
+            "description": "次開始位置"
+          },
+          "speechRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeechRecordJSON"
+            }
+          }
+        }
+      },
+      "MeetingRecord": {
+        "type": "object",
+        "properties": {
+          "issueID": {
+            "type": "string",
+            "description": "会議録ID"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "イメージ種別（会議録・目次・索引・附録・追録）"
+          },
+          "searchObject": {
+            "type": "string",
+            "description": "検索対象箇所（議事冒頭・本文）"
+          },
+          "session": {
+            "type": "integer",
+            "description": "国会回次"
+          },
+          "nameOfHouse": {
+            "type": "string",
+            "description": "院名"
+          },
+          "nameOfMeeting": {
+            "type": "string",
+            "description": "会議名"
+          },
+          "issue": {
+            "type": "string",
+            "description": "号数"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "開催日付"
+          },
+          "closing": {
+            "type": "boolean",
+            "description": "閉会中フラグ"
+          },
+          "speechRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeechRecordSimple"
+            }
+          },
+          "meetingURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録テキスト表示画面のURL"
+          },
+          "pdfURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録PDF表示画面のURL"
+          }
+        }
+      },
+      "MeetingRecordJSON": {
+        "type": "object",
+        "properties": {
+          "issueID": {
+            "type": "string",
+            "description": "会議録ID"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "イメージ種別（会議録・目次・索引・附録・追録）"
+          },
+          "searchObject": {
+            "type": "string",
+            "description": "検索対象箇所（議事冒頭・本文）"
+          },
+          "session": {
+            "type": "integer",
+            "description": "国会回次"
+          },
+          "nameOfHouse": {
+            "type": "string",
+            "description": "院名"
+          },
+          "nameOfMeeting": {
+            "type": "string",
+            "description": "会議名"
+          },
+          "issue": {
+            "type": "string",
+            "description": "号数"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "開催日付"
+          },
+          "closing": {
+            "type": "boolean",
+            "description": "閉会中フラグ"
+          },
+          "speechRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeechRecordSimpleJSON"
+            }
+          },
+          "meetingURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録テキスト表示画面のURL"
+          },
+          "pdfURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録PDF表示画面のURL"
+          }
+        }
+      },
+      "MeetingRecordFull": {
+        "type": "object",
+        "properties": {
+          "issueID": {
+            "type": "string",
+            "description": "会議録ID"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "イメージ種別（会議録・目次・索引・附録・追録）"
+          },
+          "searchObject": {
+            "type": "string",
+            "description": "検索対象箇所（議事冒頭・本文）"
+          },
+          "session": {
+            "type": "integer",
+            "description": "国会回次"
+          },
+          "nameOfHouse": {
+            "type": "string",
+            "description": "院名"
+          },
+          "nameOfMeeting": {
+            "type": "string",
+            "description": "会議名"
+          },
+          "issue": {
+            "type": "string",
+            "description": "号数"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "開催日付"
+          },
+          "closing": {
+            "type": "boolean",
+            "description": "閉会中フラグ"
+          },
+          "speechRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeechRecordFull"
+            }
+          },
+          "meetingURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録テキスト表示画面のURL"
+          },
+          "pdfURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録PDF表示画面のURL"
+          }
+        }
+      },
+      "MeetingRecordFullJSON": {
+        "type": "object",
+        "properties": {
+          "issueID": {
+            "type": "string",
+            "description": "会議録ID"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "イメージ種別（会議録・目次・索引・附録・追録）"
+          },
+          "searchObject": {
+            "type": "string",
+            "description": "検索対象箇所（議事冒頭・本文）"
+          },
+          "session": {
+            "type": "integer",
+            "description": "国会回次"
+          },
+          "nameOfHouse": {
+            "type": "string",
+            "description": "院名"
+          },
+          "nameOfMeeting": {
+            "type": "string",
+            "description": "会議名"
+          },
+          "issue": {
+            "type": "string",
+            "description": "号数"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "開催日付"
+          },
+          "closing": {
+            "type": "boolean",
+            "description": "閉会中フラグ"
+          },
+          "speechRecord": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeechRecordFullJSON"
+            }
+          },
+          "meetingURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録テキスト表示画面のURL"
+          },
+          "pdfURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録PDF表示画面のURL"
+          }
+        }
+      },
+      "SpeechRecordSimple": {
+        "type": "object",
+        "properties": {
+          "speechID": {
+            "type": "string",
+            "description": "発言ID"
+          },
+          "speechOrder": {
+            "type": "integer",
+            "description": "発言番号"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "発言者名"
+          },
+          "speechURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "発言URL"
+          }
+        }
+      },
+      "SpeechRecordSimpleJSON": {
+        "type": "object",
+        "properties": {
+          "speechID": {
+            "type": "string",
+            "description": "発言ID"
+          },
+          "speechOrder": {
+            "type": "integer",
+            "description": "発言番号"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "発言者名"
+          },
+          "speechURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "発言URL"
+          }
+        }
+      },
+      "SpeechRecordFull": {
+        "type": "object",
+        "properties": {
+          "speechID": {
+            "type": "string",
+            "description": "発言ID"
+          },
+          "speechOrder": {
+            "type": "integer",
+            "description": "発言番号"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "発言者名"
+          },
+          "speakerYomi": {
+            "type": "string",
+            "description": "発言者よみ"
+          },
+          "speakerGroup": {
+            "type": "string",
+            "description": "発言者所属会派"
+          },
+          "speakerPosition": {
+            "type": "string",
+            "description": "発言者肩書き"
+          },
+          "speakerRole": {
+            "type": "string",
+            "description": "発言者役割"
+          },
+          "speech": {
+            "type": "string",
+            "description": "発言"
+          },
+          "startPage": {
+            "type": "integer",
+            "description": "発言が掲載されている開始ページ"
+          },
+          "createTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "レコード登録日時"
+          },
+          "updateTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "レコード更新日時"
+          },
+          "speechURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "発言URL"
+          }
+        }
+      },
+      "SpeechRecordFullJSON": {
+        "type": "object",
+        "properties": {
+          "speechID": {
+            "type": "string",
+            "description": "発言ID"
+          },
+          "speechOrder": {
+            "type": "integer",
+            "description": "発言番号"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "発言者名"
+          },
+          "speakerYomi": {
+            "type": "string",
+            "description": "発言者よみ"
+          },
+          "speakerGroup": {
+            "type": "string",
+            "description": "発言者所属会派"
+          },
+          "speakerPosition": {
+            "type": "string",
+            "description": "発言者肩書き"
+          },
+          "speakerRole": {
+            "type": "string",
+            "description": "発言者役割"
+          },
+          "speech": {
+            "type": "string",
+            "description": "発言"
+          },
+          "startPage": {
+            "type": "integer",
+            "description": "発言が掲載されている開始ページ"
+          },
+          "createTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "レコード登録日時"
+          },
+          "updateTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "レコード更新日時"
+          },
+          "speechURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "発言URL"
+          }
+        }
+      },
+      "SpeechRecord": {
+        "type": "object",
+        "properties": {
+          "speechID": {
+            "type": "string",
+            "description": "発言ID"
+          },
+          "issueID": {
+            "type": "string",
+            "description": "会議録ID"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "イメージ種別（会議録・目次・索引・附録・追録）"
+          },
+          "searchObject": {
+            "type": "string",
+            "description": "検索対象箇所（議事冒頭・本文）"
+          },
+          "session": {
+            "type": "integer",
+            "description": "国会回次"
+          },
+          "nameOfHouse": {
+            "type": "string",
+            "description": "院名"
+          },
+          "nameOfMeeting": {
+            "type": "string",
+            "description": "会議名"
+          },
+          "issue": {
+            "type": "string",
+            "description": "号数"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "開催日付"
+          },
+          "closing": {
+            "type": "boolean",
+            "description": "閉会中フラグ"
+          },
+          "speechOrder": {
+            "type": "integer",
+            "description": "発言番号"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "発言者名"
+          },
+          "speakerYomi": {
+            "type": "string",
+            "description": "発言者よみ"
+          },
+          "speakerGroup": {
+            "type": "string",
+            "description": "発言者所属会派"
+          },
+          "speakerPosition": {
+            "type": "string",
+            "description": "発言者肩書き"
+          },
+          "speakerRole": {
+            "type": "string",
+            "description": "発言者役割"
+          },
+          "speech": {
+            "type": "string",
+            "description": "発言"
+          },
+          "startPage": {
+            "type": "integer",
+            "description": "発言が掲載されている開始ページ"
+          },
+          "speechURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "発言URL"
+          },
+          "meetingURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録テキスト表示画面のURL"
+          },
+          "pdfURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録PDF表示画面のURL"
+          }
+        }
+      },
+      "SpeechRecordJSON": {
+        "type": "object",
+        "properties": {
+          "speechID": {
+            "type": "string",
+            "description": "発言ID"
+          },
+          "issueID": {
+            "type": "string",
+            "description": "会議録ID"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "イメージ種別（会議録・目次・索引・附録・追録）"
+          },
+          "searchObject": {
+            "type": "string",
+            "description": "検索対象箇所（議事冒頭・本文）"
+          },
+          "session": {
+            "type": "integer",
+            "description": "国会回次"
+          },
+          "nameOfHouse": {
+            "type": "string",
+            "description": "院名"
+          },
+          "nameOfMeeting": {
+            "type": "string",
+            "description": "会議名"
+          },
+          "issue": {
+            "type": "string",
+            "description": "号数"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "開催日付"
+          },
+          "closing": {
+            "type": "boolean",
+            "description": "閉会中フラグ"
+          },
+          "speechOrder": {
+            "type": "integer",
+            "description": "発言番号"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "発言者名"
+          },
+          "speakerYomi": {
+            "type": "string",
+            "description": "発言者よみ"
+          },
+          "speakerGroup": {
+            "type": "string",
+            "description": "発言者所属会派"
+          },
+          "speakerPosition": {
+            "type": "string",
+            "description": "発言者肩書き"
+          },
+          "speakerRole": {
+            "type": "string",
+            "description": "発言者役割"
+          },
+          "speech": {
+            "type": "string",
+            "description": "発言"
+          },
+          "startPage": {
+            "type": "integer",
+            "description": "発言が掲載されている開始ページ"
+          },
+          "speechURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "発言URL"
+          },
+          "meetingURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録テキスト表示画面のURL"
+          },
+          "pdfURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "会議録PDF表示画面のURL"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "diagnostics": {
+            "type": "object",
+            "properties": {
+              "diagnostic": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "description": "エラーメッセージ"
+                  },
+                  "details": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "エラーメッセージの詳細"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ErrorResponseJSON": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "エラーメッセージ"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "エラーメッセージの詳細"
+          }
+        }
+      }
+    }
+  }
+}

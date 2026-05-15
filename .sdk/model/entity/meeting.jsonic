@@ -1,0 +1,291 @@
+# Entity: meeting
+
+main: kit: entity: meeting: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "closing"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "image_kind"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "issue"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "issue_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "meeting_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name_of_houses"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name_of_meeting"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "pdf_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "search_object"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "session"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "speech_record"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "meeting"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "any"
+                orig: "any"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: false
+                kind: "query"
+                name: "closing"
+                orig: "closing"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                example: false
+                kind: "query"
+                name: "contents_and_index"
+                orig: "contents_and_index"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "from"
+                orig: "from"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "issue_from"
+                orig: "issue_from"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "issue_id"
+                orig: "issue_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "issue_to"
+                orig: "issue_to"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 3
+                kind: "query"
+                name: "maximum_record"
+                orig: "maximum_record"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "name_of_houses"
+                orig: "name_of_houses"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "name_of_meeting"
+                orig: "name_of_meeting"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "xml"
+                kind: "query"
+                name: "record_packing"
+                orig: "record_packing"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "冒頭・本文"
+                kind: "query"
+                name: "search_range"
+                orig: "search_range"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "session_from"
+                orig: "session_from"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "session_to"
+                orig: "session_to"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "speaker"
+                orig: "speaker"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "speaker_group"
+                orig: "speaker_group"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "speaker_position"
+                orig: "speaker_position"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "speaker_role"
+                orig: "speaker_role"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "speech_id"
+                orig: "speech_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "speech_number"
+                orig: "speech_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 1
+                kind: "query"
+                name: "start_record"
+                orig: "start_record"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: false
+                kind: "query"
+                name: "supplement_and_appendix"
+                orig: "supplement_and_appendix"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "until"
+                orig: "until"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/meeting"
+          parts: [
+            "meeting"
+          ]
+          select: {
+            exist: [
+              "any"
+              "closing"
+              "contents_and_index"
+              "from"
+              "issue_from"
+              "issue_id"
+              "issue_to"
+              "maximum_record"
+              "name_of_houses"
+              "name_of_meeting"
+              "record_packing"
+              "search_range"
+              "session_from"
+              "session_to"
+              "speaker"
+              "speaker_group"
+              "speaker_position"
+              "speaker_role"
+              "speech_id"
+              "speech_number"
+              "start_record"
+              "supplement_and_appendix"
+              "until"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

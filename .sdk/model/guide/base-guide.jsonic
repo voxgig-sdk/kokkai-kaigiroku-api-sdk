@@ -1,0 +1,26 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 3
+  metrics: count: path: 3
+  metrics: count: method: 3
+
+  entity: meeting: {
+    path: "/meeting": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: meeting_list: {
+    path: "/meeting_list": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: speech: {
+    path: "/speech": {
+      op: list: method: *GET
+    }
+  }
+
+}

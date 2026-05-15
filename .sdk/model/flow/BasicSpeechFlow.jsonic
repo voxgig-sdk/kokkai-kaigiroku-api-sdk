@@ -1,0 +1,22 @@
+# BasicSpeechFlow
+
+main: kit: flow: BasicSpeechFlow:
+{
+  entity: "speech",
+  kind: "basic",
+  name: "BasicSpeechFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "speech_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSpeechFlow"
+}

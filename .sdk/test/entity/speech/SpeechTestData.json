@@ -1,0 +1,102 @@
+{
+  "existing": {
+    "speech": {
+      "SPEECH00": {
+        "closing": true,
+        "date": "sd3",
+        "image_kind": "sd4",
+        "issue": "sd5",
+        "issue_id": "ISSUE01",
+        "meeting_url": "sd7",
+        "name_of_houses": "sd8",
+        "name_of_meeting": "sd9",
+        "pdf_url": "sda",
+        "search_object": "sdb",
+        "session": "sdc",
+        "speaker": "sdd",
+        "speaker_group": "sde",
+        "speaker_position": "sdf",
+        "speaker_role": "se0",
+        "speaker_yomi": "se1",
+        "speech": "se2",
+        "speech_id": "SPEECH01",
+        "speech_order": "se4",
+        "speech_url": "se5",
+        "start_page": "se6"
+      },
+      "SPEECH01": {
+        "closing": true,
+        "date": "s1a5",
+        "image_kind": "s1a6",
+        "issue": "s1a7",
+        "issue_id": "ISSUE01",
+        "meeting_url": "s1a9",
+        "name_of_houses": "s1aa",
+        "name_of_meeting": "s1ab",
+        "pdf_url": "s1ac",
+        "search_object": "s1ad",
+        "session": "s1ae",
+        "speaker": "s1af",
+        "speaker_group": "s1b0",
+        "speaker_position": "s1b1",
+        "speaker_role": "s1b2",
+        "speaker_yomi": "s1b3",
+        "speech": "s1b4",
+        "speech_id": "SPEECH01",
+        "speech_order": "s1b6",
+        "speech_url": "s1b7",
+        "start_page": "s1b8"
+      },
+      "SPEECH02": {
+        "closing": true,
+        "date": "s277",
+        "image_kind": "s278",
+        "issue": "s279",
+        "issue_id": "ISSUE01",
+        "meeting_url": "s27b",
+        "name_of_houses": "s27c",
+        "name_of_meeting": "s27d",
+        "pdf_url": "s27e",
+        "search_object": "s27f",
+        "session": "s280",
+        "speaker": "s281",
+        "speaker_group": "s282",
+        "speaker_position": "s283",
+        "speaker_role": "s284",
+        "speaker_yomi": "s285",
+        "speech": "s286",
+        "speech_id": "SPEECH01",
+        "speech_order": "s288",
+        "speech_url": "s289",
+        "start_page": "s28a"
+      }
+    }
+  },
+  "new": {
+    "speech": {
+      "speech_ref01": {
+        "closing": true,
+        "date": "s349",
+        "image_kind": "s34a",
+        "issue": "s34b",
+        "issue_id": "ISSUE01",
+        "meeting_url": "s34d",
+        "name_of_houses": "s34e",
+        "name_of_meeting": "s34f",
+        "pdf_url": "s350",
+        "search_object": "s351",
+        "session": "s352",
+        "speaker": "s353",
+        "speaker_group": "s354",
+        "speaker_position": "s355",
+        "speaker_role": "s356",
+        "speaker_yomi": "s357",
+        "speech": "s358",
+        "speech_id": "SPEECH01",
+        "speech_order": "s35a",
+        "speech_url": "s35b",
+        "start_page": "s35c"
+      }
+    }
+  }
+}
