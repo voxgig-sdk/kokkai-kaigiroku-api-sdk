@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: 'https://kokkai.ndl.go.jp/api',
+    base: '$$main.kit.info.servers.0.url$$',
 
     'AUTHBLOCK'headers: 'HEADERS',
 

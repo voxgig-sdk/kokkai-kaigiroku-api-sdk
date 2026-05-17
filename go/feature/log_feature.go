@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 )
 
 type LogFeature struct {

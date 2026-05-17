@@ -70,7 +70,7 @@
               "active": true
             },
             {
-              "name": "name_of_houses",
+              "name": "name_of_house",
               "req": false,
               "type": "`$STRING`",
               "active": true
@@ -183,8 +183,8 @@
                       },
                       {
                         "kind": "query",
-                        "name": "name_of_houses",
-                        "orig": "name_of_houses",
+                        "name": "name_of_house",
+                        "orig": "name_of_house",
                         "reqd": false,
                         "type": "`$STRING`",
                         "active": true
@@ -322,7 +322,7 @@
                       "issue_id",
                       "issue_to",
                       "maximum_record",
-                      "name_of_houses",
+                      "name_of_house",
                       "name_of_meeting",
                       "record_packing",
                       "search_range",
@@ -396,7 +396,7 @@
               "active": true
             },
             {
-              "name": "name_of_houses",
+              "name": "name_of_house",
               "req": false,
               "type": "`$STRING`",
               "active": true
@@ -509,8 +509,8 @@
                       },
                       {
                         "kind": "query",
-                        "name": "name_of_houses",
-                        "orig": "name_of_houses",
+                        "name": "name_of_house",
+                        "orig": "name_of_house",
                         "reqd": false,
                         "type": "`$STRING`",
                         "active": true
@@ -648,7 +648,7 @@
                       "issue_id",
                       "issue_to",
                       "maximum_record",
-                      "name_of_houses",
+                      "name_of_house",
                       "name_of_meeting",
                       "record_packing",
                       "search_range",
@@ -722,7 +722,7 @@
               "active": true
             },
             {
-              "name": "name_of_houses",
+              "name": "name_of_house",
               "req": false,
               "type": "`$STRING`",
               "active": true
@@ -889,8 +889,8 @@
                       },
                       {
                         "kind": "query",
-                        "name": "name_of_houses",
-                        "orig": "name_of_houses",
+                        "name": "name_of_house",
+                        "orig": "name_of_house",
                         "reqd": false,
                         "type": "`$STRING`",
                         "active": true
@@ -1028,7 +1028,7 @@
                       "issue_id",
                       "issue_to",
                       "maximum_record",
-                      "name_of_houses",
+                      "name_of_house",
                       "name_of_meeting",
                       "record_packing",
                       "search_range",
@@ -1142,6 +1142,9 @@
             },
             "rb": {
               "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
             }
           }
         }
@@ -1227,6 +1230,33 @@
         }
       },
       "target": {
+        "go-cli": {
+          "title": "Go CLI",
+          "ext": "go",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "kokkai-kaigiroku-api"
+          },
+          "phase": {
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "deps": {},
+          "name": "go-cli",
+          "active": true
+        },
         "ts": {
           "title": "TypeScript",
           "ext": "ts",
@@ -1267,14 +1297,7 @@
             "name": "kokkai-kaigiroku-api"
           },
           "srcfeature": false,
-          "deps": {
-            "github.com/voxgig/struct": {
-              "active": true,
-              "version": "v0.0.0",
-              "replace": "./utility/struct",
-              "kind": "prod"
-            }
-          },
+          "deps": {},
           "name": "go",
           "active": true
         },
@@ -1362,15 +1385,6 @@
     },
     "def": {
       "desc": ""
-    },
-    "api": {
-      "guide": {},
-      "entity": {}
     }
-  },
-  "name__orig": "kokkai-kaigiroku-api",
-  "Name": "KokkaiKaigirokuApi",
-  "name_": "kokkai_kaigiroku_api",
-  "name-": "kokkai-kaigiroku-api",
-  "NAME": "KOKKAI-KAIGIROKU-API"
+  }
 }

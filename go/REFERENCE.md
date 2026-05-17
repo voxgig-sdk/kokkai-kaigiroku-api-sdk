@@ -104,7 +104,7 @@ meeting := client.Meeting(nil)
 | `issue` | ``$STRING`` | No |  |
 | `issue_id` | ``$STRING`` | No |  |
 | `meeting_url` | ``$STRING`` | No |  |
-| `name_of_houses` | ``$STRING`` | No |  |
+| `name_of_house` | ``$STRING`` | No |  |
 | `name_of_meeting` | ``$STRING`` | No |  |
 | `pdf_url` | ``$STRING`` | No |  |
 | `search_object` | ``$STRING`` | No |  |
@@ -161,7 +161,7 @@ meeting_list := client.MeetingList(nil)
 | `issue` | ``$STRING`` | No |  |
 | `issue_id` | ``$STRING`` | No |  |
 | `meeting_url` | ``$STRING`` | No |  |
-| `name_of_houses` | ``$STRING`` | No |  |
+| `name_of_house` | ``$STRING`` | No |  |
 | `name_of_meeting` | ``$STRING`` | No |  |
 | `pdf_url` | ``$STRING`` | No |  |
 | `search_object` | ``$STRING`` | No |  |
@@ -218,7 +218,7 @@ speech := client.Speech(nil)
 | `issue` | ``$STRING`` | No |  |
 | `issue_id` | ``$STRING`` | No |  |
 | `meeting_url` | ``$STRING`` | No |  |
-| `name_of_houses` | ``$STRING`` | No |  |
+| `name_of_house` | ``$STRING`` | No |  |
 | `name_of_meeting` | ``$STRING`` | No |  |
 | `pdf_url` | ``$STRING`` | No |  |
 | `search_object` | ``$STRING`` | No |  |

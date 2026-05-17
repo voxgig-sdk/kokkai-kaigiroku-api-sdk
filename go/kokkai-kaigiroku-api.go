@@ -1,10 +1,10 @@
 package voxgigkokkaikaigirokuapisdk
 
 import (
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/entity"
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/feature"
-	_ "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/utility"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/entity"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/feature"
+	_ "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

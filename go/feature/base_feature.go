@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 )
 
 type BaseFeature struct {

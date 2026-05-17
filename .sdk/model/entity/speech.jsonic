@@ -36,7 +36,7 @@ main: kit: entity: speech: {
       type: "`$STRING`"
     }
     {
-      name: "name_of_houses"
+      name: "name_of_house"
       req: false
       type: "`$STRING`"
     }
@@ -181,8 +181,8 @@ main: kit: entity: speech: {
               }
               {
                 kind: "query"
-                name: "name_of_houses"
-                orig: "name_of_houses"
+                name: "name_of_house"
+                orig: "name_of_house"
                 reqd: false
                 type: "`$STRING`"
               }
@@ -305,7 +305,7 @@ main: kit: entity: speech: {
               "issue_id"
               "issue_to"
               "maximum_record"
-              "name_of_houses"
+              "name_of_house"
               "name_of_meeting"
               "record_packing"
               "search_range"

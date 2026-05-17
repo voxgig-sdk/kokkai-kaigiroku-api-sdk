@@ -5,14 +5,14 @@ The Golang SDK for the KokkaiKaigirokuApi API. Provides an entity-oriented inter
 
 ## Install
 ```bash
-go get github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk
+go get github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go
 ```
 
 If the module is not yet published to a registry, use a `replace` directive
 in your `go.mod` to point to a local checkout:
 
 ```bash
-go mod edit -replace github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk=../path/to/github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk
+go mod edit -replace github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go=../path/to/github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go
 ```
 
 
@@ -30,8 +30,8 @@ import (
     "fmt"
     "os"
 
-    sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk"
-    "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+    sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go"
+    "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 )
 
 func main() {
@@ -232,7 +232,7 @@ On error, `"ok"` is `false` and `"err"` contains the error value.
 | `"issue"` |  |
 | `"issue_id"` |  |
 | `"meeting_url"` |  |
-| `"name_of_houses"` |  |
+| `"name_of_house"` |  |
 | `"name_of_meeting"` |  |
 | `"pdf_url"` |  |
 | `"search_object"` |  |
@@ -253,7 +253,7 @@ API path: `/meeting`
 | `"issue"` |  |
 | `"issue_id"` |  |
 | `"meeting_url"` |  |
-| `"name_of_houses"` |  |
+| `"name_of_house"` |  |
 | `"name_of_meeting"` |  |
 | `"pdf_url"` |  |
 | `"search_object"` |  |
@@ -274,7 +274,7 @@ API path: `/meeting_list`
 | `"issue"` |  |
 | `"issue_id"` |  |
 | `"meeting_url"` |  |
-| `"name_of_houses"` |  |
+| `"name_of_house"` |  |
 | `"name_of_meeting"` |  |
 | `"pdf_url"` |  |
 | `"search_object"` |  |
@@ -319,7 +319,7 @@ Create an instance: `meeting := client.Meeting(nil)`
 | `issue` | ``$STRING`` |  |
 | `issue_id` | ``$STRING`` |  |
 | `meeting_url` | ``$STRING`` |  |
-| `name_of_houses` | ``$STRING`` |  |
+| `name_of_house` | ``$STRING`` |  |
 | `name_of_meeting` | ``$STRING`` |  |
 | `pdf_url` | ``$STRING`` |  |
 | `search_object` | ``$STRING`` |  |
@@ -353,7 +353,7 @@ Create an instance: `meeting_list := client.MeetingList(nil)`
 | `issue` | ``$STRING`` |  |
 | `issue_id` | ``$STRING`` |  |
 | `meeting_url` | ``$STRING`` |  |
-| `name_of_houses` | ``$STRING`` |  |
+| `name_of_house` | ``$STRING`` |  |
 | `name_of_meeting` | ``$STRING`` |  |
 | `pdf_url` | ``$STRING`` |  |
 | `search_object` | ``$STRING`` |  |
@@ -387,7 +387,7 @@ Create an instance: `speech := client.Speech(nil)`
 | `issue` | ``$STRING`` |  |
 | `issue_id` | ``$STRING`` |  |
 | `meeting_url` | ``$STRING`` |  |
-| `name_of_houses` | ``$STRING`` |  |
+| `name_of_house` | ``$STRING`` |  |
 | `name_of_meeting` | ``$STRING`` |  |
 | `pdf_url` | ``$STRING`` |  |
 | `search_object` | ``$STRING`` |  |
@@ -460,7 +460,7 @@ Use `core.ToMapAny()` to safely cast results and nested data.
 ### Package structure
 
 ```
-github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/
+github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/
 ├── kokkai-kaigiroku-api.go        # Root package — type aliases and constructors
 ├── core/               # SDK core — client, types, pipeline
 ├── entity/             # Entity implementations
@@ -469,7 +469,7 @@ github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/
 └── test/               # Test suites
 ```
 
-The root package (`github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk`) re-exports everything needed
+The root package (`github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go`) re-exports everything needed
 for normal use. Import sub-packages only when you need specific types
 like `core.ToMapAny`.
 

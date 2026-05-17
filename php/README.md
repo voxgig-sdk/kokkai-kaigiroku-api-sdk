@@ -214,7 +214,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `issue` |  |
 | `issue_id` |  |
 | `meeting_url` |  |
-| `name_of_houses` |  |
+| `name_of_house` |  |
 | `name_of_meeting` |  |
 | `pdf_url` |  |
 | `search_object` |  |
@@ -235,7 +235,7 @@ API path: `/meeting`
 | `issue` |  |
 | `issue_id` |  |
 | `meeting_url` |  |
-| `name_of_houses` |  |
+| `name_of_house` |  |
 | `name_of_meeting` |  |
 | `pdf_url` |  |
 | `search_object` |  |
@@ -256,7 +256,7 @@ API path: `/meeting_list`
 | `issue` |  |
 | `issue_id` |  |
 | `meeting_url` |  |
-| `name_of_houses` |  |
+| `name_of_house` |  |
 | `name_of_meeting` |  |
 | `pdf_url` |  |
 | `search_object` |  |
@@ -301,7 +301,7 @@ Create an instance: `const meeting = client.Meeting()`
 | `issue` | ``$STRING`` |  |
 | `issue_id` | ``$STRING`` |  |
 | `meeting_url` | ``$STRING`` |  |
-| `name_of_houses` | ``$STRING`` |  |
+| `name_of_house` | ``$STRING`` |  |
 | `name_of_meeting` | ``$STRING`` |  |
 | `pdf_url` | ``$STRING`` |  |
 | `search_object` | ``$STRING`` |  |
@@ -335,7 +335,7 @@ Create an instance: `const meeting_list = client.MeetingList()`
 | `issue` | ``$STRING`` |  |
 | `issue_id` | ``$STRING`` |  |
 | `meeting_url` | ``$STRING`` |  |
-| `name_of_houses` | ``$STRING`` |  |
+| `name_of_house` | ``$STRING`` |  |
 | `name_of_meeting` | ``$STRING`` |  |
 | `pdf_url` | ``$STRING`` |  |
 | `search_object` | ``$STRING`` |  |
@@ -369,7 +369,7 @@ Create an instance: `const speech = client.Speech()`
 | `issue` | ``$STRING`` |  |
 | `issue_id` | ``$STRING`` |  |
 | `meeting_url` | ``$STRING`` |  |
-| `name_of_houses` | ``$STRING`` |  |
+| `name_of_house` | ``$STRING`` |  |
 | `name_of_meeting` | ``$STRING`` |  |
 | `pdf_url` | ``$STRING`` |  |
 | `search_object` | ``$STRING`` |  |

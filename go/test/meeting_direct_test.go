@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk"
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+	sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 )
 
 func TestMeetingDirect(t *testing.T) {

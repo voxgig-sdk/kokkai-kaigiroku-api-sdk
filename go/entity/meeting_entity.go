@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/utility/struct"
 )
 
 type MeetingEntity struct {

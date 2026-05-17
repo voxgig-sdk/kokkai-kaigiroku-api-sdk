@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk"
-	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+	sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go"
+	"github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/utility/struct"
 )
 
 func TestSpeechEntity(t *testing.T) {

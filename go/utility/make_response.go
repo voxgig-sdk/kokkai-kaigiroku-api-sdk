@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/core"
+import "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go/core"
 
 func makeResponseUtil(ctx *core.Context) (*core.Response, error) {
 	if ctx.Out["response"] != nil {

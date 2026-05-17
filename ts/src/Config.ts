@@ -107,7 +107,7 @@ class Config {
           "index$": 5
         },
         {
-          "name": "name_of_houses",
+          "name": "name_of_house",
           "req": false,
           "type": "`$STRING`",
           "active": true,
@@ -226,8 +226,8 @@ class Config {
                   },
                   {
                     "kind": "query",
-                    "name": "name_of_houses",
-                    "orig": "name_of_houses",
+                    "name": "name_of_house",
+                    "orig": "name_of_house",
                     "reqd": false,
                     "type": "`$STRING`",
                     "active": true
@@ -365,7 +365,7 @@ class Config {
                   "issue_id",
                   "issue_to",
                   "maximum_record",
-                  "name_of_houses",
+                  "name_of_house",
                   "name_of_meeting",
                   "record_packing",
                   "search_range",
@@ -443,7 +443,7 @@ class Config {
           "index$": 5
         },
         {
-          "name": "name_of_houses",
+          "name": "name_of_house",
           "req": false,
           "type": "`$STRING`",
           "active": true,
@@ -562,8 +562,8 @@ class Config {
                   },
                   {
                     "kind": "query",
-                    "name": "name_of_houses",
-                    "orig": "name_of_houses",
+                    "name": "name_of_house",
+                    "orig": "name_of_house",
                     "reqd": false,
                     "type": "`$STRING`",
                     "active": true
@@ -701,7 +701,7 @@ class Config {
                   "issue_id",
                   "issue_to",
                   "maximum_record",
-                  "name_of_houses",
+                  "name_of_house",
                   "name_of_meeting",
                   "record_packing",
                   "search_range",
@@ -779,7 +779,7 @@ class Config {
           "index$": 5
         },
         {
-          "name": "name_of_houses",
+          "name": "name_of_house",
           "req": false,
           "type": "`$STRING`",
           "active": true,
@@ -961,8 +961,8 @@ class Config {
                   },
                   {
                     "kind": "query",
-                    "name": "name_of_houses",
-                    "orig": "name_of_houses",
+                    "name": "name_of_house",
+                    "orig": "name_of_house",
                     "reqd": false,
                     "type": "`$STRING`",
                     "active": true
@@ -1100,7 +1100,7 @@ class Config {
                   "issue_id",
                   "issue_to",
                   "maximum_record",
-                  "name_of_houses",
+                  "name_of_house",
                   "name_of_meeting",
                   "record_packing",
                   "search_range",
