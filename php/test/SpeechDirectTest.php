@@ -68,14 +68,12 @@ function speech_direct_setup($mockres)
     $env = Runner::env_override([
         "KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID" => [],
         "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
-        "KOKKAIKAIGIROKUAPI_APIKEY" => "NONE",
     ]);
 
     $live = $env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["KOKKAIKAIGIROKUAPI_APIKEY"],
         ];
         $client = new KokkaiKaigirokuApiSDK($merged_opts);
         return [

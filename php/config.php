@@ -20,9 +20,6 @@ class KokkaiKaigirokuApiConfig
             ],
             "options" => [
                 "base" => "https://kokkai.ndl.go.jp/api",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

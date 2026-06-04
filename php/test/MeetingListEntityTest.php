@@ -86,7 +86,6 @@ function meeting_list_basic_setup($extra)
         "KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID" => $idmap,
         "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
         "KOKKAIKAIGIROKUAPI_TEST_EXPLAIN" => "FALSE",
-        "KOKKAIKAIGIROKUAPI_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +97,6 @@ function meeting_list_basic_setup($extra)
     if ($env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["KOKKAIKAIGIROKUAPI_APIKEY"],
             ],
             $extra ?? [],
         ]);

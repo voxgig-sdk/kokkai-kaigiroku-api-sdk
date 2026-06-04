@@ -17,7 +17,19 @@
         ],
         "termsOfService": "https://kokkai.ndl.go.jp/api.html",
         "title": "国会会議録検索API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Search Japan's National Diet (Kokkai) meeting minutes and individual speeches by date, session, speaker, and keyword",
+        "homepage": "https://kokkai.ndl.go.jp/",
+        "docs_url": "https://kokkai.ndl.go.jp/api.html",
+        "license_short": "Free to use without registration; speech content remains copyright of speakers, subject to National Diet Library website terms.",
+        "license_md": "- No registration or API key required to call the service.\n- The National Diet Library publishes the records under its website terms of use.\n- Individual speeches are copyrighted by their speakers; reuse generally requires permission except for fair-use cases such as private use, quotation, news reporting, and computational analysis.\n- The library asks callers to space requests by several seconds and avoid concurrent or bulk access; access may be blocked if service stability is threatened.",
+        "about_md": "The Kokkai Kaigiroku Search API (国会会議録検索システム) is operated by the [National Diet Library of Japan](https://kokkai.ndl.go.jp/) and exposes the full text of proceedings from both houses of the Japanese National Diet. The records cover plenary sessions and committee meetings, with speaker-level granularity.\n\nWhat you get from the API:\n\n- Three search endpoints: a lightweight meeting list (`/meeting_list`), full meeting records (`/meeting`), and individual speech records (`/speech`).\n- Meeting fields include session number, house name, meeting name, issue number, date, meeting ID, and links to the HTML and PDF views on kokkai.ndl.go.jp.\n- Speech fields include speaker name, speaker affiliation and role, speech order within the meeting, the full speech text, and a starting page reference.\n- Responses are XML by default; JSON is available via the `recordPacking` parameter.\n\nOperational notes: no authentication or registration is required. The simple meeting-list and speech endpoints return up to 100 records per request, while the full meeting endpoint returns up to 10. The library asks for several seconds between requests and discourages concurrent or short-window bulk access.",
+        "entity_desc": {
+          "meeting": "Full meeting record including all speeches from a single Diet sitting, served from `/api/meeting` (up to 10 records per request).",
+          "meeting_list": "Lightweight index of meetings matching a query, served from `/api/meeting_list` with session, house, meeting name, date, and links to HTML/PDF views (up to 100 per request).",
+          "speech": "Individual speech utterance with speaker name, affiliation, role, full text, and order within the meeting, served from `/api/speech` (up to 100 per request)."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +37,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "meeting": {

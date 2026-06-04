@@ -92,7 +92,6 @@ function speech_basic_setup(extra)
     ["KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID"] = idmap,
     ["KOKKAIKAIGIROKUAPI_TEST_LIVE"] = "FALSE",
     ["KOKKAIKAIGIROKUAPI_TEST_EXPLAIN"] = "FALSE",
-    ["KOKKAIKAIGIROKUAPI_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function speech_basic_setup(extra)
   if env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["KOKKAIKAIGIROKUAPI_APIKEY"],
       },
       extra or {},
     })

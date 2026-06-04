@@ -119,7 +119,6 @@ func meeting_listBasicSetup(extra map[string]any) *entityTestSetup {
 		"KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID": idmap,
 		"KOKKAIKAIGIROKUAPI_TEST_LIVE":      "FALSE",
 		"KOKKAIKAIGIROKUAPI_TEST_EXPLAIN":   "FALSE",
-		"KOKKAIKAIGIROKUAPI_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID"])
@@ -130,7 +129,6 @@ func meeting_listBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["KOKKAIKAIGIROKUAPI_APIKEY"],
 			},
 			extra,
 		})

@@ -20,9 +20,7 @@ loading a specific record.
 <?php
 require_once 'kokkaikaigirokuapi_sdk.php';
 
-$client = new KokkaiKaigirokuApiSDK([
-    "apikey" => getenv("KOKKAI-KAIGIROKU-API_APIKEY"),
-]);
+$client = new KokkaiKaigirokuApiSDK([]);
 ```
 
 ### 2. List meetings
@@ -119,7 +117,6 @@ Create a `.env.local` file at the project root:
 
 ```
 KOKKAI-KAIGIROKU-API_TEST_LIVE=TRUE
-KOKKAI-KAIGIROKU-API_APIKEY=<your-key>
 ```
 
 Then run:
@@ -142,7 +139,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
