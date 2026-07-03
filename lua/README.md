@@ -10,7 +10,7 @@ The Lua SDK for the KokkaiKaigirokuApi API — an entity-oriented client using L
 
 ## Install
 ```bash
-luarocks install kokkai-kaigiroku-api-sdk
+luarocks install voxgig-sdk-kokkai-kaigiroku-api
 ```
 
 If the module is not yet published, add the source directory to

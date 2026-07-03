@@ -10,7 +10,7 @@ The Python SDK for the KokkaiKaigirokuApi API — an entity-oriented client foll
 
 ## Install
 ```bash
-pip install kokkai-kaigiroku-api-sdk
+pip install voxgig-sdk-kokkai-kaigiroku-api
 ```
 
 Or install from source:

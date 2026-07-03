@@ -10,13 +10,13 @@ The Ruby SDK for the KokkaiKaigirokuApi API — an entity-oriented client using 
 
 ## Install
 ```bash
-gem install kokkai-kaigiroku-api-sdk
+gem install voxgig-sdk-kokkai-kaigiroku-api
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "kokkai-kaigiroku-api-sdk"
+gem "voxgig-sdk-kokkai-kaigiroku-api"
 ```
 
 Then run:

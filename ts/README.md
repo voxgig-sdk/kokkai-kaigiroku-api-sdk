@@ -10,7 +10,7 @@ The TypeScript SDK for the KokkaiKaigirokuApi API — a type-safe, entity-orient
 
 ## Install
 ```bash
-npm install kokkai-kaigiroku-api
+npm install @voxgig-sdk/kokkai-kaigiroku-api
 ```
 ## Tutorial: your first API call
 

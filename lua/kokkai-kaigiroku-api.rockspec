@@ -8,12 +8,14 @@ source = {
   dir = "kokkai-kaigiroku-api-sdk/lua"
 }
 description = {
-  summary = "KokkaiKaigirokuApi SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the 国会会議録検索 public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk",
+  issues_url = "https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "kokkai-kaigiroku-api" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

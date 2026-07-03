@@ -10,7 +10,7 @@ The PHP SDK for the KokkaiKaigirokuApi API — an entity-oriented client using P
 
 ## Install
 ```bash
-composer require voxgig/kokkai-kaigiroku-api-sdk
+composer require voxgig-sdk/kokkai-kaigiroku-api
 ```
 
 
