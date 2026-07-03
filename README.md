@@ -1,21 +1,8 @@
 # KokkaiKaigirokuApi SDK
 
-Search Japan's National Diet (Kokkai) meeting minutes and individual speeches by date, session, speaker, and keyword
+国会会議録検索API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About 国会会議録検索API
-
-The Kokkai Kaigiroku Search API (国会会議録検索システム) is operated by the [National Diet Library of Japan](https://kokkai.ndl.go.jp/) and exposes the full text of proceedings from both houses of the Japanese National Diet. The records cover plenary sessions and committee meetings, with speaker-level granularity.
-
-What you get from the API:
-
-- Three search endpoints: a lightweight meeting list (`/meeting_list`), full meeting records (`/meeting`), and individual speech records (`/speech`).
-- Meeting fields include session number, house name, meeting name, issue number, date, meeting ID, and links to the HTML and PDF views on kokkai.ndl.go.jp.
-- Speech fields include speaker name, speaker affiliation and role, speech order within the meeting, the full speech text, and a starting page reference.
-- Responses are XML by default; JSON is available via the `recordPacking` parameter.
-
-Operational notes: no authentication or registration is required. The simple meeting-list and speech endpoints return up to 100 records per request, while the full meeting endpoint returns up to 10. The library asks for several seconds between requests and discourages concurrent or short-window bulk access.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install kokkai-kaigiroku-api-sdk
 luarocks install kokkai-kaigiroku-api-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { KokkaiKaigirokuApiSDK } from 'kokkai-kaigiroku-api'
 
-const client = new KokkaiKaigirokuApiSDK({})
+const client = new KokkaiKaigirokuApiSDK({
+  apikey: process.env.KOKKAI-KAIGIROKU-API_APIKEY,
+})
 
 // List all meetings
 const meetings = await client.Meeting().list()
+console.log(meetings.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,9 +90,9 @@ The API exposes 3 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Meeting** | Full meeting record including all speeches from a single Diet sitting, served from `/api/meeting` (up to 10 records per request). | `/meeting` |
-| **MeetingList** | Lightweight index of meetings matching a query, served from `/api/meeting_list` with session, house, meeting name, date, and links to HTML/PDF views (up to 100 per request). | `/meeting_list` |
-| **Speech** | Individual speech utterance with speaker name, affiliation, role, full text, and order within the meeting, served from `/api/speech` (up to 100 per request). | `/speech` |
+| **Meeting** |  | `/meeting` |
+| **MeetingList** |  | `/meeting_list` |
+| **Speech** |  | `/speech` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -113,12 +102,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from kokkaikaigirokuapi_sdk import KokkaiKaigirokuApiSDK
 
-client = KokkaiKaigirokuApiSDK({})
+client = KokkaiKaigirokuApiSDK({
+    "apikey": os.environ.get("KOKKAI-KAIGIROKU-API_APIKEY"),
+})
 
 # List all meetings
-meetings, err = client.Meeting(None).list(None, None)
+meetings, err = client.Meeting().list()
+print(meetings)
 ```
 
 ### PHP
@@ -127,10 +120,13 @@ meetings, err = client.Meeting(None).list(None, None)
 <?php
 require_once 'kokkaikaigirokuapi_sdk.php';
 
-$client = new KokkaiKaigirokuApiSDK([]);
+$client = new KokkaiKaigirokuApiSDK([
+    "apikey" => getenv("KOKKAI-KAIGIROKU-API_APIKEY"),
+]);
 
 // List all meetings
-[$meetings, $err] = $client->Meeting(null)->list(null, null);
+[$meetings, $err] = $client->Meeting()->list();
+print_r($meetings);
 ```
 
 ### Golang
@@ -138,10 +134,13 @@ $client = new KokkaiKaigirokuApiSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go"
 
-client := sdk.NewKokkaiKaigirokuApiSDK(map[string]any{})
+client := sdk.NewKokkaiKaigirokuApiSDK(map[string]any{
+    "apikey": os.Getenv("KOKKAI-KAIGIROKU-API_APIKEY"),
+})
 
 // List all meetings
 meetings, err := client.Meeting(nil).List(nil, nil)
+fmt.Println(meetings)
 ```
 
 ### Ruby
@@ -149,10 +148,13 @@ meetings, err := client.Meeting(nil).List(nil, nil)
 ```ruby
 require_relative "KokkaiKaigirokuApi_sdk"
 
-client = KokkaiKaigirokuApiSDK.new({})
+client = KokkaiKaigirokuApiSDK.new({
+  "apikey" => ENV["KOKKAI-KAIGIROKU-API_APIKEY"],
+})
 
 # List all meetings
-meetings, err = client.Meeting(nil).list(nil, nil)
+meetings, err = client.Meeting().list
+puts meetings
 ```
 
 ### Lua
@@ -160,10 +162,13 @@ meetings, err = client.Meeting(nil).list(nil, nil)
 ```lua
 local sdk = require("kokkai-kaigiroku-api_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("KOKKAI-KAIGIROKU-API_APIKEY"),
+})
 
 -- List all meetings
-local meetings, err = client:Meeting(nil):list(nil, nil)
+local meetings, err = client:Meeting():list()
+print(meetings)
 ```
 
 ## Unit testing in offline mode
@@ -182,25 +187,21 @@ const result = await client.Meeting().load({ id: 'test01' })
 ### Python
 
 ```python
-client = KokkaiKaigirokuApiSDK.test(None, None)
-result, err = client.Meeting(None).load(
-    {"id": "test01"}, None
-)
+client = KokkaiKaigirokuApiSDK.test()
+result, err = client.Meeting().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = KokkaiKaigirokuApiSDK::test(null, null);
-[$result, $err] = $client->Meeting(null)->load(
-    ["id" => "test01"], null
-);
+$client = KokkaiKaigirokuApiSDK::test();
+[$result, $err] = $client->Meeting()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Meeting(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -209,19 +210,15 @@ result, err := client.Meeting(nil).Load(
 ### Ruby
 
 ```ruby
-client = KokkaiKaigirokuApiSDK.test(nil, nil)
-result, err = client.Meeting(nil).load(
-  { "id" => "test01" }, nil
-)
+client = KokkaiKaigirokuApiSDK.test
+result, err = client.Meeting().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Meeting(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Meeting():load({ id = "test01" })
 ```
 
 ## How it works
@@ -325,16 +322,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the 国会会議録検索API
-
-- Upstream: [https://kokkai.ndl.go.jp/](https://kokkai.ndl.go.jp/)
-- API docs: [https://kokkai.ndl.go.jp/api.html](https://kokkai.ndl.go.jp/api.html)
-
-- No registration or API key required to call the service.
-- The National Diet Library publishes the records under its website terms of use.
-- Individual speeches are copyrighted by their speakers; reuse generally requires permission except for fair-use cases such as private use, quotation, news reporting, and computational analysis.
-- The library asks callers to space requests by several seconds and avoid concurrent or bulk access; access may be blocked if service stability is threatened.
 
 ---
 

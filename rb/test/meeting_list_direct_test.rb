@@ -62,12 +62,14 @@ def meeting_list_direct_setup(mockres)
   env = Runner.env_override({
     "KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID" => {},
     "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
+    "KOKKAIKAIGIROKUAPI_APIKEY" => "NONE",
   })
 
   live = env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["KOKKAIKAIGIROKUAPI_APIKEY"],
     }
     client = KokkaiKaigirokuApiSDK.new(merged_opts)
     return {

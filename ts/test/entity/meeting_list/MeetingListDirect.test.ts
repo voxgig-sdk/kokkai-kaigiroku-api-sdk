@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID': {},
     'KOKKAIKAIGIROKUAPI_TEST_LIVE': 'FALSE',
+    'KOKKAIKAIGIROKUAPI_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.KOKKAIKAIGIROKUAPI_TEST_LIVE
 
   if (live) {
     const client = new KokkaiKaigirokuApiSDK({
+      apikey: env.KOKKAIKAIGIROKUAPI_APIKEY,
     })
 
     let idmap: any = env['KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID']
