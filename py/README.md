@@ -31,14 +31,16 @@ from kokkaikaigirokuapi_sdk import KokkaiKaigirokuApiSDK
 client = KokkaiKaigirokuApiSDK()
 ```
 
-### 2. List meetings
+### 2. List meeting records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.meeting.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    meetings = client.Meeting().list({})
+    for meeting in meetings:
+        print(meeting)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = KokkaiKaigirokuApiSDK.test()
 
-result = client.meeting.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+meeting = client.Meeting().load({"id": "test01"})
+# meeting contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -284,7 +287,7 @@ API path: `/speech`
 
 ### Meeting
 
-Create an instance: `const meeting = client.meeting`
+Create an instance: `meeting = client.Meeting()`
 
 #### Operations
 
@@ -311,14 +314,14 @@ Create an instance: `const meeting = client.meeting`
 
 #### Example: List
 
-```ts
-const meetings = await client.meeting.list()
+```python
+meetings = client.Meeting().list({})
 ```
 
 
 ### MeetingList
 
-Create an instance: `const meeting_list = client.meeting_list`
+Create an instance: `meeting_list = client.MeetingList()`
 
 #### Operations
 
@@ -345,14 +348,14 @@ Create an instance: `const meeting_list = client.meeting_list`
 
 #### Example: List
 
-```ts
-const meeting_lists = await client.meeting_list.list()
+```python
+meeting_lists = client.MeetingList().list({})
 ```
 
 
 ### Speech
 
-Create an instance: `const speech = client.speech`
+Create an instance: `speech = client.Speech()`
 
 #### Operations
 
@@ -388,8 +391,8 @@ Create an instance: `const speech = client.speech`
 
 #### Example: List
 
-```ts
-const speechs = await client.speech.list()
+```python
+speechs = client.Speech().list({})
 ```
 
 
@@ -463,7 +466,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-meeting = client.meeting
+meeting = client.Meeting()
 meeting.load({"id": "example_id"})
 
 # meeting.data_get() now returns the loaded meeting data

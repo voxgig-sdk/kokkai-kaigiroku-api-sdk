@@ -28,16 +28,14 @@ require_relative "KokkaiKaigirokuApi_sdk"
 client = KokkaiKaigirokuApiSDK.new
 ```
 
-### 2. List meetings
+### 2. List meeting records
 
 ```ruby
 begin
-  result = client.meeting.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Meeting records — iterate directly.
+  meetings = client.Meeting.list
+  meetings.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = KokkaiKaigirokuApiSDK.test
+client = KokkaiKaigirokuApiSDK.test({
+  "entity" => { "meeting" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.meeting.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+meeting = client.Meeting.load({ "id" => "test01" })
+puts meeting
 ```
 
 ### Use a custom fetch function
@@ -287,7 +289,7 @@ API path: `/speech`
 
 ### Meeting
 
-Create an instance: `const meeting = client.meeting`
+Create an instance: `meeting = client.Meeting`
 
 #### Operations
 
@@ -314,14 +316,15 @@ Create an instance: `const meeting = client.meeting`
 
 #### Example: List
 
-```ts
-const meetings = await client.meeting.list()
+```ruby
+# list returns an Array of Meeting records (raises on error).
+meetings = client.Meeting.list
 ```
 
 
 ### MeetingList
 
-Create an instance: `const meeting_list = client.meeting_list`
+Create an instance: `meeting_list = client.MeetingList`
 
 #### Operations
 
@@ -348,14 +351,15 @@ Create an instance: `const meeting_list = client.meeting_list`
 
 #### Example: List
 
-```ts
-const meeting_lists = await client.meeting_list.list()
+```ruby
+# list returns an Array of MeetingList records (raises on error).
+meeting_lists = client.MeetingList.list
 ```
 
 
 ### Speech
 
-Create an instance: `const speech = client.speech`
+Create an instance: `speech = client.Speech`
 
 #### Operations
 
@@ -391,8 +395,9 @@ Create an instance: `const speech = client.speech`
 
 #### Example: List
 
-```ts
-const speechs = await client.speech.list()
+```ruby
+# list returns an Array of Speech records (raises on error).
+speechs = client.Speech.list
 ```
 
 
@@ -467,7 +472,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-meeting = client.meeting
+meeting = client.Meeting
 meeting.load({ "id" => "example_id" })
 
 # meeting.data_get now returns the loaded meeting data

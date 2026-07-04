@@ -93,7 +93,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## MeetingEntity
 
 ```php
-$meeting = $client->meeting();
+$meeting = $client->Meeting();
 ```
 
 ### Fields
@@ -120,7 +120,7 @@ $meeting = $client->meeting();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->meeting()->list([]);
+$results = $client->Meeting()->list([]);
 ```
 
 ### Common Methods
@@ -156,7 +156,7 @@ Return the entity name.
 ## MeetingListEntity
 
 ```php
-$meeting_list = $client->meeting_list();
+$meeting_list = $client->MeetingList();
 ```
 
 ### Fields
@@ -183,7 +183,7 @@ $meeting_list = $client->meeting_list();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->meeting_list()->list([]);
+$results = $client->MeetingList()->list([]);
 ```
 
 ### Common Methods
@@ -219,7 +219,7 @@ Return the entity name.
 ## SpeechEntity
 
 ```php
-$speech = $client->speech();
+$speech = $client->Speech();
 ```
 
 ### Fields
@@ -255,7 +255,7 @@ $speech = $client->speech();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->speech()->list([]);
+$results = $client->Speech()->list([]);
 ```
 
 ### Common Methods

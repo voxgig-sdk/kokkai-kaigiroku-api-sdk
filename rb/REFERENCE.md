@@ -94,7 +94,7 @@ same parameters as `direct()`. Raises on error.
 ## MeetingEntity
 
 ```ruby
-meeting = client.meeting
+meeting = client.Meeting
 ```
 
 ### Fields
@@ -121,7 +121,7 @@ meeting = client.meeting
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.meeting.list(nil)
+results = client.Meeting.list(nil)
 ```
 
 ### Common Methods
@@ -157,7 +157,7 @@ Return the entity name.
 ## MeetingListEntity
 
 ```ruby
-meeting_list = client.meeting_list
+meeting_list = client.MeetingList
 ```
 
 ### Fields
@@ -184,7 +184,7 @@ meeting_list = client.meeting_list
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.meeting_list.list(nil)
+results = client.MeetingList.list(nil)
 ```
 
 ### Common Methods
@@ -220,7 +220,7 @@ Return the entity name.
 ## SpeechEntity
 
 ```ruby
-speech = client.speech
+speech = client.Speech
 ```
 
 ### Fields
@@ -256,7 +256,7 @@ speech = client.speech
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.speech.list(nil)
+results = client.Speech.list(nil)
 ```
 
 ### Common Methods

@@ -133,7 +133,7 @@ Alias for `KokkaiKaigirokuApiSDK.test()`.
 ## MeetingEntity
 
 ```ts
-const meeting = client.meeting
+const meeting = client.Meeting()
 ```
 
 ### Fields
@@ -160,7 +160,7 @@ const meeting = client.meeting
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.meeting.list()
+const results = await client.Meeting().list()
 ```
 
 ### Common Methods
@@ -194,7 +194,7 @@ Return a copy of the entity options.
 ## MeetingListEntity
 
 ```ts
-const meeting_list = client.meeting_list
+const meeting_list = client.MeetingList()
 ```
 
 ### Fields
@@ -221,7 +221,7 @@ const meeting_list = client.meeting_list
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.meeting_list.list()
+const results = await client.MeetingList().list()
 ```
 
 ### Common Methods
@@ -255,7 +255,7 @@ Return a copy of the entity options.
 ## SpeechEntity
 
 ```ts
-const speech = client.speech
+const speech = client.Speech()
 ```
 
 ### Fields
@@ -291,7 +291,7 @@ const speech = client.speech
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.speech.list()
+const results = await client.Speech().list()
 ```
 
 ### Common Methods

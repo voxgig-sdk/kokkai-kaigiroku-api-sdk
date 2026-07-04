@@ -91,7 +91,7 @@ same parameters as `direct()`.
 ## MeetingEntity
 
 ```lua
-local meeting = client:meeting(nil)
+local meeting = client:Meeting(nil)
 ```
 
 ### Fields
@@ -118,7 +118,7 @@ local meeting = client:meeting(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:meeting():list()
+local results, err = client:Meeting():list()
 ```
 
 ### Common Methods
@@ -154,7 +154,7 @@ Return the entity name.
 ## MeetingListEntity
 
 ```lua
-local meeting_list = client:meeting_list(nil)
+local meeting_list = client:MeetingList(nil)
 ```
 
 ### Fields
@@ -181,7 +181,7 @@ local meeting_list = client:meeting_list(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:meeting_list():list()
+local results, err = client:MeetingList():list()
 ```
 
 ### Common Methods
@@ -217,7 +217,7 @@ Return the entity name.
 ## SpeechEntity
 
 ```lua
-local speech = client:speech(nil)
+local speech = client:Speech(nil)
 ```
 
 ### Fields
@@ -253,7 +253,7 @@ local speech = client:speech(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:speech():list()
+local results, err = client:Speech():list()
 ```
 
 ### Common Methods

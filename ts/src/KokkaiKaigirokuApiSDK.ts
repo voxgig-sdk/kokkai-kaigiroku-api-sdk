@@ -206,42 +206,21 @@ class KokkaiKaigirokuApiSDK {
 
 
 
-  _meeting?: MeetingEntity
-
-  // Idiomatic facade: `client.meeting.list()` / `client.meeting.load({ id })`.
-  get meeting(): MeetingEntity {
-    return (this._meeting ??= new MeetingEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.meeting` instead. */
+  // Entity access: `client.Meeting().list()` / `client.Meeting().load({ id })`.
   Meeting(data?: any) {
     const self = this
     return new MeetingEntity(self,data)
   }
 
 
-  _meeting_list?: MeetingListEntity
-
-  // Idiomatic facade: `client.meeting_list.list()` / `client.meeting_list.load({ id })`.
-  get meeting_list(): MeetingListEntity {
-    return (this._meeting_list ??= new MeetingListEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.meeting_list` instead. */
+  // Entity access: `client.MeetingList().list()` / `client.MeetingList().load({ id })`.
   MeetingList(data?: any) {
     const self = this
     return new MeetingListEntity(self,data)
   }
 
 
-  _speech?: SpeechEntity
-
-  // Idiomatic facade: `client.speech.list()` / `client.speech.load({ id })`.
-  get speech(): SpeechEntity {
-    return (this._speech ??= new SpeechEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.speech` instead. */
+  // Entity access: `client.Speech().list()` / `client.Speech().load({ id })`.
   Speech(data?: any) {
     const self = this
     return new SpeechEntity(self,data)

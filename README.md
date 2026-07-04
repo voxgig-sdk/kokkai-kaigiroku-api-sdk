@@ -26,9 +26,11 @@ import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api'
 
 const client = new KokkaiKaigirokuApiSDK()
 
-// List all meetings
-const meetings = await client.meeting.list()
-console.log(meetings.data)
+// List all meetings (returns Meeting[])
+const meetings = await client.Meeting().list()
+for (const meeting of meetings) {
+  console.log(meeting)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -85,9 +87,10 @@ from kokkaikaigirokuapi_sdk import KokkaiKaigirokuApiSDK
 
 client = KokkaiKaigirokuApiSDK()
 
-# List all meetings
-meetings = client.meeting.list()
-print(meetings)
+# List all meetings (returns a list, raises on error)
+meetings = client.Meeting().list({})
+for meeting in meetings:
+    print(meeting)
 ```
 
 ### PHP
@@ -98,8 +101,8 @@ require_once 'kokkaikaigirokuapi_sdk.php';
 
 $client = new KokkaiKaigirokuApiSDK();
 
-// List all meetings (throws on error)
-$meetings = $client->meeting()->list();
+// List all meetings (returns an array; throws on error)
+$meetings = $client->Meeting()->list();
 print_r($meetings);
 ```
 
@@ -122,8 +125,8 @@ require_relative "KokkaiKaigirokuApi_sdk"
 
 client = KokkaiKaigirokuApiSDK.new
 
-# List all meetings
-meetings = client.meeting.list
+# List all meetings (returns an Array; raises on error)
+meetings = client.Meeting.list
 puts meetings
 ```
 
@@ -135,7 +138,7 @@ local sdk = require("kokkai-kaigiroku-api_sdk")
 local client = sdk.new()
 
 -- List all meetings
-local meetings, err = client:meeting():list()
+local meetings, err = client:Meeting():list()
 print(meetings)
 ```
 
@@ -148,22 +151,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = KokkaiKaigirokuApiSDK.test()
-const result = await client.meeting.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const meeting = await client.Meeting().load({ id: 'test01' })
+// meeting is a bare Meeting populated with mock data
+console.log(meeting)
 ```
 
 ### Python
 
 ```python
 client = KokkaiKaigirokuApiSDK.test()
-result = client.meeting.load({"id": "test01"})
+meeting = client.Meeting().load({"id": "test01"})
+print(meeting)
 ```
 
 ### PHP
 
 ```php
-$client = KokkaiKaigirokuApiSDK::test();
-$result = $client->meeting()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = KokkaiKaigirokuApiSDK::test([
+    "entity" => ["meeting" => ["test01" => ["id" => "test01"]]],
+]);
+$meeting = $client->Meeting()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -178,15 +186,18 @@ result, err := client.Meeting(nil).Load(
 ### Ruby
 
 ```ruby
-client = KokkaiKaigirokuApiSDK.test
-result = client.meeting.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = KokkaiKaigirokuApiSDK.test({
+  "entity" => { "meeting" => { "test01" => { "id" => "test01" } } },
+})
+meeting = client.Meeting.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:meeting():load({ id = "test01" })
+local result, err = client:Meeting():load({ id = "test01" })
 ```
 
 ## How it works
@@ -234,6 +245,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

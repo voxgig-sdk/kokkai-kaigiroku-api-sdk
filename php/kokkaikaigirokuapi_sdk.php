@@ -233,10 +233,10 @@ class KokkaiKaigirokuApiSDK
 
     private $_meeting = null;
 
-    // Idiomatic facade: $client->meeting()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Meeting() (PHP method
-    // names are case-insensitive).
-    public function meeting($data = null)
+    // Canonical facade: $client->Meeting()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->meeting()
+    // resolves here too.
+    public function Meeting($data = null)
     {
         require_once __DIR__ . '/entity/meeting_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class KokkaiKaigirokuApiSDK
 
     private $_meeting_list = null;
 
-    // Idiomatic facade: $client->meeting_list()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias MeetingList() (PHP method
-    // names are case-insensitive).
-    public function meeting_list($data = null)
+    // Canonical facade: $client->MeetingList()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->meeting_list()
+    // resolves here too.
+    public function MeetingList($data = null)
     {
         require_once __DIR__ . '/entity/meeting_list_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class KokkaiKaigirokuApiSDK
 
     private $_speech = null;
 
-    // Idiomatic facade: $client->speech()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Speech() (PHP method
-    // names are case-insensitive).
-    public function speech($data = null)
+    // Canonical facade: $client->Speech()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->speech()
+    // resolves here too.
+    public function Speech($data = null)
     {
         require_once __DIR__ . '/entity/speech_entity.php';
         if ($data === null) {

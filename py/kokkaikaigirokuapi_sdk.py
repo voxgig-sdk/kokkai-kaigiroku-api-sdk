@@ -220,57 +220,27 @@ class KokkaiKaigirokuApiSDK:
         }
 
 
-    @property
-    def meeting(self):
-        """Idiomatic facade: client.meeting.list() / client.meeting.load({"id": ...})."""
-        from entity.meeting_entity import MeetingEntity
-        cached = getattr(self, "_meeting", None)
-        if cached is None:
-            cached = MeetingEntity(self, None)
-            self._meeting = cached
-        return cached
-
-    def Meeting(self, data=None):
-        # Deprecated: use client.meeting instead.
+    def Meeting(self, data=None) -> "MeetingEntity":
+        """Entity factory: client.Meeting().list({}) / client.Meeting().load({"id": ...})."""
         from entity.meeting_entity import MeetingEntity
         return MeetingEntity(self, data)
 
 
-    @property
-    def meeting_list(self):
-        """Idiomatic facade: client.meeting_list.list() / client.meeting_list.load({"id": ...})."""
-        from entity.meeting_list_entity import MeetingListEntity
-        cached = getattr(self, "_meeting_list", None)
-        if cached is None:
-            cached = MeetingListEntity(self, None)
-            self._meeting_list = cached
-        return cached
-
-    def MeetingList(self, data=None):
-        # Deprecated: use client.meeting_list instead.
+    def MeetingList(self, data=None) -> "MeetingListEntity":
+        """Entity factory: client.MeetingList().list({}) / client.MeetingList().load({"id": ...})."""
         from entity.meeting_list_entity import MeetingListEntity
         return MeetingListEntity(self, data)
 
 
-    @property
-    def speech(self):
-        """Idiomatic facade: client.speech.list() / client.speech.load({"id": ...})."""
-        from entity.speech_entity import SpeechEntity
-        cached = getattr(self, "_speech", None)
-        if cached is None:
-            cached = SpeechEntity(self, None)
-            self._speech = cached
-        return cached
-
-    def Speech(self, data=None):
-        # Deprecated: use client.speech instead.
+    def Speech(self, data=None) -> "SpeechEntity":
+        """Entity factory: client.Speech().list({}) / client.Speech().load({"id": ...})."""
         from entity.speech_entity import SpeechEntity
         return SpeechEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "KokkaiKaigirokuApiSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -290,3 +260,11 @@ class KokkaiKaigirokuApiSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.meeting_entity import MeetingEntity
+    from entity.meeting_list_entity import MeetingListEntity
+    from entity.speech_entity import SpeechEntity

@@ -29,18 +29,16 @@ require_once 'kokkaikaigirokuapi_sdk.php';
 $client = new KokkaiKaigirokuApiSDK();
 ```
 
-### 2. List meetings
+### 2. List meeting records
 
 ```php
 try {
-    $result = $client->meeting()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Meeting records — iterate directly.
+    $meetings = $client->Meeting()->list();
+    foreach ($meetings as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = KokkaiKaigirokuApiSDK::test();
+$client = KokkaiKaigirokuApiSDK::test([
+    "entity" => ["meeting" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->meeting()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$meeting = $client->Meeting()->load(["id" => "test01"]);
+print_r($meeting);
 ```
 
 ### Use a custom fetch function
@@ -292,7 +294,7 @@ API path: `/speech`
 
 ### Meeting
 
-Create an instance: `const meeting = client.meeting`
+Create an instance: `$meeting = $client->Meeting();`
 
 #### Operations
 
@@ -319,14 +321,15 @@ Create an instance: `const meeting = client.meeting`
 
 #### Example: List
 
-```ts
-const meetings = await client.meeting.list()
+```php
+// list() returns an array of Meeting records (throws on error).
+$meetings = $client->Meeting()->list();
 ```
 
 
 ### MeetingList
 
-Create an instance: `const meeting_list = client.meeting_list`
+Create an instance: `$meeting_list = $client->MeetingList();`
 
 #### Operations
 
@@ -353,14 +356,15 @@ Create an instance: `const meeting_list = client.meeting_list`
 
 #### Example: List
 
-```ts
-const meeting_lists = await client.meeting_list.list()
+```php
+// list() returns an array of MeetingList records (throws on error).
+$meeting_lists = $client->MeetingList()->list();
 ```
 
 
 ### Speech
 
-Create an instance: `const speech = client.speech`
+Create an instance: `$speech = $client->Speech();`
 
 #### Operations
 
@@ -396,8 +400,9 @@ Create an instance: `const speech = client.speech`
 
 #### Example: List
 
-```ts
-const speechs = await client.speech.list()
+```php
+// list() returns an array of Speech records (throws on error).
+$speechs = $client->Speech()->list();
 ```
 
 
@@ -472,7 +477,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$meeting = $client->meeting();
+$meeting = $client->Meeting();
 $meeting->load(["id" => "example_id"]);
 
 // $meeting->dataGet() now returns the loaded meeting data
