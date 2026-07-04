@@ -50,8 +50,7 @@ class SpeechEntityTest extends TestCase
         $speech_ref01_ent = $client->Speech(null);
         $speech_ref01_match = [];
 
-        [$speech_ref01_list_result, $err] = $speech_ref01_ent->list($speech_ref01_match, null);
-        $this->assertNull($err);
+        $speech_ref01_list_result = $speech_ref01_ent->list($speech_ref01_match, null);
         $this->assertIsArray($speech_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function speech_basic_setup($extra)
         "KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID" => $idmap,
         "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
         "KOKKAIKAIGIROKUAPI_TEST_EXPLAIN" => "FALSE",
-        "KOKKAIKAIGIROKUAPI_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function speech_basic_setup($extra)
     if ($env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["KOKKAIKAIGIROKUAPI_APIKEY"],
             ],
             $extra ?? [],
         ]);

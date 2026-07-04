@@ -63,14 +63,12 @@ function speech_direct_setup(mockres)
   local env = runner.env_override({
     ["KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID"] = {},
     ["KOKKAIKAIGIROKUAPI_TEST_LIVE"] = "FALSE",
-    ["KOKKAIKAIGIROKUAPI_APIKEY"] = "NONE",
   })
 
   local live = env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["KOKKAIKAIGIROKUAPI_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

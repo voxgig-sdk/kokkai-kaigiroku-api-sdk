@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -92,7 +91,7 @@ same parameters as `direct()`.
 ## MeetingEntity
 
 ```lua
-local meeting = client:Meeting(nil)
+local meeting = client:meeting(nil)
 ```
 
 ### Fields
@@ -119,7 +118,7 @@ local meeting = client:Meeting(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Meeting():list()
+local results, err = client:meeting():list()
 ```
 
 ### Common Methods
@@ -155,7 +154,7 @@ Return the entity name.
 ## MeetingListEntity
 
 ```lua
-local meeting_list = client:MeetingList(nil)
+local meeting_list = client:meeting_list(nil)
 ```
 
 ### Fields
@@ -182,7 +181,7 @@ local meeting_list = client:MeetingList(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:MeetingList():list()
+local results, err = client:meeting_list():list()
 ```
 
 ### Common Methods
@@ -218,7 +217,7 @@ Return the entity name.
 ## SpeechEntity
 
 ```lua
-local speech = client:Speech(nil)
+local speech = client:speech(nil)
 ```
 
 ### Fields
@@ -254,7 +253,7 @@ local speech = client:Speech(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Speech():list()
+local results, err = client:speech():list()
 ```
 
 ### Common Methods

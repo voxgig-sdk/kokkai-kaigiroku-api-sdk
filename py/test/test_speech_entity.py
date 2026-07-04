@@ -50,8 +50,7 @@ class TestSpeechEntity:
         speech_ref01_ent = client.Speech(None)
         speech_ref01_match = {}
 
-        speech_ref01_list_result, err = speech_ref01_ent.list(speech_ref01_match, None)
-        assert err is None
+        speech_ref01_list_result = speech_ref01_ent.list(speech_ref01_match, None)
         assert isinstance(speech_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _speech_basic_setup(extra):
         "KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID": idmap,
         "KOKKAIKAIGIROKUAPI_TEST_LIVE": "FALSE",
         "KOKKAIKAIGIROKUAPI_TEST_EXPLAIN": "FALSE",
-        "KOKKAIKAIGIROKUAPI_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _speech_basic_setup(extra):
     if env.get("KOKKAIKAIGIROKUAPI_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("KOKKAIKAIGIROKUAPI_APIKEY"),
             },
             extra or {},
         ])

@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch SpeechListMatch
+---@param ctrl? table
+---@return Speech[]
+---@return string? err
 function SpeechEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

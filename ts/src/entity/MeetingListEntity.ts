@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  MeetingList,
+  MeetingListListMatch,
+} from '../KokkaiKaigirokuApiTypes'
 
 // TODO: needs Entity superclass
-class MeetingListEntity extends KokkaiKaigirokuApiEntityBase {
+class MeetingListEntity extends KokkaiKaigirokuApiEntityBase<MeetingList> {
 
   constructor(client: KokkaiKaigirokuApiSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class MeetingListEntity extends KokkaiKaigirokuApiEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: MeetingListListMatch, ctrl?: Control): Promise<MeetingList[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class MeetingListEntity extends KokkaiKaigirokuApiEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<MeetingList[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

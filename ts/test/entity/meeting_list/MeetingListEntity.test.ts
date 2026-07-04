@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID': idmap,
     'KOKKAI_KAIGIROKU_API_TEST_LIVE': 'FALSE',
     'KOKKAI_KAIGIROKU_API_TEST_EXPLAIN': 'FALSE',
-    'KOKKAI_KAIGIROKU_API_APIKEY': 'NONE',
   })
 
   idmap = env['KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new KokkaiKaigirokuApiSDK(merge([
       {
-        apikey: env.KOKKAI_KAIGIROKU_API_APIKEY,
       },
       extra
     ]))

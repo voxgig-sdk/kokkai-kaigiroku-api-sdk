@@ -93,14 +93,12 @@ func meeting_listDirectSetup(mockres any) *meeting_listDirectSetupResult {
 	env := envOverride(map[string]any{
 		"KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID": map[string]any{},
 		"KOKKAIKAIGIROKUAPI_TEST_LIVE":    "FALSE",
-		"KOKKAIKAIGIROKUAPI_APIKEY":       "NONE",
 	})
 
 	live := env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["KOKKAIKAIGIROKUAPI_APIKEY"],
 		}
 		client := sdk.NewKokkaiKaigirokuApiSDK(mergedOpts)
 

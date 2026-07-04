@@ -144,16 +144,23 @@ class KokkaiKaigirokuApiSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class KokkaiKaigirokuApiSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,25 +212,58 @@ class KokkaiKaigirokuApiSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def meeting(self):
+        """Idiomatic facade: client.meeting.list() / client.meeting.load({"id": ...})."""
+        from entity.meeting_entity import MeetingEntity
+        cached = getattr(self, "_meeting", None)
+        if cached is None:
+            cached = MeetingEntity(self, None)
+            self._meeting = cached
+        return cached
 
     def Meeting(self, data=None):
+        # Deprecated: use client.meeting instead.
         from entity.meeting_entity import MeetingEntity
         return MeetingEntity(self, data)
 
 
+    @property
+    def meeting_list(self):
+        """Idiomatic facade: client.meeting_list.list() / client.meeting_list.load({"id": ...})."""
+        from entity.meeting_list_entity import MeetingListEntity
+        cached = getattr(self, "_meeting_list", None)
+        if cached is None:
+            cached = MeetingListEntity(self, None)
+            self._meeting_list = cached
+        return cached
+
     def MeetingList(self, data=None):
+        # Deprecated: use client.meeting_list instead.
         from entity.meeting_list_entity import MeetingListEntity
         return MeetingListEntity(self, data)
 
 
+    @property
+    def speech(self):
+        """Idiomatic facade: client.speech.list() / client.speech.load({"id": ...})."""
+        from entity.speech_entity import SpeechEntity
+        cached = getattr(self, "_speech", None)
+        if cached is None:
+            cached = SpeechEntity(self, None)
+            self._speech = cached
+        return cached
+
     def Speech(self, data=None):
+        # Deprecated: use client.speech instead.
         from entity.speech_entity import SpeechEntity
         return SpeechEntity(self, data)
 

@@ -4,6 +4,8 @@ import { MeetingEntity } from './entity/MeetingEntity'
 import { MeetingListEntity } from './entity/MeetingListEntity'
 import { SpeechEntity } from './entity/SpeechEntity'
 
+export type * from './KokkaiKaigirokuApiTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -204,18 +206,42 @@ class KokkaiKaigirokuApiSDK {
 
 
 
+  _meeting?: MeetingEntity
+
+  // Idiomatic facade: `client.meeting.list()` / `client.meeting.load({ id })`.
+  get meeting(): MeetingEntity {
+    return (this._meeting ??= new MeetingEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.meeting` instead. */
   Meeting(data?: any) {
     const self = this
     return new MeetingEntity(self,data)
   }
 
 
+  _meeting_list?: MeetingListEntity
+
+  // Idiomatic facade: `client.meeting_list.list()` / `client.meeting_list.load({ id })`.
+  get meeting_list(): MeetingListEntity {
+    return (this._meeting_list ??= new MeetingListEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.meeting_list` instead. */
   MeetingList(data?: any) {
     const self = this
     return new MeetingListEntity(self,data)
   }
 
 
+  _speech?: SpeechEntity
+
+  // Idiomatic facade: `client.speech.list()` / `client.speech.load({ id })`.
+  get speech(): SpeechEntity {
+    return (this._speech ??= new SpeechEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.speech` instead. */
   Speech(data?: any) {
     const self = this
     return new SpeechEntity(self,data)

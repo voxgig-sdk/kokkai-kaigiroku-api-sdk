@@ -45,6 +45,7 @@ class MeetingListEntity
     end
   end
 
+  # @return [MeetingList, Hash] the current MeetingList data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class MeetingListEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of MeetingList fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class MeetingListEntity
   
 
   
+  # List MeetingList items matching the given filter.
+  #
+  # @param reqmatch [MeetingListListMatch, Hash, nil] match filter (any subset of MeetingList fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<MeetingList>, Array] the matching MeetingList items; raises KokkaiKaigirokuApiError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

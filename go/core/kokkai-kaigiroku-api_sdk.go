@@ -245,16 +245,25 @@ func (sdk *KokkaiKaigirokuApiSDK) Direct(fetchargs map[string]any) (map[string]a
 }
 
 
+// Meeting returns a Meeting entity bound to this client.
+// Idiomatic usage: client.Meeting(nil).List(nil, nil) or
+// client.Meeting(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *KokkaiKaigirokuApiSDK) Meeting(data map[string]any) KokkaiKaigirokuApiEntity {
 	return NewMeetingEntityFunc(sdk, data)
 }
 
 
+// MeetingList returns a MeetingList entity bound to this client.
+// Idiomatic usage: client.MeetingList(nil).List(nil, nil) or
+// client.MeetingList(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *KokkaiKaigirokuApiSDK) MeetingList(data map[string]any) KokkaiKaigirokuApiEntity {
 	return NewMeetingListEntityFunc(sdk, data)
 }
 
 
+// Speech returns a Speech entity bound to this client.
+// Idiomatic usage: client.Speech(nil).List(nil, nil) or
+// client.Speech(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *KokkaiKaigirokuApiSDK) Speech(data map[string]any) KokkaiKaigirokuApiEntity {
 	return NewSpeechEntityFunc(sdk, data)
 }

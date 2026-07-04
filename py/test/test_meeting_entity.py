@@ -50,8 +50,7 @@ class TestMeetingEntity:
         meeting_ref01_ent = client.Meeting(None)
         meeting_ref01_match = {}
 
-        meeting_ref01_list_result, err = meeting_ref01_ent.list(meeting_ref01_match, None)
-        assert err is None
+        meeting_ref01_list_result = meeting_ref01_ent.list(meeting_ref01_match, None)
         assert isinstance(meeting_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _meeting_basic_setup(extra):
         "KOKKAIKAIGIROKUAPI_TEST_MEETING_ENTID": idmap,
         "KOKKAIKAIGIROKUAPI_TEST_LIVE": "FALSE",
         "KOKKAIKAIGIROKUAPI_TEST_EXPLAIN": "FALSE",
-        "KOKKAIKAIGIROKUAPI_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _meeting_basic_setup(extra):
     if env.get("KOKKAIKAIGIROKUAPI_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("KOKKAIKAIGIROKUAPI_APIKEY"),
             },
             extra or {},
         ])

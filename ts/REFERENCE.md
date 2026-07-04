@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -134,7 +133,7 @@ Alias for `KokkaiKaigirokuApiSDK.test()`.
 ## MeetingEntity
 
 ```ts
-const meeting = client.Meeting()
+const meeting = client.meeting
 ```
 
 ### Fields
@@ -161,7 +160,7 @@ const meeting = client.Meeting()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Meeting().list()
+const results = await client.meeting.list()
 ```
 
 ### Common Methods
@@ -195,7 +194,7 @@ Return a copy of the entity options.
 ## MeetingListEntity
 
 ```ts
-const meeting_list = client.MeetingList()
+const meeting_list = client.meeting_list
 ```
 
 ### Fields
@@ -222,7 +221,7 @@ const meeting_list = client.MeetingList()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.MeetingList().list()
+const results = await client.meeting_list.list()
 ```
 
 ### Common Methods
@@ -256,7 +255,7 @@ Return a copy of the entity options.
 ## SpeechEntity
 
 ```ts
-const speech = client.Speech()
+const speech = client.speech
 ```
 
 ### Fields
@@ -292,7 +291,7 @@ const speech = client.Speech()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Speech().list()
+const results = await client.speech.list()
 ```
 
 ### Common Methods

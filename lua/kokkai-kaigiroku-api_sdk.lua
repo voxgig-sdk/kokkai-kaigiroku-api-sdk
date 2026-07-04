@@ -244,18 +244,57 @@ end
 
 
 
+-- Idiomatic facade: client:meeting():list() / client:meeting():load({ id = ... })
+function KokkaiKaigirokuApiSDK:meeting(data)
+  local EntityMod = require("entity.meeting_entity")
+  if data == nil then
+    if self._meeting == nil then
+      self._meeting = EntityMod.new(self, nil)
+    end
+    return self._meeting
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:meeting() instead.
 function KokkaiKaigirokuApiSDK:Meeting(data)
   local EntityMod = require("entity.meeting_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:meeting_list():list() / client:meeting_list():load({ id = ... })
+function KokkaiKaigirokuApiSDK:meeting_list(data)
+  local EntityMod = require("entity.meeting_list_entity")
+  if data == nil then
+    if self._meeting_list == nil then
+      self._meeting_list = EntityMod.new(self, nil)
+    end
+    return self._meeting_list
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:meeting_list() instead.
 function KokkaiKaigirokuApiSDK:MeetingList(data)
   local EntityMod = require("entity.meeting_list_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:speech():list() / client:speech():load({ id = ... })
+function KokkaiKaigirokuApiSDK:speech(data)
+  local EntityMod = require("entity.speech_entity")
+  if data == nil then
+    if self._speech == nil then
+      self._speech = EntityMod.new(self, nil)
+    end
+    return self._speech
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:speech() instead.
 function KokkaiKaigirokuApiSDK:Speech(data)
   local EntityMod = require("entity.speech_entity")
   return EntityMod.new(self, data)

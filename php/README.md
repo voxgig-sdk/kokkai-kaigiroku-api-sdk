@@ -9,9 +9,10 @@ The PHP SDK for the KokkaiKaigirokuApi API — an entity-oriented client using P
 
 
 ## Install
-```bash
-composer require voxgig-sdk/kokkai-kaigiroku-api
-```
+This package is not yet published to Packagist. Install it from the
+GitHub release tag (`php/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases](https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -25,22 +26,22 @@ loading a specific record.
 <?php
 require_once 'kokkaikaigirokuapi_sdk.php';
 
-$client = new KokkaiKaigirokuApiSDK([
-    "apikey" => getenv("KOKKAI-KAIGIROKU-API_APIKEY"),
-]);
+$client = new KokkaiKaigirokuApiSDK();
 ```
 
 ### 2. List meetings
 
 ```php
-[$result, $err] = $client->Meeting()->list();
-if ($err) { throw new \Exception($err); }
-
-if (is_array($result)) {
-    foreach ($result as $item) {
-        $d = $item->data_get();
-        echo $d["id"] . " " . $d["name"] . "\n";
+try {
+    $result = $client->meeting()->list();
+    if (is_array($result)) {
+        foreach ($result as $item) {
+            $d = $item->data_get();
+            echo $d["id"] . " " . $d["name"] . "\n";
+        }
     }
+} catch (\Exception $err) {
+    echo "Error: " . $err->getMessage();
 }
 ```
 
@@ -52,28 +53,31 @@ if (is_array($result)) {
 For endpoints not covered by entity methods:
 
 ```php
-[$result, $err] = $client->direct([
+// direct() is the raw-HTTP escape hatch: it returns a result array
+// (it does not throw). Branch on $result["ok"].
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
+} else {
+    echo "Error: " . $result["err"]->getMessage();
 }
 ```
 
 ### Prepare a request without sending it
 
 ```php
-[$fetchdef, $err] = $client->prepare([
+// prepare() throws on error and returns the fetch definition.
+$fetchdef = $client->prepare([
     "path" => "/api/resource/{id}",
     "method" => "DELETE",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 echo $fetchdef["url"];
 echo $fetchdef["method"];
@@ -87,7 +91,7 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = KokkaiKaigirokuApiSDK::test();
 
-[$result, $err] = $client->KokkaiKaigirokuApi()->load(["id" => "test01"]);
+$result = $client->meeting()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -121,8 +125,7 @@ $client = new KokkaiKaigirokuApiSDK([
 Create a `.env.local` file at the project root:
 
 ```
-KOKKAI-KAIGIROKU-API_TEST_LIVE=TRUE
-KOKKAI-KAIGIROKU-API_APIKEY=<your-key>
+KOKKAI_KAIGIROKU_API_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -145,7 +148,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -193,8 +195,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[$result, $err]`. The first value is an
-`array` with these keys:
+Entity operations return the bare result data (an `array` for single-entity
+ops, a `list` for `list`) and throw on error. Wrap calls in
+`try`/`catch` to handle failures.
+
+The `direct()` escape hatch never throws — it returns a result `array`
+you branch on via `$result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -286,7 +292,7 @@ API path: `/speech`
 
 ### Meeting
 
-Create an instance: `const meeting = client.Meeting()`
+Create an instance: `const meeting = client.meeting`
 
 #### Operations
 
@@ -314,13 +320,13 @@ Create an instance: `const meeting = client.Meeting()`
 #### Example: List
 
 ```ts
-const meetings = await client.Meeting().list()
+const meetings = await client.meeting.list()
 ```
 
 
 ### MeetingList
 
-Create an instance: `const meeting_list = client.MeetingList()`
+Create an instance: `const meeting_list = client.meeting_list`
 
 #### Operations
 
@@ -348,13 +354,13 @@ Create an instance: `const meeting_list = client.MeetingList()`
 #### Example: List
 
 ```ts
-const meeting_lists = await client.MeetingList().list()
+const meeting_lists = await client.meeting_list.list()
 ```
 
 
 ### Speech
 
-Create an instance: `const speech = client.Speech()`
+Create an instance: `const speech = client.speech`
 
 #### Operations
 
@@ -391,7 +397,7 @@ Create an instance: `const speech = client.Speech()`
 #### Example: List
 
 ```ts
-const speechs = await client.Speech().list()
+const speechs = await client.speech.list()
 ```
 
 
@@ -466,11 +472,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$moon = $client->Moon();
-[$result, $err] = $moon->load(["planet_id" => "earth", "id" => "luna"]);
+$meeting = $client->meeting();
+$meeting->load(["id" => "example_id"]);
 
-// $moon->dataGet() now returns the loaded moon data
-// $moon->matchGet() returns the last match criteria
+// $meeting->dataGet() now returns the loaded meeting data
+// $meeting->matchGet() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -43,8 +43,7 @@ class MeetingListEntityTest < Minitest::Test
     meeting_list_ref01_ent = client.MeetingList(nil)
     meeting_list_ref01_match = {}
 
-    meeting_list_ref01_list_result, err = meeting_list_ref01_ent.list(meeting_list_ref01_match, nil)
-    assert_nil err
+    meeting_list_ref01_list_result = meeting_list_ref01_ent.list(meeting_list_ref01_match, nil)
     assert meeting_list_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def meeting_list_basic_setup(extra)
     "KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID" => idmap,
     "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
     "KOKKAIKAIGIROKUAPI_TEST_EXPLAIN" => "FALSE",
-    "KOKKAIKAIGIROKUAPI_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def meeting_list_basic_setup(extra)
   if env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["KOKKAIKAIGIROKUAPI_APIKEY"],
       },
       extra || {},
     ])

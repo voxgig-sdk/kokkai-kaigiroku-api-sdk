@@ -9,12 +9,9 @@ The Lua SDK for the KokkaiKaigirokuApi API — an entity-oriented client using L
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-kokkai-kaigiroku-api
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("kokkai-kaigiroku-api_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("KOKKAI-KAIGIROKU-API_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List meetings
 
 ```lua
-local result, err = client:Meeting():list()
+local result, err = client:meeting():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -93,7 +88,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:KokkaiKaigirokuApi():load({ id = "test01" })
+local result, err = client:meeting():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -126,8 +121,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-KOKKAI-KAIGIROKU-API_TEST_LIVE=TRUE
-KOKKAI-KAIGIROKU-API_APIKEY=<your-key>
+KOKKAI_KAIGIROKU_API_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -150,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -291,7 +284,7 @@ API path: `/speech`
 
 ### Meeting
 
-Create an instance: `const meeting = client.Meeting()`
+Create an instance: `const meeting = client.meeting`
 
 #### Operations
 
@@ -319,13 +312,13 @@ Create an instance: `const meeting = client.Meeting()`
 #### Example: List
 
 ```ts
-const meetings = await client.Meeting().list()
+const meetings = await client.meeting.list()
 ```
 
 
 ### MeetingList
 
-Create an instance: `const meeting_list = client.MeetingList()`
+Create an instance: `const meeting_list = client.meeting_list`
 
 #### Operations
 
@@ -353,13 +346,13 @@ Create an instance: `const meeting_list = client.MeetingList()`
 #### Example: List
 
 ```ts
-const meeting_lists = await client.MeetingList().list()
+const meeting_lists = await client.meeting_list.list()
 ```
 
 
 ### Speech
 
-Create an instance: `const speech = client.Speech()`
+Create an instance: `const speech = client.speech`
 
 #### Operations
 
@@ -396,7 +389,7 @@ Create an instance: `const speech = client.Speech()`
 #### Example: List
 
 ```ts
-const speechs = await client.Speech().list()
+const speechs = await client.speech.list()
 ```
 
 
@@ -471,11 +464,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local meeting = client:meeting()
+meeting:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- meeting:data_get() now returns the loaded meeting data
+-- meeting:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

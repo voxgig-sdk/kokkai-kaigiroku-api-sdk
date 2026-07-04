@@ -50,8 +50,7 @@ class MeetingEntityTest extends TestCase
         $meeting_ref01_ent = $client->Meeting(null);
         $meeting_ref01_match = [];
 
-        [$meeting_ref01_list_result, $err] = $meeting_ref01_ent->list($meeting_ref01_match, null);
-        $this->assertNull($err);
+        $meeting_ref01_list_result = $meeting_ref01_ent->list($meeting_ref01_match, null);
         $this->assertIsArray($meeting_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function meeting_basic_setup($extra)
         "KOKKAIKAIGIROKUAPI_TEST_MEETING_ENTID" => $idmap,
         "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
         "KOKKAIKAIGIROKUAPI_TEST_EXPLAIN" => "FALSE",
-        "KOKKAIKAIGIROKUAPI_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function meeting_basic_setup($extra)
     if ($env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["KOKKAIKAIGIROKUAPI_APIKEY"],
             ],
             $extra ?? [],
         ]);
