@@ -66,8 +66,12 @@ class MeetingListEntity:
     
 
     
-    def list(self, reqmatch: MeetingListListMatch, ctrl=None) -> list[MeetingList]:
+    def list(self, reqmatch=None, ctrl=None) -> list[MeetingList]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.MeetingList().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,

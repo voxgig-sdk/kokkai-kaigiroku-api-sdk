@@ -8,7 +8,7 @@ Complete API reference for the KokkaiKaigirokuApi PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/kokkai-kaigiroku-api_sdk.php';
+require_once __DIR__ . '/kokkaikaigirokuapi_sdk.php';
 
 $client = new KokkaiKaigirokuApiSDK($options);
 ```
@@ -53,11 +53,11 @@ Create a new `MeetingListEntity` instance. Pass `null` for no initial data.
 
 Create a new `SpeechEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): KokkaiKaigirokuApiUtility`
 
 Return a copy of the SDK utility object.
 
@@ -100,44 +100,44 @@ $meeting = $client->Meeting();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `string` | No |  |
+| `image_kind` | `string` | No |  |
+| `issue` | `string` | No |  |
+| `issue_id` | `string` | No |  |
+| `meeting_url` | `string` | No |  |
+| `name_of_house` | `string` | No |  |
+| `name_of_meeting` | `string` | No |  |
+| `pdf_url` | `string` | No |  |
+| `search_object` | `string` | No |  |
+| `session` | `int` | No |  |
+| `speech_record` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Meeting()->list([]);
+$results = $client->Meeting()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -146,7 +146,7 @@ Set the entity match criteria.
 Create a new `MeetingEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -163,44 +163,44 @@ $meeting_list = $client->MeetingList();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `string` | No |  |
+| `image_kind` | `string` | No |  |
+| `issue` | `string` | No |  |
+| `issue_id` | `string` | No |  |
+| `meeting_url` | `string` | No |  |
+| `name_of_house` | `string` | No |  |
+| `name_of_meeting` | `string` | No |  |
+| `pdf_url` | `string` | No |  |
+| `search_object` | `string` | No |  |
+| `session` | `int` | No |  |
+| `speech_record` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->MeetingList()->list([]);
+$results = $client->MeetingList()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -209,7 +209,7 @@ Set the entity match criteria.
 Create a new `MeetingListEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -226,53 +226,53 @@ $speech = $client->Speech();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speaker` | ``$STRING`` | No |  |
-| `speaker_group` | ``$STRING`` | No |  |
-| `speaker_position` | ``$STRING`` | No |  |
-| `speaker_role` | ``$STRING`` | No |  |
-| `speaker_yomi` | ``$STRING`` | No |  |
-| `speech` | ``$STRING`` | No |  |
-| `speech_id` | ``$STRING`` | No |  |
-| `speech_order` | ``$INTEGER`` | No |  |
-| `speech_url` | ``$STRING`` | No |  |
-| `start_page` | ``$INTEGER`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `string` | No |  |
+| `image_kind` | `string` | No |  |
+| `issue` | `string` | No |  |
+| `issue_id` | `string` | No |  |
+| `meeting_url` | `string` | No |  |
+| `name_of_house` | `string` | No |  |
+| `name_of_meeting` | `string` | No |  |
+| `pdf_url` | `string` | No |  |
+| `search_object` | `string` | No |  |
+| `session` | `int` | No |  |
+| `speaker` | `string` | No |  |
+| `speaker_group` | `string` | No |  |
+| `speaker_position` | `string` | No |  |
+| `speaker_role` | `string` | No |  |
+| `speaker_yomi` | `string` | No |  |
+| `speech` | `string` | No |  |
+| `speech_id` | `string` | No |  |
+| `speech_order` | `int` | No |  |
+| `speech_url` | `string` | No |  |
+| `start_page` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Speech()->list([]);
+$results = $client->Speech()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -281,7 +281,7 @@ Set the entity match criteria.
 Create a new `SpeechEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

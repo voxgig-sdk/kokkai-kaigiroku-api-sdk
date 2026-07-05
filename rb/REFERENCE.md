@@ -8,7 +8,7 @@ Complete API reference for the KokkaiKaigirokuApi Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'kokkai-kaigiroku-api_sdk'
+require_relative 'KokkaiKaigirokuApi_sdk'
 
 client = KokkaiKaigirokuApiSDK.new(options)
 ```
@@ -101,27 +101,27 @@ meeting = client.Meeting
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `Boolean` | No |  |
+| `date` | `String` | No |  |
+| `image_kind` | `String` | No |  |
+| `issue` | `String` | No |  |
+| `issue_id` | `String` | No |  |
+| `meeting_url` | `String` | No |  |
+| `name_of_house` | `String` | No |  |
+| `name_of_meeting` | `String` | No |  |
+| `pdf_url` | `String` | No |  |
+| `search_object` | `String` | No |  |
+| `session` | `Integer` | No |  |
+| `speech_record` | `Array` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Meeting.list(nil)
+results = client.Meeting.list
 ```
 
 ### Common Methods
@@ -164,27 +164,27 @@ meeting_list = client.MeetingList
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `Boolean` | No |  |
+| `date` | `String` | No |  |
+| `image_kind` | `String` | No |  |
+| `issue` | `String` | No |  |
+| `issue_id` | `String` | No |  |
+| `meeting_url` | `String` | No |  |
+| `name_of_house` | `String` | No |  |
+| `name_of_meeting` | `String` | No |  |
+| `pdf_url` | `String` | No |  |
+| `search_object` | `String` | No |  |
+| `session` | `Integer` | No |  |
+| `speech_record` | `Array` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.MeetingList.list(nil)
+results = client.MeetingList.list
 ```
 
 ### Common Methods
@@ -227,36 +227,36 @@ speech = client.Speech
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speaker` | ``$STRING`` | No |  |
-| `speaker_group` | ``$STRING`` | No |  |
-| `speaker_position` | ``$STRING`` | No |  |
-| `speaker_role` | ``$STRING`` | No |  |
-| `speaker_yomi` | ``$STRING`` | No |  |
-| `speech` | ``$STRING`` | No |  |
-| `speech_id` | ``$STRING`` | No |  |
-| `speech_order` | ``$INTEGER`` | No |  |
-| `speech_url` | ``$STRING`` | No |  |
-| `start_page` | ``$INTEGER`` | No |  |
+| `closing` | `Boolean` | No |  |
+| `date` | `String` | No |  |
+| `image_kind` | `String` | No |  |
+| `issue` | `String` | No |  |
+| `issue_id` | `String` | No |  |
+| `meeting_url` | `String` | No |  |
+| `name_of_house` | `String` | No |  |
+| `name_of_meeting` | `String` | No |  |
+| `pdf_url` | `String` | No |  |
+| `search_object` | `String` | No |  |
+| `session` | `Integer` | No |  |
+| `speaker` | `String` | No |  |
+| `speaker_group` | `String` | No |  |
+| `speaker_position` | `String` | No |  |
+| `speaker_role` | `String` | No |  |
+| `speaker_yomi` | `String` | No |  |
+| `speech` | `String` | No |  |
+| `speech_id` | `String` | No |  |
+| `speech_order` | `Integer` | No |  |
+| `speech_url` | `String` | No |  |
+| `start_page` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Speech.list(nil)
+results = client.Speech.list
 ```
 
 ### Common Methods

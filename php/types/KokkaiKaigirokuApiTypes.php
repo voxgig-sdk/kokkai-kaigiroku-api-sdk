@@ -29,7 +29,7 @@ class Meeting
     public ?array $speech_record = null;
 }
 
-/** Match filter for Meeting#list (any subset of Meeting fields). */
+/** Request payload for Meeting#list. */
 class MeetingListMatch
 {
     public ?bool $closing = null;
@@ -63,7 +63,7 @@ class MeetingList
     public ?array $speech_record = null;
 }
 
-/** Match filter for MeetingList#list (any subset of MeetingList fields). */
+/** Request payload for MeetingList#list. */
 class MeetingListListMatch
 {
     public ?bool $closing = null;
@@ -106,7 +106,7 @@ class Speech
     public ?int $start_page = null;
 }
 
-/** Match filter for Speech#list (any subset of Speech fields). */
+/** Request payload for Speech#list. */
 class SpeechListMatch
 {
     public ?bool $closing = null;

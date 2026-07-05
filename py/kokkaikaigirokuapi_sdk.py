@@ -221,19 +221,19 @@ class KokkaiKaigirokuApiSDK:
 
 
     def Meeting(self, data=None) -> "MeetingEntity":
-        """Entity factory: client.Meeting().list({}) / client.Meeting().load({"id": ...})."""
+        """Entity factory: client.Meeting().list() / client.Meeting().load({"id": ...})."""
         from entity.meeting_entity import MeetingEntity
         return MeetingEntity(self, data)
 
 
     def MeetingList(self, data=None) -> "MeetingListEntity":
-        """Entity factory: client.MeetingList().list({}) / client.MeetingList().load({"id": ...})."""
+        """Entity factory: client.MeetingList().list() / client.MeetingList().load({"id": ...})."""
         from entity.meeting_list_entity import MeetingListEntity
         return MeetingListEntity(self, data)
 
 
     def Speech(self, data=None) -> "SpeechEntity":
-        """Entity factory: client.Speech().list({}) / client.Speech().load({"id": ...})."""
+        """Entity factory: client.Speech().list() / client.Speech().load({"id": ...})."""
         from entity.speech_entity import SpeechEntity
         return SpeechEntity(self, data)
 

@@ -105,18 +105,18 @@ meeting := client.Meeting(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `string` | No |  |
+| `image_kind` | `string` | No |  |
+| `issue` | `string` | No |  |
+| `issue_id` | `string` | No |  |
+| `meeting_url` | `string` | No |  |
+| `name_of_house` | `string` | No |  |
+| `name_of_meeting` | `string` | No |  |
+| `pdf_url` | `string` | No |  |
+| `search_object` | `string` | No |  |
+| `session` | `int` | No |  |
+| `speech_record` | `[]any` | No |  |
 
 ### Operations
 
@@ -162,18 +162,18 @@ meeting_list := client.MeetingList(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `string` | No |  |
+| `image_kind` | `string` | No |  |
+| `issue` | `string` | No |  |
+| `issue_id` | `string` | No |  |
+| `meeting_url` | `string` | No |  |
+| `name_of_house` | `string` | No |  |
+| `name_of_meeting` | `string` | No |  |
+| `pdf_url` | `string` | No |  |
+| `search_object` | `string` | No |  |
+| `session` | `int` | No |  |
+| `speech_record` | `[]any` | No |  |
 
 ### Operations
 
@@ -219,27 +219,27 @@ speech := client.Speech(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speaker` | ``$STRING`` | No |  |
-| `speaker_group` | ``$STRING`` | No |  |
-| `speaker_position` | ``$STRING`` | No |  |
-| `speaker_role` | ``$STRING`` | No |  |
-| `speaker_yomi` | ``$STRING`` | No |  |
-| `speech` | ``$STRING`` | No |  |
-| `speech_id` | ``$STRING`` | No |  |
-| `speech_order` | ``$INTEGER`` | No |  |
-| `speech_url` | ``$STRING`` | No |  |
-| `start_page` | ``$INTEGER`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `string` | No |  |
+| `image_kind` | `string` | No |  |
+| `issue` | `string` | No |  |
+| `issue_id` | `string` | No |  |
+| `meeting_url` | `string` | No |  |
+| `name_of_house` | `string` | No |  |
+| `name_of_meeting` | `string` | No |  |
+| `pdf_url` | `string` | No |  |
+| `search_object` | `string` | No |  |
+| `session` | `int` | No |  |
+| `speaker` | `string` | No |  |
+| `speaker_group` | `string` | No |  |
+| `speaker_position` | `string` | No |  |
+| `speaker_role` | `string` | No |  |
+| `speaker_yomi` | `string` | No |  |
+| `speech` | `string` | No |  |
+| `speech_id` | `string` | No |  |
+| `speech_order` | `int` | No |  |
+| `speech_url` | `string` | No |  |
+| `start_page` | `int` | No |  |
 
 ### Operations
 

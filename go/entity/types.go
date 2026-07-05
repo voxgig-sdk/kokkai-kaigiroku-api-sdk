@@ -24,8 +24,7 @@ type Meeting struct {
 	SpeechRecord *[]any `json:"speech_record,omitempty"`
 }
 
-// MeetingListMatch mirrors the meeting fields as an all-optional match
-// filter (Go analog of Partial<Meeting>).
+// MeetingListMatch is the typed request payload for Meeting.ListTyped.
 type MeetingListMatch struct {
 	Closing *bool `json:"closing,omitempty"`
 	Date *string `json:"date,omitempty"`
@@ -57,8 +56,7 @@ type MeetingList struct {
 	SpeechRecord *[]any `json:"speech_record,omitempty"`
 }
 
-// MeetingListListMatch mirrors the meeting_list fields as an all-optional match
-// filter (Go analog of Partial<MeetingList>).
+// MeetingListListMatch is the typed request payload for MeetingList.ListTyped.
 type MeetingListListMatch struct {
 	Closing *bool `json:"closing,omitempty"`
 	Date *string `json:"date,omitempty"`
@@ -99,8 +97,7 @@ type Speech struct {
 	StartPage *int `json:"start_page,omitempty"`
 }
 
-// SpeechListMatch mirrors the speech fields as an all-optional match
-// filter (Go analog of Partial<Speech>).
+// SpeechListMatch is the typed request payload for Speech.ListTyped.
 type SpeechListMatch struct {
 	Closing *bool `json:"closing,omitempty"`
 	Date *string `json:"date,omitempty"`

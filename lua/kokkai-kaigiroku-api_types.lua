@@ -21,6 +21,18 @@
 ---@field speech_record? table
 
 ---@class MeetingListMatch
+---@field closing? boolean
+---@field date? string
+---@field image_kind? string
+---@field issue? string
+---@field issue_id? string
+---@field meeting_url? string
+---@field name_of_house? string
+---@field name_of_meeting? string
+---@field pdf_url? string
+---@field search_object? string
+---@field session? number
+---@field speech_record? table
 
 ---@class MeetingList
 ---@field closing? boolean
@@ -37,6 +49,18 @@
 ---@field speech_record? table
 
 ---@class MeetingListListMatch
+---@field closing? boolean
+---@field date? string
+---@field image_kind? string
+---@field issue? string
+---@field issue_id? string
+---@field meeting_url? string
+---@field name_of_house? string
+---@field name_of_meeting? string
+---@field pdf_url? string
+---@field search_object? string
+---@field session? number
+---@field speech_record? table
 
 ---@class Speech
 ---@field closing? boolean
@@ -62,6 +86,27 @@
 ---@field start_page? number
 
 ---@class SpeechListMatch
+---@field closing? boolean
+---@field date? string
+---@field image_kind? string
+---@field issue? string
+---@field issue_id? string
+---@field meeting_url? string
+---@field name_of_house? string
+---@field name_of_meeting? string
+---@field pdf_url? string
+---@field search_object? string
+---@field session? number
+---@field speaker? string
+---@field speaker_group? string
+---@field speaker_position? string
+---@field speaker_role? string
+---@field speaker_yomi? string
+---@field speech? string
+---@field speech_id? string
+---@field speech_order? number
+---@field speech_url? string
+---@field start_page? number
 
 local M = {}
 

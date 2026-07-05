@@ -4,6 +4,8 @@
 
 The Ruby SDK for the KokkaiKaigirokuApi API — an entity-oriented client using idiomatic Ruby conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Meeting` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -35,11 +37,38 @@ begin
   # list returns an Array of Meeting records — iterate directly.
   meetings = client.Meeting.list
   meetings.each do |item|
-    puts "#{item["id"]} #{item["name"]}"
+    puts "#{item["closing"]}"
   end
 rescue => err
   warn "list failed: #{err}"
 end
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so rescue them:
+
+```ruby
+begin
+  meetings = client.Meeting.list()
+rescue => err
+  warn "list failed: #{err}"
+end
+```
+
+`direct` does **not** raise — it returns the result hash. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```ruby
+result = client.direct({
+  "path" => "/api/resource/{id}",
+  "method" => "GET",
+  "params" => { "id" => "example_id" },
+})
+
+warn "request failed: #{result["err"] || "HTTP #{result["status"]}"}" unless result["ok"]
 ```
 
 
@@ -60,7 +89,9 @@ if result["ok"]
   puts result["status"]  # 200
   puts result["data"]    # response body
 else
-  warn result["err"]
+  # On an HTTP error status there is no err (only a transport failure sets
+  # it), so fall back to the status code.
+  warn(result["err"] || "HTTP #{result["status"]}")
 end
 ```
 
@@ -83,16 +114,13 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```ruby
-client = KokkaiKaigirokuApiSDK.test({
-  "entity" => { "meeting" => { "test01" => { "id" => "test01" } } },
-})
+client = KokkaiKaigirokuApiSDK.test
 
-# load returns the bare mock record (raises on error).
-meeting = client.Meeting.load({ "id" => "test01" })
+# Entity ops return the bare mock record (raises on error).
+meeting = client.Meeting.list()
 puts meeting
 ```
 
@@ -179,11 +207,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `list` | `(reqmatch, ctrl) -> Array` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -301,18 +325,18 @@ Create an instance: `meeting = client.Meeting`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` |  |
-| `date` | ``$STRING`` |  |
-| `image_kind` | ``$STRING`` |  |
-| `issue` | ``$STRING`` |  |
-| `issue_id` | ``$STRING`` |  |
-| `meeting_url` | ``$STRING`` |  |
-| `name_of_house` | ``$STRING`` |  |
-| `name_of_meeting` | ``$STRING`` |  |
-| `pdf_url` | ``$STRING`` |  |
-| `search_object` | ``$STRING`` |  |
-| `session` | ``$INTEGER`` |  |
-| `speech_record` | ``$ARRAY`` |  |
+| `closing` | `Boolean` |  |
+| `date` | `String` |  |
+| `image_kind` | `String` |  |
+| `issue` | `String` |  |
+| `issue_id` | `String` |  |
+| `meeting_url` | `String` |  |
+| `name_of_house` | `String` |  |
+| `name_of_meeting` | `String` |  |
+| `pdf_url` | `String` |  |
+| `search_object` | `String` |  |
+| `session` | `Integer` |  |
+| `speech_record` | `Array` |  |
 
 #### Example: List
 
@@ -336,18 +360,18 @@ Create an instance: `meeting_list = client.MeetingList`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` |  |
-| `date` | ``$STRING`` |  |
-| `image_kind` | ``$STRING`` |  |
-| `issue` | ``$STRING`` |  |
-| `issue_id` | ``$STRING`` |  |
-| `meeting_url` | ``$STRING`` |  |
-| `name_of_house` | ``$STRING`` |  |
-| `name_of_meeting` | ``$STRING`` |  |
-| `pdf_url` | ``$STRING`` |  |
-| `search_object` | ``$STRING`` |  |
-| `session` | ``$INTEGER`` |  |
-| `speech_record` | ``$ARRAY`` |  |
+| `closing` | `Boolean` |  |
+| `date` | `String` |  |
+| `image_kind` | `String` |  |
+| `issue` | `String` |  |
+| `issue_id` | `String` |  |
+| `meeting_url` | `String` |  |
+| `name_of_house` | `String` |  |
+| `name_of_meeting` | `String` |  |
+| `pdf_url` | `String` |  |
+| `search_object` | `String` |  |
+| `session` | `Integer` |  |
+| `speech_record` | `Array` |  |
 
 #### Example: List
 
@@ -371,27 +395,27 @@ Create an instance: `speech = client.Speech`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` |  |
-| `date` | ``$STRING`` |  |
-| `image_kind` | ``$STRING`` |  |
-| `issue` | ``$STRING`` |  |
-| `issue_id` | ``$STRING`` |  |
-| `meeting_url` | ``$STRING`` |  |
-| `name_of_house` | ``$STRING`` |  |
-| `name_of_meeting` | ``$STRING`` |  |
-| `pdf_url` | ``$STRING`` |  |
-| `search_object` | ``$STRING`` |  |
-| `session` | ``$INTEGER`` |  |
-| `speaker` | ``$STRING`` |  |
-| `speaker_group` | ``$STRING`` |  |
-| `speaker_position` | ``$STRING`` |  |
-| `speaker_role` | ``$STRING`` |  |
-| `speaker_yomi` | ``$STRING`` |  |
-| `speech` | ``$STRING`` |  |
-| `speech_id` | ``$STRING`` |  |
-| `speech_order` | ``$INTEGER`` |  |
-| `speech_url` | ``$STRING`` |  |
-| `start_page` | ``$INTEGER`` |  |
+| `closing` | `Boolean` |  |
+| `date` | `String` |  |
+| `image_kind` | `String` |  |
+| `issue` | `String` |  |
+| `issue_id` | `String` |  |
+| `meeting_url` | `String` |  |
+| `name_of_house` | `String` |  |
+| `name_of_meeting` | `String` |  |
+| `pdf_url` | `String` |  |
+| `search_object` | `String` |  |
+| `session` | `Integer` |  |
+| `speaker` | `String` |  |
+| `speaker_group` | `String` |  |
+| `speaker_position` | `String` |  |
+| `speaker_role` | `String` |  |
+| `speaker_yomi` | `String` |  |
+| `speech` | `String` |  |
+| `speech_id` | `String` |  |
+| `speech_order` | `Integer` |  |
+| `speech_url` | `String` |  |
+| `start_page` | `Integer` |  |
 
 #### Example: List
 
@@ -401,12 +425,16 @@ speechs = client.Speech.list
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -423,8 +451,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -468,14 +497,14 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
 meeting = client.Meeting
-meeting.load({ "id" => "example_id" })
+meeting.list()
 
-# meeting.data_get now returns the loaded meeting data
+# meeting.data_get now returns the meeting data from the last list
 # meeting.match_get returns the last match criteria
 ```
 

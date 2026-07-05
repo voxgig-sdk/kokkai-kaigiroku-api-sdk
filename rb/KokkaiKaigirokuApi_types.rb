@@ -61,7 +61,7 @@ Meeting = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Meeting#list (any subset of Meeting fields).
+# Request payload for Meeting#list.
 #
 # @!attribute [rw] closing
 #   @return [Boolean, nil]
@@ -167,7 +167,7 @@ MeetingList = Struct.new(
   keyword_init: true
 )
 
-# Match filter for MeetingList#list (any subset of MeetingList fields).
+# Request payload for MeetingList#list.
 #
 # @!attribute [rw] closing
 #   @return [Boolean, nil]
@@ -309,7 +309,7 @@ Speech = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Speech#list (any subset of Speech fields).
+# Request payload for Speech#list.
 #
 # @!attribute [rw] closing
 #   @return [Boolean, nil]

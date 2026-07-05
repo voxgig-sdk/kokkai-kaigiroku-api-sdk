@@ -8,7 +8,7 @@ Complete API reference for the KokkaiKaigirokuApi Python SDK.
 ### Constructor
 
 ```python
-from kokkai-kaigiroku-api_sdk import KokkaiKaigirokuApiSDK
+from kokkaikaigirokuapi_sdk import KokkaiKaigirokuApiSDK
 
 client = KokkaiKaigirokuApiSDK(options)
 ```
@@ -95,27 +95,27 @@ meeting = client.Meeting()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `str` | No |  |
+| `image_kind` | `str` | No |  |
+| `issue` | `str` | No |  |
+| `issue_id` | `str` | No |  |
+| `meeting_url` | `str` | No |  |
+| `name_of_house` | `str` | No |  |
+| `name_of_meeting` | `str` | No |  |
+| `pdf_url` | `str` | No |  |
+| `search_object` | `str` | No |  |
+| `session` | `int` | No |  |
+| `speech_record` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Meeting().list({})
+results = client.Meeting().list()
 for meeting in results:
     print(meeting)
 ```
@@ -159,27 +159,27 @@ meeting_list = client.MeetingList()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speech_record` | ``$ARRAY`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `str` | No |  |
+| `image_kind` | `str` | No |  |
+| `issue` | `str` | No |  |
+| `issue_id` | `str` | No |  |
+| `meeting_url` | `str` | No |  |
+| `name_of_house` | `str` | No |  |
+| `name_of_meeting` | `str` | No |  |
+| `pdf_url` | `str` | No |  |
+| `search_object` | `str` | No |  |
+| `session` | `int` | No |  |
+| `speech_record` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.MeetingList().list({})
+results = client.MeetingList().list()
 for meeting_list in results:
     print(meeting_list)
 ```
@@ -223,36 +223,36 @@ speech = client.Speech()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | ``$BOOLEAN`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `image_kind` | ``$STRING`` | No |  |
-| `issue` | ``$STRING`` | No |  |
-| `issue_id` | ``$STRING`` | No |  |
-| `meeting_url` | ``$STRING`` | No |  |
-| `name_of_house` | ``$STRING`` | No |  |
-| `name_of_meeting` | ``$STRING`` | No |  |
-| `pdf_url` | ``$STRING`` | No |  |
-| `search_object` | ``$STRING`` | No |  |
-| `session` | ``$INTEGER`` | No |  |
-| `speaker` | ``$STRING`` | No |  |
-| `speaker_group` | ``$STRING`` | No |  |
-| `speaker_position` | ``$STRING`` | No |  |
-| `speaker_role` | ``$STRING`` | No |  |
-| `speaker_yomi` | ``$STRING`` | No |  |
-| `speech` | ``$STRING`` | No |  |
-| `speech_id` | ``$STRING`` | No |  |
-| `speech_order` | ``$INTEGER`` | No |  |
-| `speech_url` | ``$STRING`` | No |  |
-| `start_page` | ``$INTEGER`` | No |  |
+| `closing` | `bool` | No |  |
+| `date` | `str` | No |  |
+| `image_kind` | `str` | No |  |
+| `issue` | `str` | No |  |
+| `issue_id` | `str` | No |  |
+| `meeting_url` | `str` | No |  |
+| `name_of_house` | `str` | No |  |
+| `name_of_meeting` | `str` | No |  |
+| `pdf_url` | `str` | No |  |
+| `search_object` | `str` | No |  |
+| `session` | `int` | No |  |
+| `speaker` | `str` | No |  |
+| `speaker_group` | `str` | No |  |
+| `speaker_position` | `str` | No |  |
+| `speaker_role` | `str` | No |  |
+| `speaker_yomi` | `str` | No |  |
+| `speech` | `str` | No |  |
+| `speech_id` | `str` | No |  |
+| `speech_order` | `int` | No |  |
+| `speech_url` | `str` | No |  |
+| `start_page` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Speech().list({})
+results = client.Speech().list()
 for speech in results:
     print(speech)
 ```
