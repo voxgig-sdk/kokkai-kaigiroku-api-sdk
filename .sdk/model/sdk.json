@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -1234,6 +1231,7 @@
           "url": "https://kokkai.ndl.go.jp/api.html"
         },
         "description": "国会会議録検索システムに登録されているデータを検索するためのAPIです。HTTPのGETメソッドを使用して、指定された条件で会議録や発言情報をXMLまたはJSON形式で取得できます。検索結果は、会議開催日の新しい順にソートされます。",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "国会会議録検索システム APIサーバー",
@@ -1295,6 +1293,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -1345,6 +1346,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

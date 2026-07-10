@@ -375,7 +375,7 @@ fmt.Println(meetings) // the array of records
 
 ### MeetingList
 
-Create an instance: `meeting_list := client.MeetingList(nil)`
+Create an instance: `meetingList := client.MeetingList(nil)`
 
 #### Operations
 
@@ -403,11 +403,11 @@ Create an instance: `meeting_list := client.MeetingList(nil)`
 #### Example: List
 
 ```go
-meeting_lists, err := client.MeetingList(nil).List(nil, nil)
+meetingLists, err := client.MeetingList(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(meeting_lists) // the array of records
+fmt.Println(meetingLists) // the array of records
 ```
 
 

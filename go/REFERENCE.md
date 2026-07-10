@@ -99,6 +99,7 @@ same parameters as `Direct()`.
 
 ```go
 meeting := client.Meeting(nil)
+fmt.Println(meeting.GetName()) // "meeting"
 ```
 
 ### Fields
@@ -126,6 +127,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Meeting(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -155,7 +160,8 @@ Return the entity name.
 ## MeetingListEntity
 
 ```go
-meeting_list := client.MeetingList(nil)
+meetingList := client.MeetingList(nil)
+fmt.Println(meetingList.GetName()) // "meeting_list"
 ```
 
 ### Fields
@@ -183,6 +189,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.MeetingList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -213,6 +223,7 @@ Return the entity name.
 
 ```go
 speech := client.Speech(nil)
+fmt.Println(speech.GetName()) // "speech"
 ```
 
 ### Fields
@@ -249,6 +260,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Speech(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
