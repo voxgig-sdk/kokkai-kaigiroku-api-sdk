@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- KokkaiKaigirokuApi SDK exists test
 
 local sdk = require("kokkai-kaigiroku-api_sdk")
 
