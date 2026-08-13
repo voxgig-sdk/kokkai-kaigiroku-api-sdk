@@ -43,8 +43,8 @@ class KokkaiKaigirokuApiTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('KOKKAIKAIGIROKUAPI_TEST_LIVE');
-        $override = self::getenv('KOKKAIKAIGIROKUAPI_TEST_OVERRIDE');
+        $live = self::getenv('KOKKAI_KAIGIROKU_API_TEST_LIVE');
+        $override = self::getenv('KOKKAI_KAIGIROKU_API_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class KokkaiKaigirokuApiTestRunner
             }
         }
 
-        $explain = self::getenv('KOKKAIKAIGIROKUAPI_TEST_EXPLAIN');
+        $explain = self::getenv('KOKKAI_KAIGIROKU_API_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['KOKKAIKAIGIROKUAPI_TEST_EXPLAIN'] = $explain;
+            $m['KOKKAI_KAIGIROKU_API_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

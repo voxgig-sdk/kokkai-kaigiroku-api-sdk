@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import KokkaiKaigirokuApiSDK
-from core.error import KokkaiKaigirokuApiError
-from core.result import KokkaiKaigirokuApiResult
-from core.response import KokkaiKaigirokuApiResponse
-from core.spec import KokkaiKaigirokuApiSpec
-from feature.base_feature import KokkaiKaigirokuApiBaseFeature
+from projectname_sdk.core.error import KokkaiKaigirokuApiError
+from projectname_sdk.core.result import KokkaiKaigirokuApiResult
+from projectname_sdk.core.response import KokkaiKaigirokuApiResponse
+from projectname_sdk.core.spec import KokkaiKaigirokuApiSpec
+from projectname_sdk.feature.base_feature import KokkaiKaigirokuApiBaseFeature
 
 
 def _client():

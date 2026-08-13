@@ -70,7 +70,7 @@ describe("MeetingListEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -126,22 +126,22 @@ function meeting_list_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID")
+  local entid_env_raw = os.getenv("KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID"] = idmap,
-    ["KOKKAIKAIGIROKUAPI_TEST_LIVE"] = "FALSE",
-    ["KOKKAIKAIGIROKUAPI_TEST_EXPLAIN"] = "FALSE",
+    ["KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID"] = idmap,
+    ["KOKKAI_KAIGIROKU_API_TEST_LIVE"] = "FALSE",
+    ["KOKKAI_KAIGIROKU_API_TEST_EXPLAIN"] = "FALSE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID"])
+    env["KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE" then
+  if env["KOKKAI_KAIGIROKU_API_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
       },
@@ -150,13 +150,13 @@ function meeting_list_basic_setup(extra)
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
+  local live = env["KOKKAI_KAIGIROKU_API_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["KOKKAIKAIGIROKUAPI_TEST_EXPLAIN"] == "TRUE",
+    explain = env["KOKKAI_KAIGIROKU_API_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

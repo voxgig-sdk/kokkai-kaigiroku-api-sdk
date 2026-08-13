@@ -15,9 +15,12 @@ main: {
           url: "https://kokkai.ndl.go.jp/api"
         }
       ]
+      summary: "国会会議録検索システムに登録されているデータを検索するためのAPIです。HTTPのGETメソッドを使用して、指定された条件で会議録や発言情報をXMLまたはJSON形式で取得できます。検索結果は、会議開催日の新しい順にソートされます。"
       termsOfService: "https://kokkai.ndl.go.jp/api.html"
       title: "国会会議録検索API"
       version: "1.0.0"
+      website: "https://kokkai.ndl.go.jp"
     }
   }
 }
+

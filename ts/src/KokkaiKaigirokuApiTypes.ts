@@ -8,108 +8,108 @@
 export interface Meeting {
   closing?: boolean
   date?: string
-  image_kind?: string
+  imageKind?: string
   issue?: string
-  issue_id?: string
-  meeting_url?: string
-  name_of_house?: string
-  name_of_meeting?: string
-  pdf_url?: string
-  search_object?: string
+  issueID?: string
+  meetingURL?: string
+  nameOfHouse?: string
+  nameOfMeeting?: string
+  pdfURL?: string
+  searchObject?: string
   session?: number
-  speech_record?: any[]
+  speechRecord?: any[]
 }
 
 export interface MeetingListMatch {
   closing?: boolean
   date?: string
-  image_kind?: string
+  imageKind?: string
   issue?: string
-  issue_id?: string
-  meeting_url?: string
-  name_of_house?: string
-  name_of_meeting?: string
-  pdf_url?: string
-  search_object?: string
+  issueID?: string
+  meetingURL?: string
+  nameOfHouse?: string
+  nameOfMeeting?: string
+  pdfURL?: string
+  searchObject?: string
   session?: number
-  speech_record?: any[]
+  speechRecord?: any[]
 }
 
 export interface MeetingList {
   closing?: boolean
   date?: string
-  image_kind?: string
+  imageKind?: string
   issue?: string
-  issue_id?: string
-  meeting_url?: string
-  name_of_house?: string
-  name_of_meeting?: string
-  pdf_url?: string
-  search_object?: string
+  issueID?: string
+  meetingURL?: string
+  nameOfHouse?: string
+  nameOfMeeting?: string
+  pdfURL?: string
+  searchObject?: string
   session?: number
-  speech_record?: any[]
+  speechRecord?: any[]
 }
 
 export interface MeetingListListMatch {
   closing?: boolean
   date?: string
-  image_kind?: string
+  imageKind?: string
   issue?: string
-  issue_id?: string
-  meeting_url?: string
-  name_of_house?: string
-  name_of_meeting?: string
-  pdf_url?: string
-  search_object?: string
+  issueID?: string
+  meetingURL?: string
+  nameOfHouse?: string
+  nameOfMeeting?: string
+  pdfURL?: string
+  searchObject?: string
   session?: number
-  speech_record?: any[]
+  speechRecord?: any[]
 }
 
 export interface Speech {
   closing?: boolean
   date?: string
-  image_kind?: string
+  imageKind?: string
   issue?: string
-  issue_id?: string
-  meeting_url?: string
-  name_of_house?: string
-  name_of_meeting?: string
-  pdf_url?: string
-  search_object?: string
+  issueID?: string
+  meetingURL?: string
+  nameOfHouse?: string
+  nameOfMeeting?: string
+  pdfURL?: string
+  searchObject?: string
   session?: number
   speaker?: string
-  speaker_group?: string
-  speaker_position?: string
-  speaker_role?: string
-  speaker_yomi?: string
+  speakerGroup?: string
+  speakerPosition?: string
+  speakerRole?: string
+  speakerYomi?: string
   speech?: string
-  speech_id?: string
-  speech_order?: number
-  speech_url?: string
-  start_page?: number
+  speechID?: string
+  speechOrder?: number
+  speechURL?: string
+  startPage?: number
 }
 
 export interface SpeechListMatch {
   closing?: boolean
   date?: string
-  image_kind?: string
+  imageKind?: string
   issue?: string
-  issue_id?: string
-  meeting_url?: string
-  name_of_house?: string
-  name_of_meeting?: string
-  pdf_url?: string
-  search_object?: string
+  issueID?: string
+  meetingURL?: string
+  nameOfHouse?: string
+  nameOfMeeting?: string
+  pdfURL?: string
+  searchObject?: string
   session?: number
   speaker?: string
-  speaker_group?: string
-  speaker_position?: string
-  speaker_role?: string
-  speaker_yomi?: string
+  speakerGroup?: string
+  speakerPosition?: string
+  speakerRole?: string
+  speakerYomi?: string
   speech?: string
-  speech_id?: string
-  speech_order?: number
-  speech_url?: string
-  start_page?: number
+  speechID?: string
+  speechOrder?: number
+  speechURL?: string
+  startPage?: number
 }
 

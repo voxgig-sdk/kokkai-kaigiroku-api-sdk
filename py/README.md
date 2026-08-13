@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = KokkaiKaigirokuApiSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 meeting = client.Meeting().list()
 # meeting contains the mock response record
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -246,16 +247,16 @@ On error, `ok` is `False` and `err` contains the error value.
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: List.
 
@@ -267,16 +268,16 @@ API path: `/meeting`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: List.
 
@@ -288,25 +289,25 @@ API path: `/meeting_list`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
 | `speaker` |  |
-| `speaker_group` |  |
-| `speaker_position` |  |
-| `speaker_role` |  |
-| `speaker_yomi` |  |
+| `speakerGroup` |  |
+| `speakerPosition` |  |
+| `speakerRole` |  |
+| `speakerYomi` |  |
 | `speech` |  |
-| `speech_id` |  |
-| `speech_order` |  |
-| `speech_url` |  |
-| `start_page` |  |
+| `speechID` |  |
+| `speechOrder` |  |
+| `speechURL` |  |
+| `startPage` |  |
 
 Operations: List.
 
@@ -333,16 +334,16 @@ Create an instance: `meeting = client.Meeting()`
 | --- | --- | --- |
 | `closing` | `bool` |  |
 | `date` | `str` |  |
-| `image_kind` | `str` |  |
+| `imageKind` | `str` |  |
 | `issue` | `str` |  |
-| `issue_id` | `str` |  |
-| `meeting_url` | `str` |  |
-| `name_of_house` | `str` |  |
-| `name_of_meeting` | `str` |  |
-| `pdf_url` | `str` |  |
-| `search_object` | `str` |  |
+| `issueID` | `str` |  |
+| `meetingURL` | `str` |  |
+| `nameOfHouse` | `str` |  |
+| `nameOfMeeting` | `str` |  |
+| `pdfURL` | `str` |  |
+| `searchObject` | `str` |  |
 | `session` | `int` |  |
-| `speech_record` | `list` |  |
+| `speechRecord` | `list` |  |
 
 #### Example: List
 
@@ -367,16 +368,16 @@ Create an instance: `meeting_list = client.MeetingList()`
 | --- | --- | --- |
 | `closing` | `bool` |  |
 | `date` | `str` |  |
-| `image_kind` | `str` |  |
+| `imageKind` | `str` |  |
 | `issue` | `str` |  |
-| `issue_id` | `str` |  |
-| `meeting_url` | `str` |  |
-| `name_of_house` | `str` |  |
-| `name_of_meeting` | `str` |  |
-| `pdf_url` | `str` |  |
-| `search_object` | `str` |  |
+| `issueID` | `str` |  |
+| `meetingURL` | `str` |  |
+| `nameOfHouse` | `str` |  |
+| `nameOfMeeting` | `str` |  |
+| `pdfURL` | `str` |  |
+| `searchObject` | `str` |  |
 | `session` | `int` |  |
-| `speech_record` | `list` |  |
+| `speechRecord` | `list` |  |
 
 #### Example: List
 
@@ -401,25 +402,25 @@ Create an instance: `speech = client.Speech()`
 | --- | --- | --- |
 | `closing` | `bool` |  |
 | `date` | `str` |  |
-| `image_kind` | `str` |  |
+| `imageKind` | `str` |  |
 | `issue` | `str` |  |
-| `issue_id` | `str` |  |
-| `meeting_url` | `str` |  |
-| `name_of_house` | `str` |  |
-| `name_of_meeting` | `str` |  |
-| `pdf_url` | `str` |  |
-| `search_object` | `str` |  |
+| `issueID` | `str` |  |
+| `meetingURL` | `str` |  |
+| `nameOfHouse` | `str` |  |
+| `nameOfMeeting` | `str` |  |
+| `pdfURL` | `str` |  |
+| `searchObject` | `str` |  |
 | `session` | `int` |  |
 | `speaker` | `str` |  |
-| `speaker_group` | `str` |  |
-| `speaker_position` | `str` |  |
-| `speaker_role` | `str` |  |
-| `speaker_yomi` | `str` |  |
+| `speakerGroup` | `str` |  |
+| `speakerPosition` | `str` |  |
+| `speakerRole` | `str` |  |
+| `speakerYomi` | `str` |  |
 | `speech` | `str` |  |
-| `speech_id` | `str` |  |
-| `speech_order` | `int` |  |
-| `speech_url` | `str` |  |
-| `start_page` | `int` |  |
+| `speechID` | `str` |  |
+| `speechOrder` | `int` |  |
+| `speechURL` | `str` |  |
+| `startPage` | `int` |  |
 
 #### Example: List
 

@@ -26,8 +26,8 @@ import {
 describe('MeetingListEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when KOKKAIKAIGIROKUAPI_TEST_LIVE=TRUE.
-  afterEach(liveDelay('KOKKAIKAIGIROKUAPI_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when KOKKAI_KAIGIROKU_API_TEST_LIVE=TRUE.
+  afterEach(liveDelay('KOKKAI_KAIGIROKU_API_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = KokkaiKaigirokuApiSDK.test()
@@ -63,7 +63,7 @@ describe('MeetingListEntity', async () => {
     const meeting_list_ref01_ent = client.MeetingList()
     const meeting_list_ref01_match: any = {}
 
-    const meeting_list_ref01_list = await meeting_list_ref01_ent.list(meeting_list_ref01_match)
+    const meeting_list_ref01_list = (await meeting_list_ref01_ent.list(meeting_list_ref01_match)).map((e: any) => e.data())
 
 
   })

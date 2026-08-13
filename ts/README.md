@@ -35,7 +35,9 @@ const client = new KokkaiKaigirokuApiSDK()
 
 ### 2. List meeting records
 
-`list()` resolves to an array of Meeting objects — iterate it directly:
+`list()` resolves to an array of Meeting ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const meetings = await client.Meeting().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = KokkaiKaigirokuApiSDK.test()
 
 const meeting = await client.Meeting().list()
-// meeting is a bare entity populated with mock response data
+// meeting is the entity, populated with mock response data
+// — call meeting.data() for the record itself
 console.log(meeting)
 ```
 
@@ -288,16 +291,16 @@ The `prepare()` method returns:
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: list.
 
@@ -309,16 +312,16 @@ API path: `/meeting`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: list.
 
@@ -330,25 +333,25 @@ API path: `/meeting_list`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
 | `speaker` |  |
-| `speaker_group` |  |
-| `speaker_position` |  |
-| `speaker_role` |  |
-| `speaker_yomi` |  |
+| `speakerGroup` |  |
+| `speakerPosition` |  |
+| `speakerRole` |  |
+| `speakerYomi` |  |
 | `speech` |  |
-| `speech_id` |  |
-| `speech_order` |  |
-| `speech_url` |  |
-| `start_page` |  |
+| `speechID` |  |
+| `speechOrder` |  |
+| `speechURL` |  |
+| `startPage` |  |
 
 Operations: list.
 
@@ -375,16 +378,16 @@ Create an instance: `const meeting = client.Meeting()`
 | --- | --- | --- |
 | `closing` | `boolean` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `number` |  |
-| `speech_record` | `any[]` |  |
+| `speechRecord` | `any[]` |  |
 
 #### Example: List
 
@@ -409,16 +412,16 @@ Create an instance: `const meeting_list = client.MeetingList()`
 | --- | --- | --- |
 | `closing` | `boolean` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `number` |  |
-| `speech_record` | `any[]` |  |
+| `speechRecord` | `any[]` |  |
 
 #### Example: List
 
@@ -443,25 +446,25 @@ Create an instance: `const speech = client.Speech()`
 | --- | --- | --- |
 | `closing` | `boolean` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `number` |  |
 | `speaker` | `string` |  |
-| `speaker_group` | `string` |  |
-| `speaker_position` | `string` |  |
-| `speaker_role` | `string` |  |
-| `speaker_yomi` | `string` |  |
+| `speakerGroup` | `string` |  |
+| `speakerPosition` | `string` |  |
+| `speakerRole` | `string` |  |
+| `speakerYomi` | `string` |  |
 | `speech` | `string` |  |
-| `speech_id` | `string` |  |
-| `speech_order` | `number` |  |
-| `speech_url` | `string` |  |
-| `start_page` | `number` |  |
+| `speechID` | `string` |  |
+| `speechOrder` | `number` |  |
+| `speechURL` | `string` |  |
+| `startPage` | `number` |  |
 
 #### Example: List
 

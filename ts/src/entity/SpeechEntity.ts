@@ -37,7 +37,7 @@ class SpeechEntity extends KokkaiKaigirokuApiEntityBase<Speech> {
 
 
 
-  async list(this: any, reqmatch?: SpeechListMatch, ctrl?: Control): Promise<Speech[]> {
+  async list(this: any, reqmatch?: SpeechListMatch, ctrl?: Control): Promise<SpeechEntity[]> {
 
     const utility = this._utility
 

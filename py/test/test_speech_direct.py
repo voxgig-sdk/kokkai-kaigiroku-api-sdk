@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from kokkaikaigirokuapi_sdk.utility.voxgig_struct import voxgig_struct as vs
 from kokkaikaigirokuapi_sdk import KokkaiKaigirokuApiSDK
-from core import helpers
+from kokkaikaigirokuapi_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _speech_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID": {},
-        "KOKKAIKAIGIROKUAPI_TEST_LIVE": "FALSE",
+        "KOKKAI_KAIGIROKU_API_TEST_SPEECH_ENTID": {},
+        "KOKKAI_KAIGIROKU_API_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("KOKKAIKAIGIROKUAPI_TEST_LIVE") == "TRUE"
+    live = env.get("KOKKAI_KAIGIROKU_API_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

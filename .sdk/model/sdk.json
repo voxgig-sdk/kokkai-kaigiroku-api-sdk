@@ -5,6 +5,10 @@
       "desc": ""
     },
     "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
       "config": {
         "docs_order": [
           "ts",
@@ -18,6 +22,7 @@
           "content-type": "application/json"
         }
       },
+      "contributor": {},
       "entity": {
         "meeting": {
           "active": true,
@@ -39,7 +44,7 @@
             },
             {
               "active": true,
-              "name": "image_kind",
+              "name": "imageKind",
               "req": false,
               "type": "`$STRING`"
             },
@@ -51,37 +56,37 @@
             },
             {
               "active": true,
-              "name": "issue_id",
+              "name": "issueID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "meeting_url",
+              "name": "meetingURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_of_house",
+              "name": "nameOfHouse",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_of_meeting",
+              "name": "nameOfMeeting",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "pdf_url",
+              "name": "pdfURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "search_object",
+              "name": "searchObject",
               "req": false,
               "type": "`$STRING`"
             },
@@ -93,7 +98,7 @@
             },
             {
               "active": true,
-              "name": "speech_record",
+              "name": "speechRecord",
               "req": false,
               "type": "`$ARRAY`"
             }
@@ -301,6 +306,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/meeting",
                   "parts": [
@@ -335,7 +341,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meetingRecord`"
                   }
                 }
               ]
@@ -365,7 +371,7 @@
             },
             {
               "active": true,
-              "name": "image_kind",
+              "name": "imageKind",
               "req": false,
               "type": "`$STRING`"
             },
@@ -377,37 +383,37 @@
             },
             {
               "active": true,
-              "name": "issue_id",
+              "name": "issueID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "meeting_url",
+              "name": "meetingURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_of_house",
+              "name": "nameOfHouse",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_of_meeting",
+              "name": "nameOfMeeting",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "pdf_url",
+              "name": "pdfURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "search_object",
+              "name": "searchObject",
               "req": false,
               "type": "`$STRING`"
             },
@@ -419,7 +425,7 @@
             },
             {
               "active": true,
-              "name": "speech_record",
+              "name": "speechRecord",
               "req": false,
               "type": "`$ARRAY`"
             }
@@ -627,6 +633,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/meeting_list",
                   "parts": [
@@ -661,7 +668,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.meetingRecord`"
                   }
                 }
               ]
@@ -691,7 +698,7 @@
             },
             {
               "active": true,
-              "name": "image_kind",
+              "name": "imageKind",
               "req": false,
               "type": "`$STRING`"
             },
@@ -703,37 +710,37 @@
             },
             {
               "active": true,
-              "name": "issue_id",
+              "name": "issueID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "meeting_url",
+              "name": "meetingURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_of_house",
+              "name": "nameOfHouse",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "name_of_meeting",
+              "name": "nameOfMeeting",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "pdf_url",
+              "name": "pdfURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "search_object",
+              "name": "searchObject",
               "req": false,
               "type": "`$STRING`"
             },
@@ -751,25 +758,25 @@
             },
             {
               "active": true,
-              "name": "speaker_group",
+              "name": "speakerGroup",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "speaker_position",
+              "name": "speakerPosition",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "speaker_role",
+              "name": "speakerRole",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "speaker_yomi",
+              "name": "speakerYomi",
               "req": false,
               "type": "`$STRING`"
             },
@@ -781,25 +788,25 @@
             },
             {
               "active": true,
-              "name": "speech_id",
+              "name": "speechID",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "speech_order",
+              "name": "speechOrder",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
-              "name": "speech_url",
+              "name": "speechURL",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
-              "name": "start_page",
+              "name": "startPage",
               "req": false,
               "type": "`$INTEGER`"
             }
@@ -1007,6 +1014,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/speech",
                   "parts": [
@@ -1041,7 +1049,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.speechRecord`"
                   }
                 }
               ]
@@ -1238,23 +1246,48 @@
             "url": "https://kokkai.ndl.go.jp/api"
           }
         ],
+        "summary": "国会会議録検索システムに登録されているデータを検索するためのAPIです。HTTPのGETメソッドを使用して、指定された条件で会議録や発言情報をXMLまたはJSON形式で取得できます。検索結果は、会議開催日の新しい順にソートされます。",
         "termsOfService": "https://kokkai.ndl.go.jp/api.html",
         "title": "国会会議録検索API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://kokkai.ndl.go.jp"
       },
       "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
       "target": {
         "go": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "go",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1276,22 +1309,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Golang"
         },
         "go-cli": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "go-cli",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -1330,21 +1381,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go CLI"
         },
         "go-mcp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "go-mcp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -1383,12 +1452,17 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go MCP server"
         },
         "lua": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
@@ -1400,10 +1474,23 @@
             }
           },
           "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "lua",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1425,22 +1512,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Lua"
         },
         "php": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "php",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1462,13 +1567,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "PHP"
         },
         "py": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -1480,10 +1590,23 @@
             }
           },
           "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "py",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1505,13 +1628,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Python"
         },
         "rb": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -1528,10 +1656,23 @@
             }
           },
           "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "rb",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1553,13 +1694,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Ruby"
         },
         "ts": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
@@ -1582,10 +1728,23 @@
             }
           },
           "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "kokkai-kaigiroku-api"
+            "goversion": "",
+            "name": "kokkai-kaigiroku-api",
+            "package": "",
+            "path": ""
           },
           "name": "ts",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1607,9 +1766,17 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
         }
       }
     }

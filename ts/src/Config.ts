@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'KokkaiKaigirokuApi',
   }
 
 
@@ -76,7 +76,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_kind",
+          "name": "imageKind",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -90,42 +90,42 @@ class Config {
         },
         {
           "active": true,
-          "name": "issue_id",
+          "name": "issueID",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "meeting_url",
+          "name": "meetingURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "name_of_house",
+          "name": "nameOfHouse",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "name_of_meeting",
+          "name": "nameOfMeeting",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "pdf_url",
+          "name": "pdfURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "search_object",
+          "name": "searchObject",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -139,7 +139,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "speech_record",
+          "name": "speechRecord",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 11
@@ -348,6 +348,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/meeting",
               "parts": [
@@ -382,7 +383,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.meetingRecord`"
               },
               "index$": 0
             }
@@ -412,7 +413,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_kind",
+          "name": "imageKind",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -426,42 +427,42 @@ class Config {
         },
         {
           "active": true,
-          "name": "issue_id",
+          "name": "issueID",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "meeting_url",
+          "name": "meetingURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "name_of_house",
+          "name": "nameOfHouse",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "name_of_meeting",
+          "name": "nameOfMeeting",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "pdf_url",
+          "name": "pdfURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "search_object",
+          "name": "searchObject",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -475,7 +476,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "speech_record",
+          "name": "speechRecord",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 11
@@ -684,6 +685,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/meeting_list",
               "parts": [
@@ -718,7 +720,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.meetingRecord`"
               },
               "index$": 0
             }
@@ -748,7 +750,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_kind",
+          "name": "imageKind",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -762,42 +764,42 @@ class Config {
         },
         {
           "active": true,
-          "name": "issue_id",
+          "name": "issueID",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "meeting_url",
+          "name": "meetingURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "name_of_house",
+          "name": "nameOfHouse",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "name_of_meeting",
+          "name": "nameOfMeeting",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "pdf_url",
+          "name": "pdfURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "search_object",
+          "name": "searchObject",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -818,28 +820,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "speaker_group",
+          "name": "speakerGroup",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "speaker_position",
+          "name": "speakerPosition",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "speaker_role",
+          "name": "speakerRole",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "speaker_yomi",
+          "name": "speakerYomi",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
@@ -853,28 +855,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "speech_id",
+          "name": "speechID",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "speech_order",
+          "name": "speechOrder",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 18
         },
         {
           "active": true,
-          "name": "speech_url",
+          "name": "speechURL",
           "req": false,
           "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "start_page",
+          "name": "startPage",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 20
@@ -1083,6 +1085,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/speech",
               "parts": [
@@ -1117,7 +1120,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.speechRecord`"
               },
               "index$": 0
             }

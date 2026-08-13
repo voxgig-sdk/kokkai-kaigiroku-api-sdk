@@ -26,8 +26,8 @@ import {
 describe('SpeechEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when KOKKAIKAIGIROKUAPI_TEST_LIVE=TRUE.
-  afterEach(liveDelay('KOKKAIKAIGIROKUAPI_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when KOKKAI_KAIGIROKU_API_TEST_LIVE=TRUE.
+  afterEach(liveDelay('KOKKAI_KAIGIROKU_API_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = KokkaiKaigirokuApiSDK.test()
@@ -63,7 +63,7 @@ describe('SpeechEntity', async () => {
     const speech_ref01_ent = client.Speech()
     const speech_ref01_match: any = {}
 
-    const speech_ref01_list = await speech_ref01_ent.list(speech_ref01_match)
+    const speech_ref01_list = (await speech_ref01_ent.list(speech_ref01_match)).map((e: any) => e.data())
 
 
   })

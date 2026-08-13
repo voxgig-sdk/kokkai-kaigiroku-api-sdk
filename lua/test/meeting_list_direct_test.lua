@@ -61,11 +61,11 @@ function meeting_list_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["KOKKAIKAIGIROKUAPI_TEST_MEETING_LIST_ENTID"] = {},
-    ["KOKKAIKAIGIROKUAPI_TEST_LIVE"] = "FALSE",
+    ["KOKKAI_KAIGIROKU_API_TEST_MEETING_LIST_ENTID"] = {},
+    ["KOKKAI_KAIGIROKU_API_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
+  local live = env["KOKKAI_KAIGIROKU_API_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

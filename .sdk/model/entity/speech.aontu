@@ -16,7 +16,7 @@ main: kit: entity: speech: {
       type: "`$STRING`"
     }
     {
-      name: "image_kind"
+      name: "imageKind"
       req: false
       type: "`$STRING`"
     }
@@ -26,32 +26,32 @@ main: kit: entity: speech: {
       type: "`$STRING`"
     }
     {
-      name: "issue_id"
+      name: "issueID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "meeting_url"
+      name: "meetingURL"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "name_of_house"
+      name: "nameOfHouse"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "name_of_meeting"
+      name: "nameOfMeeting"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "pdf_url"
+      name: "pdfURL"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "search_object"
+      name: "searchObject"
       req: false
       type: "`$STRING`"
     }
@@ -66,22 +66,22 @@ main: kit: entity: speech: {
       type: "`$STRING`"
     }
     {
-      name: "speaker_group"
+      name: "speakerGroup"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "speaker_position"
+      name: "speakerPosition"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "speaker_role"
+      name: "speakerRole"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "speaker_yomi"
+      name: "speakerYomi"
       req: false
       type: "`$STRING`"
     }
@@ -91,22 +91,22 @@ main: kit: entity: speech: {
       type: "`$STRING`"
     }
     {
-      name: "speech_id"
+      name: "speechID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "speech_order"
+      name: "speechOrder"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "speech_url"
+      name: "speechURL"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "start_page"
+      name: "startPage"
       req: false
       type: "`$INTEGER`"
     }
@@ -324,7 +324,7 @@ main: kit: entity: speech: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.speechRecord`"
           }
         }
       ]

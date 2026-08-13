@@ -102,16 +102,16 @@ $meeting = $client->Meeting();
 | --- | --- | --- | --- |
 | `closing` | `bool` | No |  |
 | `date` | `string` | No |  |
-| `image_kind` | `string` | No |  |
+| `imageKind` | `string` | No |  |
 | `issue` | `string` | No |  |
-| `issue_id` | `string` | No |  |
-| `meeting_url` | `string` | No |  |
-| `name_of_house` | `string` | No |  |
-| `name_of_meeting` | `string` | No |  |
-| `pdf_url` | `string` | No |  |
-| `search_object` | `string` | No |  |
+| `issueID` | `string` | No |  |
+| `meetingURL` | `string` | No |  |
+| `nameOfHouse` | `string` | No |  |
+| `nameOfMeeting` | `string` | No |  |
+| `pdfURL` | `string` | No |  |
+| `searchObject` | `string` | No |  |
 | `session` | `int` | No |  |
-| `speech_record` | `array` | No |  |
+| `speechRecord` | `array` | No |  |
 
 ### Operations
 
@@ -165,16 +165,16 @@ $meeting_list = $client->MeetingList();
 | --- | --- | --- | --- |
 | `closing` | `bool` | No |  |
 | `date` | `string` | No |  |
-| `image_kind` | `string` | No |  |
+| `imageKind` | `string` | No |  |
 | `issue` | `string` | No |  |
-| `issue_id` | `string` | No |  |
-| `meeting_url` | `string` | No |  |
-| `name_of_house` | `string` | No |  |
-| `name_of_meeting` | `string` | No |  |
-| `pdf_url` | `string` | No |  |
-| `search_object` | `string` | No |  |
+| `issueID` | `string` | No |  |
+| `meetingURL` | `string` | No |  |
+| `nameOfHouse` | `string` | No |  |
+| `nameOfMeeting` | `string` | No |  |
+| `pdfURL` | `string` | No |  |
+| `searchObject` | `string` | No |  |
 | `session` | `int` | No |  |
-| `speech_record` | `array` | No |  |
+| `speechRecord` | `array` | No |  |
 
 ### Operations
 
@@ -228,25 +228,25 @@ $speech = $client->Speech();
 | --- | --- | --- | --- |
 | `closing` | `bool` | No |  |
 | `date` | `string` | No |  |
-| `image_kind` | `string` | No |  |
+| `imageKind` | `string` | No |  |
 | `issue` | `string` | No |  |
-| `issue_id` | `string` | No |  |
-| `meeting_url` | `string` | No |  |
-| `name_of_house` | `string` | No |  |
-| `name_of_meeting` | `string` | No |  |
-| `pdf_url` | `string` | No |  |
-| `search_object` | `string` | No |  |
+| `issueID` | `string` | No |  |
+| `meetingURL` | `string` | No |  |
+| `nameOfHouse` | `string` | No |  |
+| `nameOfMeeting` | `string` | No |  |
+| `pdfURL` | `string` | No |  |
+| `searchObject` | `string` | No |  |
 | `session` | `int` | No |  |
 | `speaker` | `string` | No |  |
-| `speaker_group` | `string` | No |  |
-| `speaker_position` | `string` | No |  |
-| `speaker_role` | `string` | No |  |
-| `speaker_yomi` | `string` | No |  |
+| `speakerGroup` | `string` | No |  |
+| `speakerPosition` | `string` | No |  |
+| `speakerRole` | `string` | No |  |
+| `speakerYomi` | `string` | No |  |
 | `speech` | `string` | No |  |
-| `speech_id` | `string` | No |  |
-| `speech_order` | `int` | No |  |
-| `speech_url` | `string` | No |  |
-| `start_page` | `int` | No |  |
+| `speechID` | `string` | No |  |
+| `speechOrder` | `int` | No |  |
+| `speechURL` | `string` | No |  |
+| `startPage` | `int` | No |  |
 
 ### Operations
 

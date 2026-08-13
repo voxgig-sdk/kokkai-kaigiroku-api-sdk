@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import KokkaiKaigirokuApiControl
-from core.error import KokkaiKaigirokuApiError
-from core.result import KokkaiKaigirokuApiResult
-from core.spec import KokkaiKaigirokuApiSpec
+from kokkaikaigirokuapi_sdk.config import make_config
+from kokkaikaigirokuapi_sdk.features import _make_feature
+from kokkaikaigirokuapi_sdk.core.control import KokkaiKaigirokuApiControl
+from kokkaikaigirokuapi_sdk.core.error import KokkaiKaigirokuApiError
+from kokkaikaigirokuapi_sdk.core.result import KokkaiKaigirokuApiResult
+from kokkaikaigirokuapi_sdk.core.spec import KokkaiKaigirokuApiSpec
 
 
 # True when this SDK was generated with the named feature.

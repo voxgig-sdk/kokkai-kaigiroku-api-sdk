@@ -60,11 +60,11 @@ def speech_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "KOKKAIKAIGIROKUAPI_TEST_SPEECH_ENTID" => {},
-    "KOKKAIKAIGIROKUAPI_TEST_LIVE" => "FALSE",
+    "KOKKAI_KAIGIROKU_API_TEST_SPEECH_ENTID" => {},
+    "KOKKAI_KAIGIROKU_API_TEST_LIVE" => "FALSE",
   })
 
-  live = env["KOKKAIKAIGIROKUAPI_TEST_LIVE"] == "TRUE"
+  live = env["KOKKAI_KAIGIROKU_API_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

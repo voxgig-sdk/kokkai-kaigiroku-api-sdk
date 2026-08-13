@@ -23,8 +23,8 @@ module KokkaiKaigirokuApiTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("KOKKAIKAIGIROKUAPI_TEST_LIVE")
-    override = getenv("KOKKAIKAIGIROKUAPI_TEST_OVERRIDE")
+    live = getenv("KOKKAI_KAIGIROKU_API_TEST_LIVE")
+    override = getenv("KOKKAI_KAIGIROKU_API_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module KokkaiKaigirokuApiTestRunner
       end
     end
 
-    explain = getenv("KOKKAIKAIGIROKUAPI_TEST_EXPLAIN")
-    m["KOKKAIKAIGIROKUAPI_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("KOKKAI_KAIGIROKU_API_TEST_EXPLAIN")
+    m["KOKKAI_KAIGIROKU_API_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

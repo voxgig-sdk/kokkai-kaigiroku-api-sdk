@@ -16,7 +16,7 @@ main: kit: entity: meeting_list: {
       type: "`$STRING`"
     }
     {
-      name: "image_kind"
+      name: "imageKind"
       req: false
       type: "`$STRING`"
     }
@@ -26,32 +26,32 @@ main: kit: entity: meeting_list: {
       type: "`$STRING`"
     }
     {
-      name: "issue_id"
+      name: "issueID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "meeting_url"
+      name: "meetingURL"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "name_of_house"
+      name: "nameOfHouse"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "name_of_meeting"
+      name: "nameOfMeeting"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "pdf_url"
+      name: "pdfURL"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "search_object"
+      name: "searchObject"
       req: false
       type: "`$STRING`"
     }
@@ -61,7 +61,7 @@ main: kit: entity: meeting_list: {
       type: "`$INTEGER`"
     }
     {
-      name: "speech_record"
+      name: "speechRecord"
       req: false
       type: "`$ARRAY`"
     }
@@ -279,7 +279,7 @@ main: kit: entity: meeting_list: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.meetingRecord`"
           }
         }
       ]

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ KokkaiKaigirokuApiUtility.registrar = ->(u) {
   u.prepare_params = KokkaiKaigirokuApiUtilities::PrepareParams
   u.prepare_path = KokkaiKaigirokuApiUtilities::PreparePath
   u.prepare_query = KokkaiKaigirokuApiUtilities::PrepareQuery
+  u.graphql_body = KokkaiKaigirokuApiUtilities::GraphqlBody
+  u.graphql_errors = KokkaiKaigirokuApiUtilities::GraphqlErrors
   u.result_basic = KokkaiKaigirokuApiUtilities::ResultBasic
   u.result_body = KokkaiKaigirokuApiUtilities::ResultBody
   u.result_headers = KokkaiKaigirokuApiUtilities::ResultHeaders

@@ -37,7 +37,7 @@ class MeetingListEntity extends KokkaiKaigirokuApiEntityBase<MeetingList> {
 
 
 
-  async list(this: any, reqmatch?: MeetingListListMatch, ctrl?: Control): Promise<MeetingList[]> {
+  async list(this: any, reqmatch?: MeetingListListMatch, ctrl?: Control): Promise<MeetingListEntity[]> {
 
     const utility = this._utility
 

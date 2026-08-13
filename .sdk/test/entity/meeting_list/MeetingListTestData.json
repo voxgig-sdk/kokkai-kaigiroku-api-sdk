@@ -4,44 +4,44 @@
       "MEETING_LIST00": {
         "closing": true,
         "date": "s79",
-        "image_kind": "s7a",
+        "imageKind": "s7a",
         "issue": "s7b",
-        "issue_id": "ISSUE01",
-        "meeting_url": "s7d",
-        "name_of_house": "s7e",
-        "name_of_meeting": "s7f",
-        "pdf_url": "s80",
-        "search_object": "s81",
+        "issueID": "s7c",
+        "meetingURL": "s7d",
+        "nameOfHouse": "s7e",
+        "nameOfMeeting": "s7f",
+        "pdfURL": "s80",
+        "searchObject": "s81",
         "session": "s82",
-        "speech_record": []
+        "speechRecord": []
       },
       "MEETING_LIST01": {
         "closing": true,
         "date": "sf1",
-        "image_kind": "sf2",
+        "imageKind": "sf2",
         "issue": "sf3",
-        "issue_id": "ISSUE01",
-        "meeting_url": "sf5",
-        "name_of_house": "sf6",
-        "name_of_meeting": "sf7",
-        "pdf_url": "sf8",
-        "search_object": "sf9",
+        "issueID": "sf4",
+        "meetingURL": "sf5",
+        "nameOfHouse": "sf6",
+        "nameOfMeeting": "sf7",
+        "pdfURL": "sf8",
+        "searchObject": "sf9",
         "session": "sfa",
-        "speech_record": []
+        "speechRecord": []
       },
       "MEETING_LIST02": {
         "closing": true,
         "date": "s169",
-        "image_kind": "s16a",
+        "imageKind": "s16a",
         "issue": "s16b",
-        "issue_id": "ISSUE01",
-        "meeting_url": "s16d",
-        "name_of_house": "s16e",
-        "name_of_meeting": "s16f",
-        "pdf_url": "s170",
-        "search_object": "s171",
+        "issueID": "s16c",
+        "meetingURL": "s16d",
+        "nameOfHouse": "s16e",
+        "nameOfMeeting": "s16f",
+        "pdfURL": "s170",
+        "searchObject": "s171",
         "session": "s172",
-        "speech_record": []
+        "speechRecord": []
       }
     }
   },
@@ -50,16 +50,16 @@
       "meeting_list_ref01": {
         "closing": true,
         "date": "s1e1",
-        "image_kind": "s1e2",
+        "imageKind": "s1e2",
         "issue": "s1e3",
-        "issue_id": "ISSUE01",
-        "meeting_url": "s1e5",
-        "name_of_house": "s1e6",
-        "name_of_meeting": "s1e7",
-        "pdf_url": "s1e8",
-        "search_object": "s1e9",
+        "issueID": "s1e4",
+        "meetingURL": "s1e5",
+        "nameOfHouse": "s1e6",
+        "nameOfMeeting": "s1e7",
+        "pdfURL": "s1e8",
+        "searchObject": "s1e9",
         "session": "s1ea",
-        "speech_record": []
+        "speechRecord": []
       }
     }
   }

@@ -62,8 +62,8 @@ function makeCtrl(explain: boolean) {
 // Overrides configuration values with environment variables if available
 function envOverride(m: Record<string, any>) {
   if (
-    'TRUE' === process.env.KOKKAIKAIGIROKUAPI_TEST_LIVE ||
-    'TRUE' === process.env.KOKKAIKAIGIROKUAPI_TEST_OVERRIDE
+    'TRUE' === process.env.KOKKAI_KAIGIROKU_API_TEST_LIVE ||
+    'TRUE' === process.env.KOKKAI_KAIGIROKU_API_TEST_OVERRIDE
   ) {
     Object.entries(m).map(n => {
       let envval = process.env[n[0]]
@@ -74,7 +74,7 @@ function envOverride(m: Record<string, any>) {
     })
   }
 
-  m.KOKKAIKAIGIROKUAPI_TEST_EXPLAIN = process.env.KOKKAIKAIGIROKUAPI_TEST_EXPLAIN || m.KOKKAIKAIGIROKUAPI_TEST_EXPLAIN
+  m.KOKKAI_KAIGIROKU_API_TEST_EXPLAIN = process.env.KOKKAI_KAIGIROKU_API_TEST_EXPLAIN || m.KOKKAI_KAIGIROKU_API_TEST_EXPLAIN
 
   return m
 }

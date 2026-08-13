@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = KokkaiKaigirokuApiSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $meeting = $client->Meeting()->list();
 print_r($meeting);
 ```
@@ -226,7 +227,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -250,16 +251,16 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: List.
 
@@ -271,16 +272,16 @@ API path: `/meeting`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: List.
 
@@ -292,25 +293,25 @@ API path: `/meeting_list`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
 | `speaker` |  |
-| `speaker_group` |  |
-| `speaker_position` |  |
-| `speaker_role` |  |
-| `speaker_yomi` |  |
+| `speakerGroup` |  |
+| `speakerPosition` |  |
+| `speakerRole` |  |
+| `speakerYomi` |  |
 | `speech` |  |
-| `speech_id` |  |
-| `speech_order` |  |
-| `speech_url` |  |
-| `start_page` |  |
+| `speechID` |  |
+| `speechOrder` |  |
+| `speechURL` |  |
+| `startPage` |  |
 
 Operations: List.
 
@@ -337,16 +338,16 @@ Create an instance: `$meeting = $client->Meeting();`
 | --- | --- | --- |
 | `closing` | `bool` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `int` |  |
-| `speech_record` | `array` |  |
+| `speechRecord` | `array` |  |
 
 #### Example: List
 
@@ -372,16 +373,16 @@ Create an instance: `$meeting_list = $client->MeetingList();`
 | --- | --- | --- |
 | `closing` | `bool` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `int` |  |
-| `speech_record` | `array` |  |
+| `speechRecord` | `array` |  |
 
 #### Example: List
 
@@ -407,25 +408,25 @@ Create an instance: `$speech = $client->Speech();`
 | --- | --- | --- |
 | `closing` | `bool` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `int` |  |
 | `speaker` | `string` |  |
-| `speaker_group` | `string` |  |
-| `speaker_position` | `string` |  |
-| `speaker_role` | `string` |  |
-| `speaker_yomi` | `string` |  |
+| `speakerGroup` | `string` |  |
+| `speakerPosition` | `string` |  |
+| `speakerRole` | `string` |  |
+| `speakerYomi` | `string` |  |
 | `speech` | `string` |  |
-| `speech_id` | `string` |  |
-| `speech_order` | `int` |  |
-| `speech_url` | `string` |  |
-| `start_page` | `int` |  |
+| `speechID` | `string` |  |
+| `speechOrder` | `int` |  |
+| `speechURL` | `string` |  |
+| `startPage` | `int` |  |
 
 #### Example: List
 

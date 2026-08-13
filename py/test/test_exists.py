@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# KokkaiKaigirokuApi SDK exists test
 
 import pytest
 from kokkaikaigirokuapi_sdk import KokkaiKaigirokuApiSDK

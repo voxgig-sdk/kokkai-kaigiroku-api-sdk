@@ -16,48 +16,48 @@
 # @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] image_kind
+# @!attribute [rw] imageKind
 #   @return [String, nil]
 #
 # @!attribute [rw] issue
 #   @return [String, nil]
 #
-# @!attribute [rw] issue_id
+# @!attribute [rw] issueID
 #   @return [String, nil]
 #
-# @!attribute [rw] meeting_url
+# @!attribute [rw] meetingURL
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_house
+# @!attribute [rw] nameOfHouse
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_meeting
+# @!attribute [rw] nameOfMeeting
 #   @return [String, nil]
 #
-# @!attribute [rw] pdf_url
+# @!attribute [rw] pdfURL
 #   @return [String, nil]
 #
-# @!attribute [rw] search_object
+# @!attribute [rw] searchObject
 #   @return [String, nil]
 #
 # @!attribute [rw] session
 #   @return [Integer, nil]
 #
-# @!attribute [rw] speech_record
+# @!attribute [rw] speechRecord
 #   @return [Array, nil]
 Meeting = Struct.new(
   :closing,
   :date,
-  :image_kind,
+  :imageKind,
   :issue,
-  :issue_id,
-  :meeting_url,
-  :name_of_house,
-  :name_of_meeting,
-  :pdf_url,
-  :search_object,
+  :issueID,
+  :meetingURL,
+  :nameOfHouse,
+  :nameOfMeeting,
+  :pdfURL,
+  :searchObject,
   :session,
-  :speech_record,
+  :speechRecord,
   keyword_init: true
 )
 
@@ -69,48 +69,48 @@ Meeting = Struct.new(
 # @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] image_kind
+# @!attribute [rw] imageKind
 #   @return [String, nil]
 #
 # @!attribute [rw] issue
 #   @return [String, nil]
 #
-# @!attribute [rw] issue_id
+# @!attribute [rw] issueID
 #   @return [String, nil]
 #
-# @!attribute [rw] meeting_url
+# @!attribute [rw] meetingURL
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_house
+# @!attribute [rw] nameOfHouse
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_meeting
+# @!attribute [rw] nameOfMeeting
 #   @return [String, nil]
 #
-# @!attribute [rw] pdf_url
+# @!attribute [rw] pdfURL
 #   @return [String, nil]
 #
-# @!attribute [rw] search_object
+# @!attribute [rw] searchObject
 #   @return [String, nil]
 #
 # @!attribute [rw] session
 #   @return [Integer, nil]
 #
-# @!attribute [rw] speech_record
+# @!attribute [rw] speechRecord
 #   @return [Array, nil]
 MeetingListMatch = Struct.new(
   :closing,
   :date,
-  :image_kind,
+  :imageKind,
   :issue,
-  :issue_id,
-  :meeting_url,
-  :name_of_house,
-  :name_of_meeting,
-  :pdf_url,
-  :search_object,
+  :issueID,
+  :meetingURL,
+  :nameOfHouse,
+  :nameOfMeeting,
+  :pdfURL,
+  :searchObject,
   :session,
-  :speech_record,
+  :speechRecord,
   keyword_init: true
 )
 
@@ -122,48 +122,48 @@ MeetingListMatch = Struct.new(
 # @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] image_kind
+# @!attribute [rw] imageKind
 #   @return [String, nil]
 #
 # @!attribute [rw] issue
 #   @return [String, nil]
 #
-# @!attribute [rw] issue_id
+# @!attribute [rw] issueID
 #   @return [String, nil]
 #
-# @!attribute [rw] meeting_url
+# @!attribute [rw] meetingURL
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_house
+# @!attribute [rw] nameOfHouse
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_meeting
+# @!attribute [rw] nameOfMeeting
 #   @return [String, nil]
 #
-# @!attribute [rw] pdf_url
+# @!attribute [rw] pdfURL
 #   @return [String, nil]
 #
-# @!attribute [rw] search_object
+# @!attribute [rw] searchObject
 #   @return [String, nil]
 #
 # @!attribute [rw] session
 #   @return [Integer, nil]
 #
-# @!attribute [rw] speech_record
+# @!attribute [rw] speechRecord
 #   @return [Array, nil]
 MeetingList = Struct.new(
   :closing,
   :date,
-  :image_kind,
+  :imageKind,
   :issue,
-  :issue_id,
-  :meeting_url,
-  :name_of_house,
-  :name_of_meeting,
-  :pdf_url,
-  :search_object,
+  :issueID,
+  :meetingURL,
+  :nameOfHouse,
+  :nameOfMeeting,
+  :pdfURL,
+  :searchObject,
   :session,
-  :speech_record,
+  :speechRecord,
   keyword_init: true
 )
 
@@ -175,48 +175,48 @@ MeetingList = Struct.new(
 # @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] image_kind
+# @!attribute [rw] imageKind
 #   @return [String, nil]
 #
 # @!attribute [rw] issue
 #   @return [String, nil]
 #
-# @!attribute [rw] issue_id
+# @!attribute [rw] issueID
 #   @return [String, nil]
 #
-# @!attribute [rw] meeting_url
+# @!attribute [rw] meetingURL
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_house
+# @!attribute [rw] nameOfHouse
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_meeting
+# @!attribute [rw] nameOfMeeting
 #   @return [String, nil]
 #
-# @!attribute [rw] pdf_url
+# @!attribute [rw] pdfURL
 #   @return [String, nil]
 #
-# @!attribute [rw] search_object
+# @!attribute [rw] searchObject
 #   @return [String, nil]
 #
 # @!attribute [rw] session
 #   @return [Integer, nil]
 #
-# @!attribute [rw] speech_record
+# @!attribute [rw] speechRecord
 #   @return [Array, nil]
 MeetingListListMatch = Struct.new(
   :closing,
   :date,
-  :image_kind,
+  :imageKind,
   :issue,
-  :issue_id,
-  :meeting_url,
-  :name_of_house,
-  :name_of_meeting,
-  :pdf_url,
-  :search_object,
+  :issueID,
+  :meetingURL,
+  :nameOfHouse,
+  :nameOfMeeting,
+  :pdfURL,
+  :searchObject,
   :session,
-  :speech_record,
+  :speechRecord,
   keyword_init: true
 )
 
@@ -228,28 +228,28 @@ MeetingListListMatch = Struct.new(
 # @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] image_kind
+# @!attribute [rw] imageKind
 #   @return [String, nil]
 #
 # @!attribute [rw] issue
 #   @return [String, nil]
 #
-# @!attribute [rw] issue_id
+# @!attribute [rw] issueID
 #   @return [String, nil]
 #
-# @!attribute [rw] meeting_url
+# @!attribute [rw] meetingURL
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_house
+# @!attribute [rw] nameOfHouse
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_meeting
+# @!attribute [rw] nameOfMeeting
 #   @return [String, nil]
 #
-# @!attribute [rw] pdf_url
+# @!attribute [rw] pdfURL
 #   @return [String, nil]
 #
-# @!attribute [rw] search_object
+# @!attribute [rw] searchObject
 #   @return [String, nil]
 #
 # @!attribute [rw] session
@@ -258,54 +258,54 @@ MeetingListListMatch = Struct.new(
 # @!attribute [rw] speaker
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_group
+# @!attribute [rw] speakerGroup
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_position
+# @!attribute [rw] speakerPosition
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_role
+# @!attribute [rw] speakerRole
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_yomi
+# @!attribute [rw] speakerYomi
 #   @return [String, nil]
 #
 # @!attribute [rw] speech
 #   @return [String, nil]
 #
-# @!attribute [rw] speech_id
+# @!attribute [rw] speechID
 #   @return [String, nil]
 #
-# @!attribute [rw] speech_order
+# @!attribute [rw] speechOrder
 #   @return [Integer, nil]
 #
-# @!attribute [rw] speech_url
+# @!attribute [rw] speechURL
 #   @return [String, nil]
 #
-# @!attribute [rw] start_page
+# @!attribute [rw] startPage
 #   @return [Integer, nil]
 Speech = Struct.new(
   :closing,
   :date,
-  :image_kind,
+  :imageKind,
   :issue,
-  :issue_id,
-  :meeting_url,
-  :name_of_house,
-  :name_of_meeting,
-  :pdf_url,
-  :search_object,
+  :issueID,
+  :meetingURL,
+  :nameOfHouse,
+  :nameOfMeeting,
+  :pdfURL,
+  :searchObject,
   :session,
   :speaker,
-  :speaker_group,
-  :speaker_position,
-  :speaker_role,
-  :speaker_yomi,
+  :speakerGroup,
+  :speakerPosition,
+  :speakerRole,
+  :speakerYomi,
   :speech,
-  :speech_id,
-  :speech_order,
-  :speech_url,
-  :start_page,
+  :speechID,
+  :speechOrder,
+  :speechURL,
+  :startPage,
   keyword_init: true
 )
 
@@ -317,28 +317,28 @@ Speech = Struct.new(
 # @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] image_kind
+# @!attribute [rw] imageKind
 #   @return [String, nil]
 #
 # @!attribute [rw] issue
 #   @return [String, nil]
 #
-# @!attribute [rw] issue_id
+# @!attribute [rw] issueID
 #   @return [String, nil]
 #
-# @!attribute [rw] meeting_url
+# @!attribute [rw] meetingURL
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_house
+# @!attribute [rw] nameOfHouse
 #   @return [String, nil]
 #
-# @!attribute [rw] name_of_meeting
+# @!attribute [rw] nameOfMeeting
 #   @return [String, nil]
 #
-# @!attribute [rw] pdf_url
+# @!attribute [rw] pdfURL
 #   @return [String, nil]
 #
-# @!attribute [rw] search_object
+# @!attribute [rw] searchObject
 #   @return [String, nil]
 #
 # @!attribute [rw] session
@@ -347,54 +347,54 @@ Speech = Struct.new(
 # @!attribute [rw] speaker
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_group
+# @!attribute [rw] speakerGroup
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_position
+# @!attribute [rw] speakerPosition
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_role
+# @!attribute [rw] speakerRole
 #   @return [String, nil]
 #
-# @!attribute [rw] speaker_yomi
+# @!attribute [rw] speakerYomi
 #   @return [String, nil]
 #
 # @!attribute [rw] speech
 #   @return [String, nil]
 #
-# @!attribute [rw] speech_id
+# @!attribute [rw] speechID
 #   @return [String, nil]
 #
-# @!attribute [rw] speech_order
+# @!attribute [rw] speechOrder
 #   @return [Integer, nil]
 #
-# @!attribute [rw] speech_url
+# @!attribute [rw] speechURL
 #   @return [String, nil]
 #
-# @!attribute [rw] start_page
+# @!attribute [rw] startPage
 #   @return [Integer, nil]
 SpeechListMatch = Struct.new(
   :closing,
   :date,
-  :image_kind,
+  :imageKind,
   :issue,
-  :issue_id,
-  :meeting_url,
-  :name_of_house,
-  :name_of_meeting,
-  :pdf_url,
-  :search_object,
+  :issueID,
+  :meetingURL,
+  :nameOfHouse,
+  :nameOfMeeting,
+  :pdfURL,
+  :searchObject,
   :session,
   :speaker,
-  :speaker_group,
-  :speaker_position,
-  :speaker_role,
-  :speaker_yomi,
+  :speakerGroup,
+  :speakerPosition,
+  :speakerRole,
+  :speakerYomi,
   :speech,
-  :speech_id,
-  :speech_order,
-  :speech_url,
-  :start_page,
+  :speechID,
+  :speechOrder,
+  :speechURL,
+  :startPage,
   keyword_init: true
 )
 

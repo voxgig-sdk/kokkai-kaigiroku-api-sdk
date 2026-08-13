@@ -220,9 +220,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local meeting, err = client:Meeting():load()
+    local meeting, err = client:Meeting():list()
     if err then error(err) end
-    -- meeting is the loaded record
+    -- meeting is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -235,16 +235,16 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: List.
 
@@ -256,16 +256,16 @@ API path: `/meeting`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
-| `speech_record` |  |
+| `speechRecord` |  |
 
 Operations: List.
 
@@ -277,25 +277,25 @@ API path: `/meeting_list`
 | --- | --- |
 | `closing` |  |
 | `date` |  |
-| `image_kind` |  |
+| `imageKind` |  |
 | `issue` |  |
-| `issue_id` |  |
-| `meeting_url` |  |
-| `name_of_house` |  |
-| `name_of_meeting` |  |
-| `pdf_url` |  |
-| `search_object` |  |
+| `issueID` |  |
+| `meetingURL` |  |
+| `nameOfHouse` |  |
+| `nameOfMeeting` |  |
+| `pdfURL` |  |
+| `searchObject` |  |
 | `session` |  |
 | `speaker` |  |
-| `speaker_group` |  |
-| `speaker_position` |  |
-| `speaker_role` |  |
-| `speaker_yomi` |  |
+| `speakerGroup` |  |
+| `speakerPosition` |  |
+| `speakerRole` |  |
+| `speakerYomi` |  |
 | `speech` |  |
-| `speech_id` |  |
-| `speech_order` |  |
-| `speech_url` |  |
-| `start_page` |  |
+| `speechID` |  |
+| `speechOrder` |  |
+| `speechURL` |  |
+| `startPage` |  |
 
 Operations: List.
 
@@ -322,16 +322,16 @@ Create an instance: `local meeting = client:Meeting(nil)`
 | --- | --- | --- |
 | `closing` | `boolean` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `number` |  |
-| `speech_record` | `table` |  |
+| `speechRecord` | `table` |  |
 
 #### Example: List
 
@@ -356,16 +356,16 @@ Create an instance: `local meeting_list = client:MeetingList(nil)`
 | --- | --- | --- |
 | `closing` | `boolean` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `number` |  |
-| `speech_record` | `table` |  |
+| `speechRecord` | `table` |  |
 
 #### Example: List
 
@@ -390,25 +390,25 @@ Create an instance: `local speech = client:Speech(nil)`
 | --- | --- | --- |
 | `closing` | `boolean` |  |
 | `date` | `string` |  |
-| `image_kind` | `string` |  |
+| `imageKind` | `string` |  |
 | `issue` | `string` |  |
-| `issue_id` | `string` |  |
-| `meeting_url` | `string` |  |
-| `name_of_house` | `string` |  |
-| `name_of_meeting` | `string` |  |
-| `pdf_url` | `string` |  |
-| `search_object` | `string` |  |
+| `issueID` | `string` |  |
+| `meetingURL` | `string` |  |
+| `nameOfHouse` | `string` |  |
+| `nameOfMeeting` | `string` |  |
+| `pdfURL` | `string` |  |
+| `searchObject` | `string` |  |
 | `session` | `number` |  |
 | `speaker` | `string` |  |
-| `speaker_group` | `string` |  |
-| `speaker_position` | `string` |  |
-| `speaker_role` | `string` |  |
-| `speaker_yomi` | `string` |  |
+| `speakerGroup` | `string` |  |
+| `speakerPosition` | `string` |  |
+| `speakerRole` | `string` |  |
+| `speakerYomi` | `string` |  |
 | `speech` | `string` |  |
-| `speech_id` | `string` |  |
-| `speech_order` | `number` |  |
-| `speech_url` | `string` |  |
-| `start_page` | `number` |  |
+| `speechID` | `string` |  |
+| `speechOrder` | `number` |  |
+| `speechURL` | `string` |  |
+| `startPage` | `number` |  |
 
 #### Example: List
 

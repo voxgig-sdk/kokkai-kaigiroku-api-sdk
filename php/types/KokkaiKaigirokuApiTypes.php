@@ -17,16 +17,16 @@ class Meeting
 {
     public ?bool $closing = null;
     public ?string $date = null;
-    public ?string $image_kind = null;
+    public ?string $imageKind = null;
     public ?string $issue = null;
-    public ?string $issue_id = null;
-    public ?string $meeting_url = null;
-    public ?string $name_of_house = null;
-    public ?string $name_of_meeting = null;
-    public ?string $pdf_url = null;
-    public ?string $search_object = null;
+    public ?string $issueID = null;
+    public ?string $meetingURL = null;
+    public ?string $nameOfHouse = null;
+    public ?string $nameOfMeeting = null;
+    public ?string $pdfURL = null;
+    public ?string $searchObject = null;
     public ?int $session = null;
-    public ?array $speech_record = null;
+    public ?array $speechRecord = null;
 }
 
 /** Request payload for Meeting#list. */
@@ -34,16 +34,16 @@ class MeetingListMatch
 {
     public ?bool $closing = null;
     public ?string $date = null;
-    public ?string $image_kind = null;
+    public ?string $imageKind = null;
     public ?string $issue = null;
-    public ?string $issue_id = null;
-    public ?string $meeting_url = null;
-    public ?string $name_of_house = null;
-    public ?string $name_of_meeting = null;
-    public ?string $pdf_url = null;
-    public ?string $search_object = null;
+    public ?string $issueID = null;
+    public ?string $meetingURL = null;
+    public ?string $nameOfHouse = null;
+    public ?string $nameOfMeeting = null;
+    public ?string $pdfURL = null;
+    public ?string $searchObject = null;
     public ?int $session = null;
-    public ?array $speech_record = null;
+    public ?array $speechRecord = null;
 }
 
 /** MeetingList entity data model. */
@@ -51,16 +51,16 @@ class MeetingList
 {
     public ?bool $closing = null;
     public ?string $date = null;
-    public ?string $image_kind = null;
+    public ?string $imageKind = null;
     public ?string $issue = null;
-    public ?string $issue_id = null;
-    public ?string $meeting_url = null;
-    public ?string $name_of_house = null;
-    public ?string $name_of_meeting = null;
-    public ?string $pdf_url = null;
-    public ?string $search_object = null;
+    public ?string $issueID = null;
+    public ?string $meetingURL = null;
+    public ?string $nameOfHouse = null;
+    public ?string $nameOfMeeting = null;
+    public ?string $pdfURL = null;
+    public ?string $searchObject = null;
     public ?int $session = null;
-    public ?array $speech_record = null;
+    public ?array $speechRecord = null;
 }
 
 /** Request payload for MeetingList#list. */
@@ -68,16 +68,16 @@ class MeetingListListMatch
 {
     public ?bool $closing = null;
     public ?string $date = null;
-    public ?string $image_kind = null;
+    public ?string $imageKind = null;
     public ?string $issue = null;
-    public ?string $issue_id = null;
-    public ?string $meeting_url = null;
-    public ?string $name_of_house = null;
-    public ?string $name_of_meeting = null;
-    public ?string $pdf_url = null;
-    public ?string $search_object = null;
+    public ?string $issueID = null;
+    public ?string $meetingURL = null;
+    public ?string $nameOfHouse = null;
+    public ?string $nameOfMeeting = null;
+    public ?string $pdfURL = null;
+    public ?string $searchObject = null;
     public ?int $session = null;
-    public ?array $speech_record = null;
+    public ?array $speechRecord = null;
 }
 
 /** Speech entity data model. */
@@ -85,25 +85,25 @@ class Speech
 {
     public ?bool $closing = null;
     public ?string $date = null;
-    public ?string $image_kind = null;
+    public ?string $imageKind = null;
     public ?string $issue = null;
-    public ?string $issue_id = null;
-    public ?string $meeting_url = null;
-    public ?string $name_of_house = null;
-    public ?string $name_of_meeting = null;
-    public ?string $pdf_url = null;
-    public ?string $search_object = null;
+    public ?string $issueID = null;
+    public ?string $meetingURL = null;
+    public ?string $nameOfHouse = null;
+    public ?string $nameOfMeeting = null;
+    public ?string $pdfURL = null;
+    public ?string $searchObject = null;
     public ?int $session = null;
     public ?string $speaker = null;
-    public ?string $speaker_group = null;
-    public ?string $speaker_position = null;
-    public ?string $speaker_role = null;
-    public ?string $speaker_yomi = null;
+    public ?string $speakerGroup = null;
+    public ?string $speakerPosition = null;
+    public ?string $speakerRole = null;
+    public ?string $speakerYomi = null;
     public ?string $speech = null;
-    public ?string $speech_id = null;
-    public ?int $speech_order = null;
-    public ?string $speech_url = null;
-    public ?int $start_page = null;
+    public ?string $speechID = null;
+    public ?int $speechOrder = null;
+    public ?string $speechURL = null;
+    public ?int $startPage = null;
 }
 
 /** Request payload for Speech#list. */
@@ -111,24 +111,24 @@ class SpeechListMatch
 {
     public ?bool $closing = null;
     public ?string $date = null;
-    public ?string $image_kind = null;
+    public ?string $imageKind = null;
     public ?string $issue = null;
-    public ?string $issue_id = null;
-    public ?string $meeting_url = null;
-    public ?string $name_of_house = null;
-    public ?string $name_of_meeting = null;
-    public ?string $pdf_url = null;
-    public ?string $search_object = null;
+    public ?string $issueID = null;
+    public ?string $meetingURL = null;
+    public ?string $nameOfHouse = null;
+    public ?string $nameOfMeeting = null;
+    public ?string $pdfURL = null;
+    public ?string $searchObject = null;
     public ?int $session = null;
     public ?string $speaker = null;
-    public ?string $speaker_group = null;
-    public ?string $speaker_position = null;
-    public ?string $speaker_role = null;
-    public ?string $speaker_yomi = null;
+    public ?string $speakerGroup = null;
+    public ?string $speakerPosition = null;
+    public ?string $speakerRole = null;
+    public ?string $speakerYomi = null;
     public ?string $speech = null;
-    public ?string $speech_id = null;
-    public ?int $speech_order = null;
-    public ?string $speech_url = null;
-    public ?int $start_page = null;
+    public ?string $speechID = null;
+    public ?int $speechOrder = null;
+    public ?string $speechURL = null;
+    public ?int $startPage = null;
 }
 

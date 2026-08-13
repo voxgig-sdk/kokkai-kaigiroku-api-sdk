@@ -97,16 +97,16 @@ meeting = client.Meeting()
 | --- | --- | --- | --- |
 | `closing` | `bool` | No |  |
 | `date` | `str` | No |  |
-| `image_kind` | `str` | No |  |
+| `imageKind` | `str` | No |  |
 | `issue` | `str` | No |  |
-| `issue_id` | `str` | No |  |
-| `meeting_url` | `str` | No |  |
-| `name_of_house` | `str` | No |  |
-| `name_of_meeting` | `str` | No |  |
-| `pdf_url` | `str` | No |  |
-| `search_object` | `str` | No |  |
+| `issueID` | `str` | No |  |
+| `meetingURL` | `str` | No |  |
+| `nameOfHouse` | `str` | No |  |
+| `nameOfMeeting` | `str` | No |  |
+| `pdfURL` | `str` | No |  |
+| `searchObject` | `str` | No |  |
 | `session` | `int` | No |  |
-| `speech_record` | `list` | No |  |
+| `speechRecord` | `list` | No |  |
 
 ### Operations
 
@@ -161,16 +161,16 @@ meeting_list = client.MeetingList()
 | --- | --- | --- | --- |
 | `closing` | `bool` | No |  |
 | `date` | `str` | No |  |
-| `image_kind` | `str` | No |  |
+| `imageKind` | `str` | No |  |
 | `issue` | `str` | No |  |
-| `issue_id` | `str` | No |  |
-| `meeting_url` | `str` | No |  |
-| `name_of_house` | `str` | No |  |
-| `name_of_meeting` | `str` | No |  |
-| `pdf_url` | `str` | No |  |
-| `search_object` | `str` | No |  |
+| `issueID` | `str` | No |  |
+| `meetingURL` | `str` | No |  |
+| `nameOfHouse` | `str` | No |  |
+| `nameOfMeeting` | `str` | No |  |
+| `pdfURL` | `str` | No |  |
+| `searchObject` | `str` | No |  |
 | `session` | `int` | No |  |
-| `speech_record` | `list` | No |  |
+| `speechRecord` | `list` | No |  |
 
 ### Operations
 
@@ -225,25 +225,25 @@ speech = client.Speech()
 | --- | --- | --- | --- |
 | `closing` | `bool` | No |  |
 | `date` | `str` | No |  |
-| `image_kind` | `str` | No |  |
+| `imageKind` | `str` | No |  |
 | `issue` | `str` | No |  |
-| `issue_id` | `str` | No |  |
-| `meeting_url` | `str` | No |  |
-| `name_of_house` | `str` | No |  |
-| `name_of_meeting` | `str` | No |  |
-| `pdf_url` | `str` | No |  |
-| `search_object` | `str` | No |  |
+| `issueID` | `str` | No |  |
+| `meetingURL` | `str` | No |  |
+| `nameOfHouse` | `str` | No |  |
+| `nameOfMeeting` | `str` | No |  |
+| `pdfURL` | `str` | No |  |
+| `searchObject` | `str` | No |  |
 | `session` | `int` | No |  |
 | `speaker` | `str` | No |  |
-| `speaker_group` | `str` | No |  |
-| `speaker_position` | `str` | No |  |
-| `speaker_role` | `str` | No |  |
-| `speaker_yomi` | `str` | No |  |
+| `speakerGroup` | `str` | No |  |
+| `speakerPosition` | `str` | No |  |
+| `speakerRole` | `str` | No |  |
+| `speakerYomi` | `str` | No |  |
 | `speech` | `str` | No |  |
-| `speech_id` | `str` | No |  |
-| `speech_order` | `int` | No |  |
-| `speech_url` | `str` | No |  |
-| `start_page` | `int` | No |  |
+| `speechID` | `str` | No |  |
+| `speechOrder` | `int` | No |  |
+| `speechURL` | `str` | No |  |
+| `startPage` | `int` | No |  |
 
 ### Operations
 
