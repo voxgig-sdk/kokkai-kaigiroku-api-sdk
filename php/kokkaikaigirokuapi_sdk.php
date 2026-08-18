@@ -40,7 +40,7 @@ class KokkaiKaigirokuApiSDK
         $utility = new KokkaiKaigirokuApiUtility();
         $this->_utility = $utility;
 
-        $config = KokkaiKaigirokuApiConfig::make_config();
+        $config = KokkaiKaigirokuApiConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

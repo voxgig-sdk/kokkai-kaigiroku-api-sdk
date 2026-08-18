@@ -28,7 +28,7 @@ class KokkaiKaigirokuApiSDK
     utility = KokkaiKaigirokuApiUtility.new
     @_utility = utility
 
-    config = KokkaiKaigirokuApiConfig.make_config
+    config = KokkaiKaigirokuApiConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

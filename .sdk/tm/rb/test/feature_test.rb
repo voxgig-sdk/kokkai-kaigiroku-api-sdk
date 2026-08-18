@@ -15,7 +15,7 @@ require_relative "../KokkaiKaigirokuApi_sdk"
 module KokkaiKaigirokuApiFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = KokkaiKaigirokuApiConfig.make_config["feature"]
+    f = KokkaiKaigirokuApiConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
