@@ -101,17 +101,17 @@ meeting = client.Meeting
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | `Boolean` | No |  |
-| `date` | `String` | No |  |
-| `imageKind` | `String` | No |  |
-| `issue` | `String` | No |  |
-| `issueID` | `String` | No |  |
-| `meetingURL` | `String` | No |  |
-| `nameOfHouse` | `String` | No |  |
-| `nameOfMeeting` | `String` | No |  |
-| `pdfURL` | `String` | No |  |
-| `searchObject` | `String` | No |  |
-| `session` | `Integer` | No |  |
+| `closing` | `Boolean` | No | 閉会中フラグ |
+| `date` | `String` | No | 開催日付 |
+| `imageKind` | `String` | No | イメージ種別（会議録・目次・索引・附録・追録） |
+| `issue` | `String` | No | 号数 |
+| `issueID` | `String` | No | 会議録ID |
+| `meetingURL` | `String` | No | 会議録テキスト表示画面のURL |
+| `nameOfHouse` | `String` | No | 院名 |
+| `nameOfMeeting` | `String` | No | 会議名 |
+| `pdfURL` | `String` | No | 会議録PDF表示画面のURL |
+| `searchObject` | `String` | No | 検索対象箇所（議事冒頭・本文） |
+| `session` | `Integer` | No | 国会回次 |
 | `speechRecord` | `Array` | No |  |
 
 ### Operations
@@ -164,17 +164,17 @@ meeting_list = client.MeetingList
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | `Boolean` | No |  |
-| `date` | `String` | No |  |
-| `imageKind` | `String` | No |  |
-| `issue` | `String` | No |  |
-| `issueID` | `String` | No |  |
-| `meetingURL` | `String` | No |  |
-| `nameOfHouse` | `String` | No |  |
-| `nameOfMeeting` | `String` | No |  |
-| `pdfURL` | `String` | No |  |
-| `searchObject` | `String` | No |  |
-| `session` | `Integer` | No |  |
+| `closing` | `Boolean` | No | 閉会中フラグ |
+| `date` | `String` | No | 開催日付 |
+| `imageKind` | `String` | No | イメージ種別（会議録・目次・索引・附録・追録） |
+| `issue` | `String` | No | 号数 |
+| `issueID` | `String` | No | 会議録ID |
+| `meetingURL` | `String` | No | 会議録テキスト表示画面のURL |
+| `nameOfHouse` | `String` | No | 院名 |
+| `nameOfMeeting` | `String` | No | 会議名 |
+| `pdfURL` | `String` | No | 会議録PDF表示画面のURL |
+| `searchObject` | `String` | No | 検索対象箇所（議事冒頭・本文） |
+| `session` | `Integer` | No | 国会回次 |
 | `speechRecord` | `Array` | No |  |
 
 ### Operations
@@ -227,27 +227,27 @@ speech = client.Speech
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `closing` | `Boolean` | No |  |
-| `date` | `String` | No |  |
-| `imageKind` | `String` | No |  |
-| `issue` | `String` | No |  |
-| `issueID` | `String` | No |  |
-| `meetingURL` | `String` | No |  |
-| `nameOfHouse` | `String` | No |  |
-| `nameOfMeeting` | `String` | No |  |
-| `pdfURL` | `String` | No |  |
-| `searchObject` | `String` | No |  |
-| `session` | `Integer` | No |  |
-| `speaker` | `String` | No |  |
-| `speakerGroup` | `String` | No |  |
-| `speakerPosition` | `String` | No |  |
-| `speakerRole` | `String` | No |  |
-| `speakerYomi` | `String` | No |  |
-| `speech` | `String` | No |  |
-| `speechID` | `String` | No |  |
-| `speechOrder` | `Integer` | No |  |
-| `speechURL` | `String` | No |  |
-| `startPage` | `Integer` | No |  |
+| `closing` | `Boolean` | No | 閉会中フラグ |
+| `date` | `String` | No | 開催日付 |
+| `imageKind` | `String` | No | イメージ種別（会議録・目次・索引・附録・追録） |
+| `issue` | `String` | No | 号数 |
+| `issueID` | `String` | No | 会議録ID |
+| `meetingURL` | `String` | No | 会議録テキスト表示画面のURL |
+| `nameOfHouse` | `String` | No | 院名 |
+| `nameOfMeeting` | `String` | No | 会議名 |
+| `pdfURL` | `String` | No | 会議録PDF表示画面のURL |
+| `searchObject` | `String` | No | 検索対象箇所（議事冒頭・本文） |
+| `session` | `Integer` | No | 国会回次 |
+| `speaker` | `String` | No | 発言者名 |
+| `speakerGroup` | `String` | No | 発言者所属会派 |
+| `speakerPosition` | `String` | No | 発言者肩書き |
+| `speakerRole` | `String` | No | 発言者役割 |
+| `speakerYomi` | `String` | No | 発言者よみ |
+| `speech` | `String` | No | 発言 |
+| `speechID` | `String` | No | 発言ID |
+| `speechOrder` | `Integer` | No | 発言番号 |
+| `speechURL` | `String` | No | 発言URL |
+| `startPage` | `Integer` | No | 発言が掲載されている開始ページ |
 
 ### Operations
 

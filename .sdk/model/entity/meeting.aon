@@ -8,56 +8,67 @@ main: kit: entity: meeting: {
     {
       name: "closing"
       req: false
+      short: "閉会中フラグ"
       type: "`$BOOLEAN`"
     }
     {
       name: "date"
       req: false
+      short: "開催日付"
       type: "`$STRING`"
     }
     {
       name: "imageKind"
       req: false
+      short: "イメージ種別（会議録・目次・索引・附録・追録）"
       type: "`$STRING`"
     }
     {
       name: "issue"
       req: false
+      short: "号数"
       type: "`$STRING`"
     }
     {
       name: "issueID"
       req: false
+      short: "会議録ID"
       type: "`$STRING`"
     }
     {
       name: "meetingURL"
       req: false
+      short: "会議録テキスト表示画面のURL"
       type: "`$STRING`"
     }
     {
       name: "nameOfHouse"
       req: false
+      short: "院名"
       type: "`$STRING`"
     }
     {
       name: "nameOfMeeting"
       req: false
+      short: "会議名"
       type: "`$STRING`"
     }
     {
       name: "pdfURL"
       req: false
+      short: "会議録PDF表示画面のURL"
       type: "`$STRING`"
     }
     {
       name: "searchObject"
       req: false
+      short: "検索対象箇所（議事冒頭・本文）"
       type: "`$STRING`"
     }
     {
       name: "session"
       req: false
+      short: "国会回次"
       type: "`$INTEGER`"
     }
     {

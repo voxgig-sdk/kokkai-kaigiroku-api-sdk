@@ -33,6 +33,9 @@ class KokkaiKaigirokuApiConfig
         return [
             "main" => [
                 "name" => "KokkaiKaigirokuApi",
+                "slug" => "kokkai-kaigiroku-api",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -57,46 +60,57 @@ class KokkaiKaigirokuApiConfig
           'fields' => [
             [
               'name' => 'closing',
+              'short' => '閉会中フラグ',
               'type' => '`$BOOLEAN`',
             ],
             [
               'name' => 'date',
+              'short' => '開催日付',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageKind',
+              'short' => 'イメージ種別（会議録・目次・索引・附録・追録）',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'issue',
+              'short' => '号数',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'issueID',
+              'short' => '会議録ID',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'meetingURL',
+              'short' => '会議録テキスト表示画面のURL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'nameOfHouse',
+              'short' => '院名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'nameOfMeeting',
+              'short' => '会議名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'pdfURL',
+              'short' => '会議録PDF表示画面のURL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'searchObject',
+              'short' => '検索対象箇所（議事冒頭・本文）',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'session',
+              'short' => '国会回次',
               'type' => '`$INTEGER`',
             ],
             [
@@ -309,46 +323,57 @@ class KokkaiKaigirokuApiConfig
           'fields' => [
             [
               'name' => 'closing',
+              'short' => '閉会中フラグ',
               'type' => '`$BOOLEAN`',
             ],
             [
               'name' => 'date',
+              'short' => '開催日付',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageKind',
+              'short' => 'イメージ種別（会議録・目次・索引・附録・追録）',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'issue',
+              'short' => '号数',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'issueID',
+              'short' => '会議録ID',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'meetingURL',
+              'short' => '会議録テキスト表示画面のURL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'nameOfHouse',
+              'short' => '院名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'nameOfMeeting',
+              'short' => '会議名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'pdfURL',
+              'short' => '会議録PDF表示画面のURL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'searchObject',
+              'short' => '検索対象箇所（議事冒頭・本文）',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'session',
+              'short' => '国会回次',
               'type' => '`$INTEGER`',
             ],
             [
@@ -561,86 +586,107 @@ class KokkaiKaigirokuApiConfig
           'fields' => [
             [
               'name' => 'closing',
+              'short' => '閉会中フラグ',
               'type' => '`$BOOLEAN`',
             ],
             [
               'name' => 'date',
+              'short' => '開催日付',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageKind',
+              'short' => 'イメージ種別（会議録・目次・索引・附録・追録）',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'issue',
+              'short' => '号数',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'issueID',
+              'short' => '会議録ID',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'meetingURL',
+              'short' => '会議録テキスト表示画面のURL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'nameOfHouse',
+              'short' => '院名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'nameOfMeeting',
+              'short' => '会議名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'pdfURL',
+              'short' => '会議録PDF表示画面のURL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'searchObject',
+              'short' => '検索対象箇所（議事冒頭・本文）',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'session',
+              'short' => '国会回次',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'speaker',
+              'short' => '発言者名',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speakerGroup',
+              'short' => '発言者所属会派',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speakerPosition',
+              'short' => '発言者肩書き',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speakerRole',
+              'short' => '発言者役割',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speakerYomi',
+              'short' => '発言者よみ',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speech',
+              'short' => '発言',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speechID',
+              'short' => '発言ID',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'speechOrder',
+              'short' => '発言番号',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'speechURL',
+              'short' => '発言URL',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'startPage',
+              'short' => '発言が掲載されている開始ページ',
               'type' => '`$INTEGER`',
             ],
           ],

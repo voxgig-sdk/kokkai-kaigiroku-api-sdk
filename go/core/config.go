@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "KokkaiKaigirokuApi",
+			"slug": "kokkai-kaigiroku-api",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -35,46 +38,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "closing",
+						"short": "閉会中フラグ",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "date",
+						"short": "開催日付",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageKind",
+						"short": "イメージ種別（会議録・目次・索引・附録・追録）",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "issue",
+						"short": "号数",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "issueID",
+						"short": "会議録ID",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "meetingURL",
+						"short": "会議録テキスト表示画面のURL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameOfHouse",
+						"short": "院名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameOfMeeting",
+						"short": "会議名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pdfURL",
+						"short": "会議録PDF表示画面のURL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "searchObject",
+						"short": "検索対象箇所（議事冒頭・本文）",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "session",
+						"short": "国会回次",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
@@ -287,46 +301,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "closing",
+						"short": "閉会中フラグ",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "date",
+						"short": "開催日付",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageKind",
+						"short": "イメージ種別（会議録・目次・索引・附録・追録）",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "issue",
+						"short": "号数",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "issueID",
+						"short": "会議録ID",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "meetingURL",
+						"short": "会議録テキスト表示画面のURL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameOfHouse",
+						"short": "院名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameOfMeeting",
+						"short": "会議名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pdfURL",
+						"short": "会議録PDF表示画面のURL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "searchObject",
+						"short": "検索対象箇所（議事冒頭・本文）",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "session",
+						"short": "国会回次",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
@@ -539,86 +564,107 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "closing",
+						"short": "閉会中フラグ",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "date",
+						"short": "開催日付",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageKind",
+						"short": "イメージ種別（会議録・目次・索引・附録・追録）",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "issue",
+						"short": "号数",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "issueID",
+						"short": "会議録ID",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "meetingURL",
+						"short": "会議録テキスト表示画面のURL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameOfHouse",
+						"short": "院名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "nameOfMeeting",
+						"short": "会議名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pdfURL",
+						"short": "会議録PDF表示画面のURL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "searchObject",
+						"short": "検索対象箇所（議事冒頭・本文）",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "session",
+						"short": "国会回次",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "speaker",
+						"short": "発言者名",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speakerGroup",
+						"short": "発言者所属会派",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speakerPosition",
+						"short": "発言者肩書き",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speakerRole",
+						"short": "発言者役割",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speakerYomi",
+						"short": "発言者よみ",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speech",
+						"short": "発言",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speechID",
+						"short": "発言ID",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "speechOrder",
+						"short": "発言番号",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "speechURL",
+						"short": "発言URL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "startPage",
+						"short": "発言が掲載されている開始ページ",
 						"type": "`$INTEGER`",
 					},
 				},

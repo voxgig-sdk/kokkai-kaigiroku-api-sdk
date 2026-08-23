@@ -36,66 +36,77 @@
               "active": true,
               "name": "closing",
               "req": false,
+              "short": "閉会中フラグ",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "date",
               "req": false,
+              "short": "開催日付",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageKind",
               "req": false,
+              "short": "イメージ種別（会議録・目次・索引・附録・追録）",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "issue",
               "req": false,
+              "short": "号数",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "issueID",
               "req": false,
+              "short": "会議録ID",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "meetingURL",
               "req": false,
+              "short": "会議録テキスト表示画面のURL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameOfHouse",
               "req": false,
+              "short": "院名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameOfMeeting",
               "req": false,
+              "short": "会議名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "pdfURL",
               "req": false,
+              "short": "会議録PDF表示画面のURL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "searchObject",
               "req": false,
+              "short": "検索対象箇所（議事冒頭・本文）",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "session",
               "req": false,
+              "short": "国会回次",
               "type": "`$INTEGER`"
             },
             {
@@ -363,66 +374,77 @@
               "active": true,
               "name": "closing",
               "req": false,
+              "short": "閉会中フラグ",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "date",
               "req": false,
+              "short": "開催日付",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageKind",
               "req": false,
+              "short": "イメージ種別（会議録・目次・索引・附録・追録）",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "issue",
               "req": false,
+              "short": "号数",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "issueID",
               "req": false,
+              "short": "会議録ID",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "meetingURL",
               "req": false,
+              "short": "会議録テキスト表示画面のURL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameOfHouse",
               "req": false,
+              "short": "院名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameOfMeeting",
               "req": false,
+              "short": "会議名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "pdfURL",
               "req": false,
+              "short": "会議録PDF表示画面のURL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "searchObject",
               "req": false,
+              "short": "検索対象箇所（議事冒頭・本文）",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "session",
               "req": false,
+              "short": "国会回次",
               "type": "`$INTEGER`"
             },
             {
@@ -690,126 +712,147 @@
               "active": true,
               "name": "closing",
               "req": false,
+              "short": "閉会中フラグ",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "date",
               "req": false,
+              "short": "開催日付",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageKind",
               "req": false,
+              "short": "イメージ種別（会議録・目次・索引・附録・追録）",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "issue",
               "req": false,
+              "short": "号数",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "issueID",
               "req": false,
+              "short": "会議録ID",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "meetingURL",
               "req": false,
+              "short": "会議録テキスト表示画面のURL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameOfHouse",
               "req": false,
+              "short": "院名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "nameOfMeeting",
               "req": false,
+              "short": "会議名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "pdfURL",
               "req": false,
+              "short": "会議録PDF表示画面のURL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "searchObject",
               "req": false,
+              "short": "検索対象箇所（議事冒頭・本文）",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "session",
               "req": false,
+              "short": "国会回次",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "speaker",
               "req": false,
+              "short": "発言者名",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speakerGroup",
               "req": false,
+              "short": "発言者所属会派",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speakerPosition",
               "req": false,
+              "short": "発言者肩書き",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speakerRole",
               "req": false,
+              "short": "発言者役割",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speakerYomi",
               "req": false,
+              "short": "発言者よみ",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speech",
               "req": false,
+              "short": "発言",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speechID",
               "req": false,
+              "short": "発言ID",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "speechOrder",
               "req": false,
+              "short": "発言番号",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "speechURL",
               "req": false,
+              "short": "発言URL",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "startPage",
               "req": false,
+              "short": "発言が掲載されている開始ページ",
               "type": "`$INTEGER`"
             }
           ],
