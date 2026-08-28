@@ -32,18 +32,28 @@ class Meeting(TypedDict, total=False):
 
 
 class MeetingListMatch(TypedDict, total=False):
+    any: str
     closing: bool
-    date: str
-    imageKind: str
-    issue: str
-    issueID: str
-    meetingURL: str
-    nameOfHouse: str
-    nameOfMeeting: str
-    pdfURL: str
-    searchObject: str
-    session: int
-    speechRecord: list
+    contents_and_index: bool
+    issue_from: int
+    issue_id: str
+    issue_to: int
+    maximum_record: int
+    name_of_house: str
+    name_of_meeting: str
+    record_packing: str
+    search_range: str
+    session_from: int
+    session_to: int
+    speaker: str
+    speaker_group: str
+    speaker_position: str
+    speaker_role: str
+    speech_id: str
+    speech_number: int
+    start_record: int
+    supplement_and_appendix: bool
+    until: str
 
 
 class MeetingList(TypedDict, total=False):
@@ -62,18 +72,28 @@ class MeetingList(TypedDict, total=False):
 
 
 class MeetingListListMatch(TypedDict, total=False):
+    any: str
     closing: bool
-    date: str
-    imageKind: str
-    issue: str
-    issueID: str
-    meetingURL: str
-    nameOfHouse: str
-    nameOfMeeting: str
-    pdfURL: str
-    searchObject: str
-    session: int
-    speechRecord: list
+    contents_and_index: bool
+    issue_from: int
+    issue_id: str
+    issue_to: int
+    maximum_record: int
+    name_of_house: str
+    name_of_meeting: str
+    record_packing: str
+    search_range: str
+    session_from: int
+    session_to: int
+    speaker: str
+    speaker_group: str
+    speaker_position: str
+    speaker_role: str
+    speech_id: str
+    speech_number: int
+    start_record: int
+    supplement_and_appendix: bool
+    until: str
 
 
 class Speech(TypedDict, total=False):
@@ -101,24 +121,25 @@ class Speech(TypedDict, total=False):
 
 
 class SpeechListMatch(TypedDict, total=False):
+    any: str
     closing: bool
-    date: str
-    imageKind: str
-    issue: str
-    issueID: str
-    meetingURL: str
-    nameOfHouse: str
-    nameOfMeeting: str
-    pdfURL: str
-    searchObject: str
-    session: int
+    contents_and_index: bool
+    issue_from: int
+    issue_id: str
+    issue_to: int
+    maximum_record: int
+    name_of_house: str
+    name_of_meeting: str
+    record_packing: str
+    search_range: str
+    session_from: int
+    session_to: int
     speaker: str
-    speakerGroup: str
-    speakerPosition: str
-    speakerRole: str
-    speakerYomi: str
-    speech: str
-    speechID: str
-    speechOrder: int
-    speechURL: str
-    startPage: int
+    speaker_group: str
+    speaker_position: str
+    speaker_role: str
+    speech_id: str
+    speech_number: int
+    start_record: int
+    supplement_and_appendix: bool
+    until: str

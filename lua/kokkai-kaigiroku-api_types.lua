@@ -21,18 +21,29 @@
 ---@field speechRecord? table
 
 ---@class MeetingListMatch
+---@field any? string
 ---@field closing? boolean
----@field date? string
----@field imageKind? string
----@field issue? string
----@field issueID? string
----@field meetingURL? string
----@field nameOfHouse? string
----@field nameOfMeeting? string
----@field pdfURL? string
----@field searchObject? string
----@field session? number
----@field speechRecord? table
+---@field contents_and_index? boolean
+---@field from? string
+---@field issue_from? number
+---@field issue_id? string
+---@field issue_to? number
+---@field maximum_record? number
+---@field name_of_house? string
+---@field name_of_meeting? string
+---@field record_packing? string
+---@field search_range? string
+---@field session_from? number
+---@field session_to? number
+---@field speaker? string
+---@field speaker_group? string
+---@field speaker_position? string
+---@field speaker_role? string
+---@field speech_id? string
+---@field speech_number? number
+---@field start_record? number
+---@field supplement_and_appendix? boolean
+---@field until? string
 
 ---@class MeetingList
 ---@field closing? boolean
@@ -49,18 +60,29 @@
 ---@field speechRecord? table
 
 ---@class MeetingListListMatch
+---@field any? string
 ---@field closing? boolean
----@field date? string
----@field imageKind? string
----@field issue? string
----@field issueID? string
----@field meetingURL? string
----@field nameOfHouse? string
----@field nameOfMeeting? string
----@field pdfURL? string
----@field searchObject? string
----@field session? number
----@field speechRecord? table
+---@field contents_and_index? boolean
+---@field from? string
+---@field issue_from? number
+---@field issue_id? string
+---@field issue_to? number
+---@field maximum_record? number
+---@field name_of_house? string
+---@field name_of_meeting? string
+---@field record_packing? string
+---@field search_range? string
+---@field session_from? number
+---@field session_to? number
+---@field speaker? string
+---@field speaker_group? string
+---@field speaker_position? string
+---@field speaker_role? string
+---@field speech_id? string
+---@field speech_number? number
+---@field start_record? number
+---@field supplement_and_appendix? boolean
+---@field until? string
 
 ---@class Speech
 ---@field closing? boolean
@@ -86,27 +108,29 @@
 ---@field startPage? number
 
 ---@class SpeechListMatch
+---@field any? string
 ---@field closing? boolean
----@field date? string
----@field imageKind? string
----@field issue? string
----@field issueID? string
----@field meetingURL? string
----@field nameOfHouse? string
----@field nameOfMeeting? string
----@field pdfURL? string
----@field searchObject? string
----@field session? number
+---@field contents_and_index? boolean
+---@field from? string
+---@field issue_from? number
+---@field issue_id? string
+---@field issue_to? number
+---@field maximum_record? number
+---@field name_of_house? string
+---@field name_of_meeting? string
+---@field record_packing? string
+---@field search_range? string
+---@field session_from? number
+---@field session_to? number
 ---@field speaker? string
----@field speakerGroup? string
----@field speakerPosition? string
----@field speakerRole? string
----@field speakerYomi? string
----@field speech? string
----@field speechID? string
----@field speechOrder? number
----@field speechURL? string
----@field startPage? number
+---@field speaker_group? string
+---@field speaker_position? string
+---@field speaker_role? string
+---@field speech_id? string
+---@field speech_number? number
+---@field start_record? number
+---@field supplement_and_appendix? boolean
+---@field until? string
 
 local M = {}
 

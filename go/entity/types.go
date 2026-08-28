@@ -30,18 +30,29 @@ type Meeting struct {
 
 // MeetingListMatch is the typed request payload for Meeting.ListTyped.
 type MeetingListMatch struct {
+	Any *string `json:"any,omitempty"`
 	Closing *bool `json:"closing,omitempty"`
-	Date *string `json:"date,omitempty"`
-	ImageKind *string `json:"imageKind,omitempty"`
-	Issue *string `json:"issue,omitempty"`
-	IssueID *string `json:"issueID,omitempty"`
-	MeetingURL *string `json:"meetingURL,omitempty"`
-	NameOfHouse *string `json:"nameOfHouse,omitempty"`
-	NameOfMeeting *string `json:"nameOfMeeting,omitempty"`
-	PdfURL *string `json:"pdfURL,omitempty"`
-	SearchObject *string `json:"searchObject,omitempty"`
-	Session *int `json:"session,omitempty"`
-	SpeechRecord *[]any `json:"speechRecord,omitempty"`
+	ContentsAndIndex *bool `json:"contents_and_index,omitempty"`
+	From *string `json:"from,omitempty"`
+	IssueFrom *int `json:"issue_from,omitempty"`
+	IssueId *string `json:"issue_id,omitempty"`
+	IssueTo *int `json:"issue_to,omitempty"`
+	MaximumRecord *int `json:"maximum_record,omitempty"`
+	NameOfHouse *string `json:"name_of_house,omitempty"`
+	NameOfMeeting *string `json:"name_of_meeting,omitempty"`
+	RecordPacking *string `json:"record_packing,omitempty"`
+	SearchRange *string `json:"search_range,omitempty"`
+	SessionFrom *int `json:"session_from,omitempty"`
+	SessionTo *int `json:"session_to,omitempty"`
+	Speaker *string `json:"speaker,omitempty"`
+	SpeakerGroup *string `json:"speaker_group,omitempty"`
+	SpeakerPosition *string `json:"speaker_position,omitempty"`
+	SpeakerRole *string `json:"speaker_role,omitempty"`
+	SpeechId *string `json:"speech_id,omitempty"`
+	SpeechNumber *int `json:"speech_number,omitempty"`
+	StartRecord *int `json:"start_record,omitempty"`
+	SupplementAndAppendix *bool `json:"supplement_and_appendix,omitempty"`
+	Until *string `json:"until,omitempty"`
 }
 
 // MeetingList is the typed data model for the meeting_list entity.
@@ -62,18 +73,29 @@ type MeetingList struct {
 
 // MeetingListListMatch is the typed request payload for MeetingList.ListTyped.
 type MeetingListListMatch struct {
+	Any *string `json:"any,omitempty"`
 	Closing *bool `json:"closing,omitempty"`
-	Date *string `json:"date,omitempty"`
-	ImageKind *string `json:"imageKind,omitempty"`
-	Issue *string `json:"issue,omitempty"`
-	IssueID *string `json:"issueID,omitempty"`
-	MeetingURL *string `json:"meetingURL,omitempty"`
-	NameOfHouse *string `json:"nameOfHouse,omitempty"`
-	NameOfMeeting *string `json:"nameOfMeeting,omitempty"`
-	PdfURL *string `json:"pdfURL,omitempty"`
-	SearchObject *string `json:"searchObject,omitempty"`
-	Session *int `json:"session,omitempty"`
-	SpeechRecord *[]any `json:"speechRecord,omitempty"`
+	ContentsAndIndex *bool `json:"contents_and_index,omitempty"`
+	From *string `json:"from,omitempty"`
+	IssueFrom *int `json:"issue_from,omitempty"`
+	IssueId *string `json:"issue_id,omitempty"`
+	IssueTo *int `json:"issue_to,omitempty"`
+	MaximumRecord *int `json:"maximum_record,omitempty"`
+	NameOfHouse *string `json:"name_of_house,omitempty"`
+	NameOfMeeting *string `json:"name_of_meeting,omitempty"`
+	RecordPacking *string `json:"record_packing,omitempty"`
+	SearchRange *string `json:"search_range,omitempty"`
+	SessionFrom *int `json:"session_from,omitempty"`
+	SessionTo *int `json:"session_to,omitempty"`
+	Speaker *string `json:"speaker,omitempty"`
+	SpeakerGroup *string `json:"speaker_group,omitempty"`
+	SpeakerPosition *string `json:"speaker_position,omitempty"`
+	SpeakerRole *string `json:"speaker_role,omitempty"`
+	SpeechId *string `json:"speech_id,omitempty"`
+	SpeechNumber *int `json:"speech_number,omitempty"`
+	StartRecord *int `json:"start_record,omitempty"`
+	SupplementAndAppendix *bool `json:"supplement_and_appendix,omitempty"`
+	Until *string `json:"until,omitempty"`
 }
 
 // Speech is the typed data model for the speech entity.
@@ -103,27 +125,29 @@ type Speech struct {
 
 // SpeechListMatch is the typed request payload for Speech.ListTyped.
 type SpeechListMatch struct {
+	Any *string `json:"any,omitempty"`
 	Closing *bool `json:"closing,omitempty"`
-	Date *string `json:"date,omitempty"`
-	ImageKind *string `json:"imageKind,omitempty"`
-	Issue *string `json:"issue,omitempty"`
-	IssueID *string `json:"issueID,omitempty"`
-	MeetingURL *string `json:"meetingURL,omitempty"`
-	NameOfHouse *string `json:"nameOfHouse,omitempty"`
-	NameOfMeeting *string `json:"nameOfMeeting,omitempty"`
-	PdfURL *string `json:"pdfURL,omitempty"`
-	SearchObject *string `json:"searchObject,omitempty"`
-	Session *int `json:"session,omitempty"`
+	ContentsAndIndex *bool `json:"contents_and_index,omitempty"`
+	From *string `json:"from,omitempty"`
+	IssueFrom *int `json:"issue_from,omitempty"`
+	IssueId *string `json:"issue_id,omitempty"`
+	IssueTo *int `json:"issue_to,omitempty"`
+	MaximumRecord *int `json:"maximum_record,omitempty"`
+	NameOfHouse *string `json:"name_of_house,omitempty"`
+	NameOfMeeting *string `json:"name_of_meeting,omitempty"`
+	RecordPacking *string `json:"record_packing,omitempty"`
+	SearchRange *string `json:"search_range,omitempty"`
+	SessionFrom *int `json:"session_from,omitempty"`
+	SessionTo *int `json:"session_to,omitempty"`
 	Speaker *string `json:"speaker,omitempty"`
-	SpeakerGroup *string `json:"speakerGroup,omitempty"`
-	SpeakerPosition *string `json:"speakerPosition,omitempty"`
-	SpeakerRole *string `json:"speakerRole,omitempty"`
-	SpeakerYomi *string `json:"speakerYomi,omitempty"`
-	Speech *string `json:"speech,omitempty"`
-	SpeechID *string `json:"speechID,omitempty"`
-	SpeechOrder *int `json:"speechOrder,omitempty"`
-	SpeechURL *string `json:"speechURL,omitempty"`
-	StartPage *int `json:"startPage,omitempty"`
+	SpeakerGroup *string `json:"speaker_group,omitempty"`
+	SpeakerPosition *string `json:"speaker_position,omitempty"`
+	SpeakerRole *string `json:"speaker_role,omitempty"`
+	SpeechId *string `json:"speech_id,omitempty"`
+	SpeechNumber *int `json:"speech_number,omitempty"`
+	StartRecord *int `json:"start_record,omitempty"`
+	SupplementAndAppendix *bool `json:"supplement_and_appendix,omitempty"`
+	Until *string `json:"until,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
