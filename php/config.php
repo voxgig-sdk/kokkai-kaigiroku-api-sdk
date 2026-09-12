@@ -65,6 +65,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$BOOLEAN`',
             ],
             [
+              'format' => 'date',
               'name' => 'date',
               'short' => '開催日付',
               'type' => '`$STRING`',
@@ -85,6 +86,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'meetingURL',
               'short' => '会議録テキスト表示画面のURL',
               'type' => '`$STRING`',
@@ -100,6 +102,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'pdfURL',
               'short' => '会議録PDF表示画面のURL',
               'type' => '`$STRING`',
@@ -278,8 +281,10 @@ class KokkaiKaigirokuApiConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/meeting',
-                  'parts' => [
-                    'meeting',
+                  'segments' => [
+                    [
+                      'lit' => 'meeting',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -312,6 +317,9 @@ class KokkaiKaigirokuApiConfig
                     'req' => '`reqdata`',
                     'res' => '`body.meetingRecord`',
                   ],
+                  'parts' => [
+                    'meeting',
+                  ],
                 ],
               ],
             ],
@@ -328,6 +336,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$BOOLEAN`',
             ],
             [
+              'format' => 'date',
               'name' => 'date',
               'short' => '開催日付',
               'type' => '`$STRING`',
@@ -348,6 +357,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'meetingURL',
               'short' => '会議録テキスト表示画面のURL',
               'type' => '`$STRING`',
@@ -363,6 +373,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'pdfURL',
               'short' => '会議録PDF表示画面のURL',
               'type' => '`$STRING`',
@@ -541,8 +552,10 @@ class KokkaiKaigirokuApiConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/meeting_list',
-                  'parts' => [
-                    'meeting_list',
+                  'segments' => [
+                    [
+                      'lit' => 'meeting_list',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -575,6 +588,9 @@ class KokkaiKaigirokuApiConfig
                     'req' => '`reqdata`',
                     'res' => '`body.meetingRecord`',
                   ],
+                  'parts' => [
+                    'meeting_list',
+                  ],
                 ],
               ],
             ],
@@ -591,6 +607,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$BOOLEAN`',
             ],
             [
+              'format' => 'date',
               'name' => 'date',
               'short' => '開催日付',
               'type' => '`$STRING`',
@@ -611,6 +628,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'meetingURL',
               'short' => '会議録テキスト表示画面のURL',
               'type' => '`$STRING`',
@@ -626,6 +644,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'pdfURL',
               'short' => '会議録PDF表示画面のURL',
               'type' => '`$STRING`',
@@ -681,6 +700,7 @@ class KokkaiKaigirokuApiConfig
               'type' => '`$INTEGER`',
             ],
             [
+              'format' => 'uri',
               'name' => 'speechURL',
               'short' => '発言URL',
               'type' => '`$STRING`',
@@ -850,8 +870,10 @@ class KokkaiKaigirokuApiConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/speech',
-                  'parts' => [
-                    'speech',
+                  'segments' => [
+                    [
+                      'lit' => 'speech',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -883,6 +905,9 @@ class KokkaiKaigirokuApiConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.speechRecord`',
+                  ],
+                  'parts' => [
+                    'speech',
                   ],
                 ],
               ],

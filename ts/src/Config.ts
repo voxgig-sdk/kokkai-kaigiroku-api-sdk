@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -78,6 +89,7 @@ class Config {
           "type": "`$BOOLEAN`"
         },
         {
+          "format": "date",
           "name": "date",
           "short": "開催日付",
           "type": "`$STRING`"
@@ -98,6 +110,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "meetingURL",
           "short": "会議録テキスト表示画面のURL",
           "type": "`$STRING`"
@@ -113,6 +126,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "pdfURL",
           "short": "会議録PDF表示画面のURL",
           "type": "`$STRING`"
@@ -291,8 +305,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/meeting",
-              "parts": [
-                "meeting"
+              "segments": [
+                {
+                  "lit": "meeting"
+                }
               ],
               "select": {
                 "exist": [
@@ -324,7 +340,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.meetingRecord`"
-              }
+              },
+              "parts": [
+                "meeting"
+              ]
             }
           ]
         }
@@ -341,6 +360,7 @@ class Config {
           "type": "`$BOOLEAN`"
         },
         {
+          "format": "date",
           "name": "date",
           "short": "開催日付",
           "type": "`$STRING`"
@@ -361,6 +381,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "meetingURL",
           "short": "会議録テキスト表示画面のURL",
           "type": "`$STRING`"
@@ -376,6 +397,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "pdfURL",
           "short": "会議録PDF表示画面のURL",
           "type": "`$STRING`"
@@ -554,8 +576,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/meeting_list",
-              "parts": [
-                "meeting_list"
+              "segments": [
+                {
+                  "lit": "meeting_list"
+                }
               ],
               "select": {
                 "exist": [
@@ -587,7 +611,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.meetingRecord`"
-              }
+              },
+              "parts": [
+                "meeting_list"
+              ]
             }
           ]
         }
@@ -604,6 +631,7 @@ class Config {
           "type": "`$BOOLEAN`"
         },
         {
+          "format": "date",
           "name": "date",
           "short": "開催日付",
           "type": "`$STRING`"
@@ -624,6 +652,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "meetingURL",
           "short": "会議録テキスト表示画面のURL",
           "type": "`$STRING`"
@@ -639,6 +668,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "pdfURL",
           "short": "会議録PDF表示画面のURL",
           "type": "`$STRING`"
@@ -694,6 +724,7 @@ class Config {
           "type": "`$INTEGER`"
         },
         {
+          "format": "uri",
           "name": "speechURL",
           "short": "発言URL",
           "type": "`$STRING`"
@@ -863,8 +894,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/speech",
-              "parts": [
-                "speech"
+              "segments": [
+                {
+                  "lit": "speech"
+                }
               ],
               "select": {
                 "exist": [
@@ -896,7 +929,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.speechRecord`"
-              }
+              },
+              "parts": [
+                "speech"
+              ]
             }
           ]
         }
@@ -912,6 +948,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 
