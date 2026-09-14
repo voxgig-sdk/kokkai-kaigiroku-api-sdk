@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api'
+import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api-sdk'
 
 const client = new KokkaiKaigirokuApiSDK()
 ```
@@ -555,7 +555,7 @@ kokkai-kaigiroku-api/
 Import the SDK from the package root:
 
 ```ts
-import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api'
+import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api-sdk'
 ```
 
 ### Entity state

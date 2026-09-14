@@ -105,7 +105,7 @@ local results, err = client:Meeting():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/kokkai-kaigiroku-api` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases) |
+| TypeScript | `@voxgig-sdk/kokkai-kaigiroku-api-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases) |
 | Python | `voxgig-sdk-kokkai-kaigiroku-api` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases) |
 | PHP | `voxgig-sdk/kokkai-kaigiroku-api` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go` | `go get github.com/voxgig-sdk/kokkai-kaigiroku-api-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Meeting():list()
 ### TypeScript
 
 ```ts
-import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api'
+import { KokkaiKaigirokuApiSDK } from '@voxgig-sdk/kokkai-kaigiroku-api-sdk'
 
 const client = new KokkaiKaigirokuApiSDK()
 

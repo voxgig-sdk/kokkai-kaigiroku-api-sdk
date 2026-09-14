@@ -1881,7 +1881,7 @@
             "registry": {
               "active": false,
               "name": "npm",
-              "package": "",
+              "package": "@voxgig-sdk/kokkai-kaigiroku-api-sdk",
               "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {
