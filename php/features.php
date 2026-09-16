@@ -4,7 +4,10 @@ declare(strict_types=1);
 // KokkaiKaigirokuApi SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class KokkaiKaigirokuApiFeatures
@@ -14,8 +17,14 @@ class KokkaiKaigirokuApiFeatures
         switch ($name) {
             case "base":
                 return new KokkaiKaigirokuApiBaseFeature();
+            case "ratelimit":
+                return new KokkaiKaigirokuApiRatelimitFeature();
+            case "retry":
+                return new KokkaiKaigirokuApiRetryFeature();
             case "test":
                 return new KokkaiKaigirokuApiTestFeature();
+            case "timeout":
+                return new KokkaiKaigirokuApiTimeoutFeature();
             default:
                 return new KokkaiKaigirokuApiBaseFeature();
         }
@@ -31,7 +40,10 @@ class KokkaiKaigirokuApiFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

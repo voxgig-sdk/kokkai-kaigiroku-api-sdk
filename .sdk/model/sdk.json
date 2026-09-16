@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "meeting": {
           "active": true,
@@ -321,6 +385,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /meeting",
+                    "json": "{\"operationId\":\"getMeeting\",\"parameters\":[{\"description\":\"検索結果の取得開始位置（1～検索件数の範囲）\",\"in\":\"query\",\"name\":\"startRecord\",\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"一回のリクエストで取得できるレコード数（1～10の範囲）\",\"in\":\"query\",\"name\":\"maximumRecords\",\"schema\":{\"default\":3,\"maximum\":10,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"院名（衆議院、参議院、両院、両院協議会のいずれか）\",\"in\":\"query\",\"name\":\"nameOfHouse\",\"schema\":{\"enum\":[\"衆議院\",\"参議院\",\"両院\",\"両院協議会\"],\"type\":\"string\"}},{\"description\":\"会議名（本会議、委員会等の会議名。部分一致検索。半角スペース区切りで複数指定可能（OR検索））\",\"in\":\"query\",\"name\":\"nameOfMeeting\",\"schema\":{\"type\":\"string\"}},{\"description\":\"検索語（発言内容等に含まれる言葉。部分一致検索。半角スペース区切りで複数指定可能（AND検索））\",\"in\":\"query\",\"name\":\"any\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者名（部分一致検索。半角スペース区切りで複数指定可能（OR検索））\",\"in\":\"query\",\"name\":\"speaker\",\"schema\":{\"type\":\"string\"}},{\"description\":\"開会日付の始点（YYYY-MM-DD形式）\",\"in\":\"query\",\"name\":\"from\",\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"開会日付の終点（YYYY-MM-DD形式）\",\"in\":\"query\",\"name\":\"until\",\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"検索対象を追録・附録に限定するか否か\",\"in\":\"query\",\"name\":\"supplementAndAppendix\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"検索対象を目次・索引に限定するか否か\",\"in\":\"query\",\"name\":\"contentsAndIndex\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"検索語を指定した際の検索対象箇所\",\"in\":\"query\",\"name\":\"searchRange\",\"schema\":{\"default\":\"冒頭・本文\",\"enum\":[\"冒頭\",\"本文\",\"冒頭・本文\"],\"type\":\"string\"}},{\"description\":\"検索対象を閉会中の会議録に限定するか否か\",\"in\":\"query\",\"name\":\"closing\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"発言番号（0以上の整数。完全一致検索）\",\"in\":\"query\",\"name\":\"speechNumber\",\"schema\":{\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"発言者の肩書き（部分一致検索）\",\"in\":\"query\",\"name\":\"speakerPosition\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者の所属会派（部分一致検索）\",\"in\":\"query\",\"name\":\"speakerGroup\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者の役割\",\"in\":\"query\",\"name\":\"speakerRole\",\"schema\":{\"enum\":[\"証人\",\"参考人\",\"公述人\"],\"type\":\"string\"}},{\"description\":\"発言ID（会議録ID_発言番号の書式。完全一致検索）\",\"in\":\"query\",\"name\":\"speechID\",\"schema\":{\"pattern\":\"^[A-Za-z0-9]{21}_[0-9]{3,4}$\",\"type\":\"string\"}},{\"description\":\"会議録ID（21桁の英数字。完全一致検索）\",\"in\":\"query\",\"name\":\"issueID\",\"schema\":{\"pattern\":\"^[A-Za-z0-9]{21}$\",\"type\":\"string\"}},{\"description\":\"国会回次の始まり（3桁までの自然数）\",\"in\":\"query\",\"name\":\"sessionFrom\",\"schema\":{\"maximum\":999,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"国会回次の終わり（3桁までの自然数）\",\"in\":\"query\",\"name\":\"sessionTo\",\"schema\":{\"maximum\":999,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"号数の始まり（3桁までの整数）\",\"in\":\"query\",\"name\":\"issueFrom\",\"schema\":{\"maximum\":999,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"号数の終わり（3桁までの整数）\",\"in\":\"query\",\"name\":\"issueTo\",\"schema\":{\"maximum\":999,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"応答ファイルの形式\",\"in\":\"query\",\"name\":\"recordPacking\",\"schema\":{\"default\":\"xml\",\"enum\":[\"xml\",\"json\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meetingRecord\":{\"items\":{\"properties\":{\"closing\":{\"description\":\"閉会中フラグ\",\"type\":\"boolean\"},\"date\":{\"description\":\"開催日付\",\"format\":\"date\",\"type\":\"string\"},\"imageKind\":{\"description\":\"イメージ種別（会議録・目次・索引・附録・追録）\",\"type\":\"string\"},\"issue\":{\"description\":\"号数\",\"type\":\"string\"},\"issueID\":{\"description\":\"会議録ID\",\"type\":\"string\"},\"meetingURL\":{\"description\":\"会議録テキスト表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"nameOfHouse\":{\"description\":\"院名\",\"type\":\"string\"},\"nameOfMeeting\":{\"description\":\"会議名\",\"type\":\"string\"},\"pdfURL\":{\"description\":\"会議録PDF表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"searchObject\":{\"description\":\"検索対象箇所（議事冒頭・本文）\",\"type\":\"string\"},\"session\":{\"description\":\"国会回次\",\"type\":\"integer\"},\"speechRecord\":{\"items\":{\"properties\":{\"createTime\":{\"description\":\"レコード登録日時\",\"format\":\"date-time\",\"type\":\"string\"},\"speaker\":{\"description\":\"発言者名\",\"type\":\"string\"},\"speakerGroup\":{\"description\":\"発言者所属会派\",\"type\":\"string\"},\"speakerPosition\":{\"description\":\"発言者肩書き\",\"type\":\"string\"},\"speakerRole\":{\"description\":\"発言者役割\",\"type\":\"string\"},\"speakerYomi\":{\"description\":\"発言者よみ\",\"type\":\"string\"},\"speech\":{\"description\":\"発言\",\"type\":\"string\"},\"speechID\":{\"description\":\"発言ID\",\"type\":\"string\"},\"speechOrder\":{\"description\":\"発言番号\",\"type\":\"integer\"},\"speechURL\":{\"description\":\"発言URL\",\"format\":\"uri\",\"type\":\"string\"},\"startPage\":{\"description\":\"発言が掲載されている開始ページ\",\"type\":\"integer\"},\"updateTime\":{\"description\":\"レコード更新日時\",\"format\":\"date-time\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"},\"nextRecordPosition\":{\"description\":\"次開始位置\",\"type\":\"integer\"},\"numberOfRecords\":{\"description\":\"総結果件数\",\"type\":\"integer\"},\"numberOfReturn\":{\"description\":\"返戻件数\",\"type\":\"integer\"},\"startRecord\":{\"description\":\"開始位置\",\"type\":\"integer\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"properties\":{\"nextRecordPosition\":{\"description\":\"次開始位置\",\"type\":\"integer\"},\"numberOfRecords\":{\"description\":\"総結果件数\",\"type\":\"integer\"},\"numberOfReturn\":{\"description\":\"返戻件数\",\"type\":\"integer\"},\"records\":{\"items\":{\"properties\":{\"closing\":{\"description\":\"閉会中フラグ\",\"type\":\"boolean\"},\"date\":{\"description\":\"開催日付\",\"format\":\"date\",\"type\":\"string\"},\"imageKind\":{\"description\":\"イメージ種別（会議録・目次・索引・附録・追録）\",\"type\":\"string\"},\"issue\":{\"description\":\"号数\",\"type\":\"string\"},\"issueID\":{\"description\":\"会議録ID\",\"type\":\"string\"},\"meetingURL\":{\"description\":\"会議録テキスト表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"nameOfHouse\":{\"description\":\"院名\",\"type\":\"string\"},\"nameOfMeeting\":{\"description\":\"会議名\",\"type\":\"string\"},\"pdfURL\":{\"description\":\"会議録PDF表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"searchObject\":{\"description\":\"検索対象箇所（議事冒頭・本文）\",\"type\":\"string\"},\"session\":{\"description\":\"国会回次\",\"type\":\"integer\"},\"speechRecord\":{\"items\":{\"properties\":{\"createTime\":{\"description\":\"レコード登録日時\",\"format\":\"date-time\",\"type\":\"string\"},\"speaker\":{\"description\":\"発言者名\",\"type\":\"string\"},\"speakerGroup\":{\"description\":\"発言者所属会派\",\"type\":\"string\"},\"speakerPosition\":{\"description\":\"発言者肩書き\",\"type\":\"string\"},\"speakerRole\":{\"description\":\"発言者役割\",\"type\":\"string\"},\"speakerYomi\":{\"description\":\"発言者よみ\",\"type\":\"string\"},\"speech\":{\"description\":\"発言\",\"type\":\"string\"},\"speechID\":{\"description\":\"発言ID\",\"type\":\"string\"},\"speechOrder\":{\"description\":\"発言番号\",\"type\":\"integer\"},\"speechURL\":{\"description\":\"発言URL\",\"format\":\"uri\",\"type\":\"string\"},\"startPage\":{\"description\":\"発言が掲載されている開始ページ\",\"type\":\"integer\"},\"updateTime\":{\"description\":\"レコード更新日時\",\"format\":\"date-time\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"},\"startRecord\":{\"description\":\"開始位置\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"成功時のレスポンス\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"details\":{\"description\":\"エラーメッセージの詳細\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"message\":{\"description\":\"エラーメッセージ\",\"type\":\"string\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"properties\":{\"diagnostics\":{\"properties\":{\"diagnostic\":{\"properties\":{\"details\":{\"description\":\"エラーメッセージの詳細\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"message\":{\"description\":\"エラーメッセージ\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"エラー発生時のレスポンス\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -664,6 +734,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /meeting_list",
+                    "json": "{\"operationId\":\"getMeetingList\",\"parameters\":[{\"description\":\"検索結果の取得開始位置（1～検索件数の範囲）\",\"in\":\"query\",\"name\":\"startRecord\",\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"一回のリクエストで取得できるレコード数（1～100の範囲）\",\"in\":\"query\",\"name\":\"maximumRecords\",\"schema\":{\"default\":30,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"院名（衆議院、参議院、両院、両院協議会のいずれか）\",\"in\":\"query\",\"name\":\"nameOfHouse\",\"schema\":{\"enum\":[\"衆議院\",\"参議院\",\"両院\",\"両院協議会\"],\"type\":\"string\"}},{\"description\":\"会議名（本会議、委員会等の会議名。部分一致検索。半角スペース区切りで複数指定可能（OR検索））\",\"in\":\"query\",\"name\":\"nameOfMeeting\",\"schema\":{\"type\":\"string\"}},{\"description\":\"検索語（発言内容等に含まれる言葉。部分一致検索。半角スペース区切りで複数指定可能（AND検索））\",\"in\":\"query\",\"name\":\"any\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者名（部分一致検索。半角スペース区切りで複数指定可能（OR検索））\",\"in\":\"query\",\"name\":\"speaker\",\"schema\":{\"type\":\"string\"}},{\"description\":\"開会日付の始点（YYYY-MM-DD形式）\",\"in\":\"query\",\"name\":\"from\",\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"開会日付の終点（YYYY-MM-DD形式）\",\"in\":\"query\",\"name\":\"until\",\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"検索対象を追録・附録に限定するか否か\",\"in\":\"query\",\"name\":\"supplementAndAppendix\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"検索対象を目次・索引に限定するか否か\",\"in\":\"query\",\"name\":\"contentsAndIndex\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"検索語を指定した際の検索対象箇所\",\"in\":\"query\",\"name\":\"searchRange\",\"schema\":{\"default\":\"冒頭・本文\",\"enum\":[\"冒頭\",\"本文\",\"冒頭・本文\"],\"type\":\"string\"}},{\"description\":\"検索対象を閉会中の会議録に限定するか否か\",\"in\":\"query\",\"name\":\"closing\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"発言番号（0以上の整数。完全一致検索）\",\"in\":\"query\",\"name\":\"speechNumber\",\"schema\":{\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"発言者の肩書き（部分一致検索）\",\"in\":\"query\",\"name\":\"speakerPosition\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者の所属会派（部分一致検索）\",\"in\":\"query\",\"name\":\"speakerGroup\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者の役割\",\"in\":\"query\",\"name\":\"speakerRole\",\"schema\":{\"enum\":[\"証人\",\"参考人\",\"公述人\"],\"type\":\"string\"}},{\"description\":\"発言ID（会議録ID_発言番号の書式。完全一致検索）\",\"in\":\"query\",\"name\":\"speechID\",\"schema\":{\"pattern\":\"^[A-Za-z0-9]{21}_[0-9]{3,4}$\",\"type\":\"string\"}},{\"description\":\"会議録ID（21桁の英数字。完全一致検索）\",\"in\":\"query\",\"name\":\"issueID\",\"schema\":{\"pattern\":\"^[A-Za-z0-9]{21}$\",\"type\":\"string\"}},{\"description\":\"国会回次の始まり（3桁までの自然数）\",\"in\":\"query\",\"name\":\"sessionFrom\",\"schema\":{\"maximum\":999,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"国会回次の終わり（3桁までの自然数）\",\"in\":\"query\",\"name\":\"sessionTo\",\"schema\":{\"maximum\":999,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"号数の始まり（3桁までの整数）\",\"in\":\"query\",\"name\":\"issueFrom\",\"schema\":{\"maximum\":999,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"号数の終わり（3桁までの整数）\",\"in\":\"query\",\"name\":\"issueTo\",\"schema\":{\"maximum\":999,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"応答ファイルの形式\",\"in\":\"query\",\"name\":\"recordPacking\",\"schema\":{\"default\":\"xml\",\"enum\":[\"xml\",\"json\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"meetingRecord\":{\"items\":{\"properties\":{\"closing\":{\"description\":\"閉会中フラグ\",\"type\":\"boolean\"},\"date\":{\"description\":\"開催日付\",\"format\":\"date\",\"type\":\"string\"},\"imageKind\":{\"description\":\"イメージ種別（会議録・目次・索引・附録・追録）\",\"type\":\"string\"},\"issue\":{\"description\":\"号数\",\"type\":\"string\"},\"issueID\":{\"description\":\"会議録ID\",\"type\":\"string\"},\"meetingURL\":{\"description\":\"会議録テキスト表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"nameOfHouse\":{\"description\":\"院名\",\"type\":\"string\"},\"nameOfMeeting\":{\"description\":\"会議名\",\"type\":\"string\"},\"pdfURL\":{\"description\":\"会議録PDF表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"searchObject\":{\"description\":\"検索対象箇所（議事冒頭・本文）\",\"type\":\"string\"},\"session\":{\"description\":\"国会回次\",\"type\":\"integer\"},\"speechRecord\":{\"items\":{\"properties\":{\"speaker\":{\"description\":\"発言者名\",\"type\":\"string\"},\"speechID\":{\"description\":\"発言ID\",\"type\":\"string\"},\"speechOrder\":{\"description\":\"発言番号\",\"type\":\"integer\"},\"speechURL\":{\"description\":\"発言URL\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"},\"nextRecordPosition\":{\"description\":\"次開始位置\",\"type\":\"integer\"},\"numberOfRecords\":{\"description\":\"総結果件数\",\"type\":\"integer\"},\"numberOfReturn\":{\"description\":\"返戻件数\",\"type\":\"integer\"},\"startRecord\":{\"description\":\"開始位置\",\"type\":\"integer\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"properties\":{\"nextRecordPosition\":{\"description\":\"次開始位置\",\"type\":\"integer\"},\"numberOfRecords\":{\"description\":\"総結果件数\",\"type\":\"integer\"},\"numberOfReturn\":{\"description\":\"返戻件数\",\"type\":\"integer\"},\"records\":{\"items\":{\"properties\":{\"closing\":{\"description\":\"閉会中フラグ\",\"type\":\"boolean\"},\"date\":{\"description\":\"開催日付\",\"format\":\"date\",\"type\":\"string\"},\"imageKind\":{\"description\":\"イメージ種別（会議録・目次・索引・附録・追録）\",\"type\":\"string\"},\"issue\":{\"description\":\"号数\",\"type\":\"string\"},\"issueID\":{\"description\":\"会議録ID\",\"type\":\"string\"},\"meetingURL\":{\"description\":\"会議録テキスト表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"nameOfHouse\":{\"description\":\"院名\",\"type\":\"string\"},\"nameOfMeeting\":{\"description\":\"会議名\",\"type\":\"string\"},\"pdfURL\":{\"description\":\"会議録PDF表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"searchObject\":{\"description\":\"検索対象箇所（議事冒頭・本文）\",\"type\":\"string\"},\"session\":{\"description\":\"国会回次\",\"type\":\"integer\"},\"speechRecord\":{\"items\":{\"properties\":{\"speaker\":{\"description\":\"発言者名\",\"type\":\"string\"},\"speechID\":{\"description\":\"発言ID\",\"type\":\"string\"},\"speechOrder\":{\"description\":\"発言番号\",\"type\":\"integer\"},\"speechURL\":{\"description\":\"発言URL\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"},\"startRecord\":{\"description\":\"開始位置\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"成功時のレスポンス\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"details\":{\"description\":\"エラーメッセージの詳細\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"message\":{\"description\":\"エラーメッセージ\",\"type\":\"string\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"properties\":{\"diagnostics\":{\"properties\":{\"diagnostic\":{\"properties\":{\"details\":{\"description\":\"エラーメッセージの詳細\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"message\":{\"description\":\"エラーメッセージ\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"エラー発生時のレスポンス\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -1073,6 +1149,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /speech",
+                    "json": "{\"operationId\":\"getSpeech\",\"parameters\":[{\"description\":\"検索結果の取得開始位置（1～検索件数の範囲）\",\"in\":\"query\",\"name\":\"startRecord\",\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"一回のリクエストで取得できるレコード数（1～100の範囲）\",\"in\":\"query\",\"name\":\"maximumRecords\",\"schema\":{\"default\":30,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"院名（衆議院、参議院、両院、両院協議会のいずれか）\",\"in\":\"query\",\"name\":\"nameOfHouse\",\"schema\":{\"enum\":[\"衆議院\",\"参議院\",\"両院\",\"両院協議会\"],\"type\":\"string\"}},{\"description\":\"会議名（本会議、委員会等の会議名。部分一致検索。半角スペース区切りで複数指定可能（OR検索））\",\"in\":\"query\",\"name\":\"nameOfMeeting\",\"schema\":{\"type\":\"string\"}},{\"description\":\"検索語（発言内容等に含まれる言葉。部分一致検索。半角スペース区切りで複数指定可能（AND検索））\",\"in\":\"query\",\"name\":\"any\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者名（部分一致検索。半角スペース区切りで複数指定可能（OR検索））\",\"in\":\"query\",\"name\":\"speaker\",\"schema\":{\"type\":\"string\"}},{\"description\":\"開会日付の始点（YYYY-MM-DD形式）\",\"in\":\"query\",\"name\":\"from\",\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"開会日付の終点（YYYY-MM-DD形式）\",\"in\":\"query\",\"name\":\"until\",\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"検索対象を追録・附録に限定するか否か\",\"in\":\"query\",\"name\":\"supplementAndAppendix\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"検索対象を目次・索引に限定するか否か\",\"in\":\"query\",\"name\":\"contentsAndIndex\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"検索語を指定した際の検索対象箇所\",\"in\":\"query\",\"name\":\"searchRange\",\"schema\":{\"default\":\"冒頭・本文\",\"enum\":[\"冒頭\",\"本文\",\"冒頭・本文\"],\"type\":\"string\"}},{\"description\":\"検索対象を閉会中の会議録に限定するか否か\",\"in\":\"query\",\"name\":\"closing\",\"schema\":{\"default\":false,\"type\":\"boolean\"}},{\"description\":\"発言番号（0以上の整数。完全一致検索）\",\"in\":\"query\",\"name\":\"speechNumber\",\"schema\":{\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"発言者の肩書き（部分一致検索）\",\"in\":\"query\",\"name\":\"speakerPosition\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者の所属会派（部分一致検索）\",\"in\":\"query\",\"name\":\"speakerGroup\",\"schema\":{\"type\":\"string\"}},{\"description\":\"発言者の役割\",\"in\":\"query\",\"name\":\"speakerRole\",\"schema\":{\"enum\":[\"証人\",\"参考人\",\"公述人\"],\"type\":\"string\"}},{\"description\":\"発言ID（会議録ID_発言番号の書式。完全一致検索）\",\"in\":\"query\",\"name\":\"speechID\",\"schema\":{\"pattern\":\"^[A-Za-z0-9]{21}_[0-9]{3,4}$\",\"type\":\"string\"}},{\"description\":\"会議録ID（21桁の英数字。完全一致検索）\",\"in\":\"query\",\"name\":\"issueID\",\"schema\":{\"pattern\":\"^[A-Za-z0-9]{21}$\",\"type\":\"string\"}},{\"description\":\"国会回次の始まり（3桁までの自然数）\",\"in\":\"query\",\"name\":\"sessionFrom\",\"schema\":{\"maximum\":999,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"国会回次の終わり（3桁までの自然数）\",\"in\":\"query\",\"name\":\"sessionTo\",\"schema\":{\"maximum\":999,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"号数の始まり（3桁までの整数）\",\"in\":\"query\",\"name\":\"issueFrom\",\"schema\":{\"maximum\":999,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"号数の終わり（3桁までの整数）\",\"in\":\"query\",\"name\":\"issueTo\",\"schema\":{\"maximum\":999,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"応答ファイルの形式\",\"in\":\"query\",\"name\":\"recordPacking\",\"schema\":{\"default\":\"xml\",\"enum\":[\"xml\",\"json\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"nextRecordPosition\":{\"description\":\"次開始位置\",\"type\":\"integer\"},\"numberOfRecords\":{\"description\":\"総結果件数\",\"type\":\"integer\"},\"numberOfReturn\":{\"description\":\"返戻件数\",\"type\":\"integer\"},\"speechRecord\":{\"items\":{\"properties\":{\"closing\":{\"description\":\"閉会中フラグ\",\"type\":\"boolean\"},\"date\":{\"description\":\"開催日付\",\"format\":\"date\",\"type\":\"string\"},\"imageKind\":{\"description\":\"イメージ種別（会議録・目次・索引・附録・追録）\",\"type\":\"string\"},\"issue\":{\"description\":\"号数\",\"type\":\"string\"},\"issueID\":{\"description\":\"会議録ID\",\"type\":\"string\"},\"meetingURL\":{\"description\":\"会議録テキスト表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"nameOfHouse\":{\"description\":\"院名\",\"type\":\"string\"},\"nameOfMeeting\":{\"description\":\"会議名\",\"type\":\"string\"},\"pdfURL\":{\"description\":\"会議録PDF表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"searchObject\":{\"description\":\"検索対象箇所（議事冒頭・本文）\",\"type\":\"string\"},\"session\":{\"description\":\"国会回次\",\"type\":\"integer\"},\"speaker\":{\"description\":\"発言者名\",\"type\":\"string\"},\"speakerGroup\":{\"description\":\"発言者所属会派\",\"type\":\"string\"},\"speakerPosition\":{\"description\":\"発言者肩書き\",\"type\":\"string\"},\"speakerRole\":{\"description\":\"発言者役割\",\"type\":\"string\"},\"speakerYomi\":{\"description\":\"発言者よみ\",\"type\":\"string\"},\"speech\":{\"description\":\"発言\",\"type\":\"string\"},\"speechID\":{\"description\":\"発言ID\",\"type\":\"string\"},\"speechOrder\":{\"description\":\"発言番号\",\"type\":\"integer\"},\"speechURL\":{\"description\":\"発言URL\",\"format\":\"uri\",\"type\":\"string\"},\"startPage\":{\"description\":\"発言が掲載されている開始ページ\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"},\"startRecord\":{\"description\":\"開始位置\",\"type\":\"integer\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"properties\":{\"nextRecordPosition\":{\"description\":\"次開始位置\",\"type\":\"integer\"},\"numberOfRecords\":{\"description\":\"総結果件数\",\"type\":\"integer\"},\"numberOfReturn\":{\"description\":\"返戻件数\",\"type\":\"integer\"},\"records\":{\"items\":{\"properties\":{\"closing\":{\"description\":\"閉会中フラグ\",\"type\":\"boolean\"},\"date\":{\"description\":\"開催日付\",\"format\":\"date\",\"type\":\"string\"},\"imageKind\":{\"description\":\"イメージ種別（会議録・目次・索引・附録・追録）\",\"type\":\"string\"},\"issue\":{\"description\":\"号数\",\"type\":\"string\"},\"issueID\":{\"description\":\"会議録ID\",\"type\":\"string\"},\"meetingURL\":{\"description\":\"会議録テキスト表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"nameOfHouse\":{\"description\":\"院名\",\"type\":\"string\"},\"nameOfMeeting\":{\"description\":\"会議名\",\"type\":\"string\"},\"pdfURL\":{\"description\":\"会議録PDF表示画面のURL\",\"format\":\"uri\",\"type\":\"string\"},\"searchObject\":{\"description\":\"検索対象箇所（議事冒頭・本文）\",\"type\":\"string\"},\"session\":{\"description\":\"国会回次\",\"type\":\"integer\"},\"speaker\":{\"description\":\"発言者名\",\"type\":\"string\"},\"speakerGroup\":{\"description\":\"発言者所属会派\",\"type\":\"string\"},\"speakerPosition\":{\"description\":\"発言者肩書き\",\"type\":\"string\"},\"speakerRole\":{\"description\":\"発言者役割\",\"type\":\"string\"},\"speakerYomi\":{\"description\":\"発言者よみ\",\"type\":\"string\"},\"speech\":{\"description\":\"発言\",\"type\":\"string\"},\"speechID\":{\"description\":\"発言ID\",\"type\":\"string\"},\"speechOrder\":{\"description\":\"発言番号\",\"type\":\"integer\"},\"speechURL\":{\"description\":\"発言URL\",\"format\":\"uri\",\"type\":\"string\"},\"startPage\":{\"description\":\"発言が掲載されている開始ページ\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"},\"startRecord\":{\"description\":\"開始位置\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"成功時のレスポンス\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"details\":{\"description\":\"エラーメッセージの詳細\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"message\":{\"description\":\"エラーメッセージ\",\"type\":\"string\"}},\"type\":\"object\"}},\"application/xml\":{\"schema\":{\"properties\":{\"diagnostics\":{\"properties\":{\"diagnostic\":{\"properties\":{\"details\":{\"description\":\"エラーメッセージの詳細\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"message\":{\"description\":\"エラーメッセージ\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"エラー発生時のレスポンス\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/speech",
@@ -1122,13 +1204,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -1218,6 +1510,102 @@
           },
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
+          "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
           "version": "0.0.1"
         }
       },
@@ -1321,6 +1709,48 @@
         "website": "https://kokkai.ndl.go.jp"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1875,6 +2305,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1916,7 +2347,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

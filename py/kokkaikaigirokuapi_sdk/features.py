@@ -1,12 +1,18 @@
 # KokkaiKaigirokuApi SDK feature factory
 
 from kokkaikaigirokuapi_sdk.feature.base_feature import KokkaiKaigirokuApiBaseFeature
+from kokkaikaigirokuapi_sdk.feature.ratelimit_feature import KokkaiKaigirokuApiRatelimitFeature
+from kokkaikaigirokuapi_sdk.feature.retry_feature import KokkaiKaigirokuApiRetryFeature
 from kokkaikaigirokuapi_sdk.feature.test_feature import KokkaiKaigirokuApiTestFeature
+from kokkaikaigirokuapi_sdk.feature.timeout_feature import KokkaiKaigirokuApiTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: KokkaiKaigirokuApiBaseFeature(),
+    "ratelimit": lambda: KokkaiKaigirokuApiRatelimitFeature(),
+    "retry": lambda: KokkaiKaigirokuApiRetryFeature(),
     "test": lambda: KokkaiKaigirokuApiTestFeature(),
+    "timeout": lambda: KokkaiKaigirokuApiTimeoutFeature(),
 }
 
 
