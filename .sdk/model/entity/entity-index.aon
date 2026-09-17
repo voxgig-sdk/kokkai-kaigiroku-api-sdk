@@ -1,5 +1,5 @@
 # Entity Models
 
-@"meeting.aon"
-@"meeting_list.aon"
-@"speech.aon"
+@"./meeting.aon"
+@"./meeting_list.aon"
+@"./speech.aon"

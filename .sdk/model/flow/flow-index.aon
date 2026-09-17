@@ -1,5 +1,5 @@
 # Flows
 
-@"BasicMeetingFlow.aon"
-@"BasicMeetingListFlow.aon"
-@"BasicSpeechFlow.aon"
+@"./BasicMeetingFlow.aon"
+@"./BasicMeetingListFlow.aon"
+@"./BasicSpeechFlow.aon"

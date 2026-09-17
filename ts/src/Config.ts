@@ -127,15 +127,15 @@ class Config {
 
     entity: {
       
-      meeting: {
-      },
-
-      meeting_list: {
-      },
-
-      speech: {
-      },
-
+        meeting: {
+        },
+  
+        meeting_list: {
+        },
+  
+        speech: {
+        },
+  
     }
   }
 
