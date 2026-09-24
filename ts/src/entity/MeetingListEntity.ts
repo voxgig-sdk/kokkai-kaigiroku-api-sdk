@@ -19,7 +19,6 @@ import type {
   MeetingListListMatch,
 } from '../KokkaiKaigirokuApiTypes'
 
-// TODO: needs Entity superclass
 class MeetingListEntity extends KokkaiKaigirokuApiEntityBase<MeetingList> {
 
   constructor(client: KokkaiKaigirokuApiSDK, entopts: any) {

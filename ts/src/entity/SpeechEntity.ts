@@ -19,7 +19,6 @@ import type {
   SpeechListMatch,
 } from '../KokkaiKaigirokuApiTypes'
 
-// TODO: needs Entity superclass
 class SpeechEntity extends KokkaiKaigirokuApiEntityBase<Speech> {
 
   constructor(client: KokkaiKaigirokuApiSDK, entopts: any) {

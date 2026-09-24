@@ -1,7 +1,7 @@
 // Typed models for the KokkaiKaigirokuApi SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,18 +14,6 @@ import (
 
 // Meeting is the typed data model for the meeting entity.
 type Meeting struct {
-	Closing *bool `json:"closing,omitempty"`
-	Date *string `json:"date,omitempty"`
-	ImageKind *string `json:"imageKind,omitempty"`
-	Issue *string `json:"issue,omitempty"`
-	IssueID *string `json:"issueID,omitempty"`
-	MeetingURL *string `json:"meetingURL,omitempty"`
-	NameOfHouse *string `json:"nameOfHouse,omitempty"`
-	NameOfMeeting *string `json:"nameOfMeeting,omitempty"`
-	PdfURL *string `json:"pdfURL,omitempty"`
-	SearchObject *string `json:"searchObject,omitempty"`
-	Session *int `json:"session,omitempty"`
-	SpeechRecord *[]any `json:"speechRecord,omitempty"`
 }
 
 // MeetingListMatch is the typed request payload for Meeting.ListTyped.
@@ -57,18 +45,6 @@ type MeetingListMatch struct {
 
 // MeetingList is the typed data model for the meeting_list entity.
 type MeetingList struct {
-	Closing *bool `json:"closing,omitempty"`
-	Date *string `json:"date,omitempty"`
-	ImageKind *string `json:"imageKind,omitempty"`
-	Issue *string `json:"issue,omitempty"`
-	IssueID *string `json:"issueID,omitempty"`
-	MeetingURL *string `json:"meetingURL,omitempty"`
-	NameOfHouse *string `json:"nameOfHouse,omitempty"`
-	NameOfMeeting *string `json:"nameOfMeeting,omitempty"`
-	PdfURL *string `json:"pdfURL,omitempty"`
-	SearchObject *string `json:"searchObject,omitempty"`
-	Session *int `json:"session,omitempty"`
-	SpeechRecord *[]any `json:"speechRecord,omitempty"`
 }
 
 // MeetingListListMatch is the typed request payload for MeetingList.ListTyped.
@@ -100,27 +76,6 @@ type MeetingListListMatch struct {
 
 // Speech is the typed data model for the speech entity.
 type Speech struct {
-	Closing *bool `json:"closing,omitempty"`
-	Date *string `json:"date,omitempty"`
-	ImageKind *string `json:"imageKind,omitempty"`
-	Issue *string `json:"issue,omitempty"`
-	IssueID *string `json:"issueID,omitempty"`
-	MeetingURL *string `json:"meetingURL,omitempty"`
-	NameOfHouse *string `json:"nameOfHouse,omitempty"`
-	NameOfMeeting *string `json:"nameOfMeeting,omitempty"`
-	PdfURL *string `json:"pdfURL,omitempty"`
-	SearchObject *string `json:"searchObject,omitempty"`
-	Session *int `json:"session,omitempty"`
-	Speaker *string `json:"speaker,omitempty"`
-	SpeakerGroup *string `json:"speakerGroup,omitempty"`
-	SpeakerPosition *string `json:"speakerPosition,omitempty"`
-	SpeakerRole *string `json:"speakerRole,omitempty"`
-	SpeakerYomi *string `json:"speakerYomi,omitempty"`
-	Speech *string `json:"speech,omitempty"`
-	SpeechID *string `json:"speechID,omitempty"`
-	SpeechOrder *int `json:"speechOrder,omitempty"`
-	SpeechURL *string `json:"speechURL,omitempty"`
-	StartPage *int `json:"startPage,omitempty"`
 }
 
 // SpeechListMatch is the typed request payload for Speech.ListTyped.

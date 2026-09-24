@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SpeechEntity = void 0;
 const KokkaiKaigirokuApiEntityBase_1 = require("../KokkaiKaigirokuApiEntityBase");
-// TODO: needs Entity superclass
 class SpeechEntity extends KokkaiKaigirokuApiEntityBase_1.KokkaiKaigirokuApiEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

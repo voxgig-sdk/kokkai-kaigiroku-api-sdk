@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -116,64 +109,76 @@ class Config {
             "fields": [
                 {
                     "name": "closing",
-                    "short": "閉会中フラグ",
-                    "type": "`$BOOLEAN`"
+                    "title": "Closing",
+                    "type": "`$BOOLEAN`",
+                    "short": "閉会中フラグ"
                 },
                 {
-                    "format": "date",
                     "name": "date",
+                    "title": "Date",
+                    "type": "`$STRING`",
                     "short": "開催日付",
-                    "type": "`$STRING`"
+                    "format": "date"
                 },
                 {
                     "name": "imageKind",
-                    "short": "イメージ種別（会議録・目次・索引・附録・追録）",
-                    "type": "`$STRING`"
+                    "title": "Image Kind",
+                    "type": "`$STRING`",
+                    "short": "イメージ種別（会議録・目次・索引・附録・追録）"
                 },
                 {
                     "name": "issue",
-                    "short": "号数",
-                    "type": "`$STRING`"
+                    "title": "Issue",
+                    "type": "`$STRING`",
+                    "short": "号数"
                 },
                 {
                     "name": "issueID",
-                    "short": "会議録ID",
-                    "type": "`$STRING`"
+                    "title": "Issue Id",
+                    "type": "`$STRING`",
+                    "short": "会議録ID"
                 },
                 {
-                    "format": "uri",
                     "name": "meetingURL",
+                    "title": "Meeting Url",
+                    "type": "`$STRING`",
                     "short": "会議録テキスト表示画面のURL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "nameOfHouse",
-                    "short": "院名",
-                    "type": "`$STRING`"
+                    "title": "Name Of House",
+                    "type": "`$STRING`",
+                    "short": "院名"
                 },
                 {
                     "name": "nameOfMeeting",
-                    "short": "会議名",
-                    "type": "`$STRING`"
+                    "title": "Name Of Meeting",
+                    "type": "`$STRING`",
+                    "short": "会議名"
                 },
                 {
-                    "format": "uri",
                     "name": "pdfURL",
+                    "title": "Pdf Url",
+                    "type": "`$STRING`",
                     "short": "会議録PDF表示画面のURL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "searchObject",
-                    "short": "検索対象箇所（議事冒頭・本文）",
-                    "type": "`$STRING`"
+                    "title": "Search Object",
+                    "type": "`$STRING`",
+                    "short": "検索対象箇所（議事冒頭・本文）"
                 },
                 {
                     "name": "session",
-                    "short": "国会回次",
-                    "type": "`$INTEGER`"
+                    "title": "Session",
+                    "type": "`$INTEGER`",
+                    "short": "国会回次"
                 },
                 {
                     "name": "speechRecord",
+                    "title": "Speech Record",
                     "type": "`$ARRAY`"
                 }
             ],
@@ -184,155 +189,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "kind": "query",
-                                        "name": "any",
-                                        "orig": "any",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "closing",
-                                        "orig": "closing",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "contents_and_index",
-                                        "orig": "contents_and_index",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "from",
-                                        "orig": "from",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_from",
-                                        "orig": "issue_from",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_id",
-                                        "orig": "issue_id",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_to",
-                                        "orig": "issue_to",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 3,
-                                        "kind": "query",
-                                        "name": "maximum_record",
-                                        "orig": "maximum_record",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "name_of_house",
-                                        "orig": "name_of_house",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "name_of_meeting",
-                                        "orig": "name_of_meeting",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "xml",
-                                        "kind": "query",
-                                        "name": "record_packing",
-                                        "orig": "record_packing",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "冒頭・本文",
-                                        "kind": "query",
-                                        "name": "search_range",
-                                        "orig": "search_range",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "session_from",
-                                        "orig": "session_from",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "session_to",
-                                        "orig": "session_to",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker",
-                                        "orig": "speaker",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_group",
-                                        "orig": "speaker_group",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_position",
-                                        "orig": "speaker_position",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_role",
-                                        "orig": "speaker_role",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speech_id",
-                                        "orig": "speech_id",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speech_number",
-                                        "orig": "speech_number",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 1,
-                                        "kind": "query",
-                                        "name": "start_record",
-                                        "orig": "start_record",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "supplement_and_appendix",
-                                        "orig": "supplement_and_appendix",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "until",
-                                        "orig": "until",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/meeting",
@@ -341,6 +197,163 @@ class Config {
                                     "lit": "meeting"
                                 }
                             ],
+                            "parts": [
+                                "meeting"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.meetingRecord`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "any",
+                                        "orig": "any",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "closing",
+                                        "orig": "closing",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "contents_and_index",
+                                        "orig": "contents_and_index",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "from",
+                                        "orig": "from",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_from",
+                                        "orig": "issue_from",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_id",
+                                        "orig": "issue_id",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_to",
+                                        "orig": "issue_to",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "maximum_record",
+                                        "orig": "maximum_record",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 3
+                                    },
+                                    {
+                                        "name": "name_of_house",
+                                        "orig": "name_of_house",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "name_of_meeting",
+                                        "orig": "name_of_meeting",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "record_packing",
+                                        "orig": "record_packing",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "xml"
+                                    },
+                                    {
+                                        "name": "search_range",
+                                        "orig": "search_range",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "冒頭・本文"
+                                    },
+                                    {
+                                        "name": "session_from",
+                                        "orig": "session_from",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "session_to",
+                                        "orig": "session_to",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker",
+                                        "orig": "speaker",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_group",
+                                        "orig": "speaker_group",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_position",
+                                        "orig": "speaker_position",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_role",
+                                        "orig": "speaker_role",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speech_id",
+                                        "orig": "speech_id",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speech_number",
+                                        "orig": "speech_number",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "start_record",
+                                        "orig": "start_record",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 1
+                                    },
+                                    {
+                                        "name": "supplement_and_appendix",
+                                        "orig": "supplement_and_appendix",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "until",
+                                        "orig": "until",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "any",
@@ -367,14 +380,7 @@ class Config {
                                     "supplement_and_appendix",
                                     "until"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.meetingRecord`"
-                            },
-                            "parts": [
-                                "meeting"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -387,64 +393,76 @@ class Config {
             "fields": [
                 {
                     "name": "closing",
-                    "short": "閉会中フラグ",
-                    "type": "`$BOOLEAN`"
+                    "title": "Closing",
+                    "type": "`$BOOLEAN`",
+                    "short": "閉会中フラグ"
                 },
                 {
-                    "format": "date",
                     "name": "date",
+                    "title": "Date",
+                    "type": "`$STRING`",
                     "short": "開催日付",
-                    "type": "`$STRING`"
+                    "format": "date"
                 },
                 {
                     "name": "imageKind",
-                    "short": "イメージ種別（会議録・目次・索引・附録・追録）",
-                    "type": "`$STRING`"
+                    "title": "Image Kind",
+                    "type": "`$STRING`",
+                    "short": "イメージ種別（会議録・目次・索引・附録・追録）"
                 },
                 {
                     "name": "issue",
-                    "short": "号数",
-                    "type": "`$STRING`"
+                    "title": "Issue",
+                    "type": "`$STRING`",
+                    "short": "号数"
                 },
                 {
                     "name": "issueID",
-                    "short": "会議録ID",
-                    "type": "`$STRING`"
+                    "title": "Issue Id",
+                    "type": "`$STRING`",
+                    "short": "会議録ID"
                 },
                 {
-                    "format": "uri",
                     "name": "meetingURL",
+                    "title": "Meeting Url",
+                    "type": "`$STRING`",
                     "short": "会議録テキスト表示画面のURL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "nameOfHouse",
-                    "short": "院名",
-                    "type": "`$STRING`"
+                    "title": "Name Of House",
+                    "type": "`$STRING`",
+                    "short": "院名"
                 },
                 {
                     "name": "nameOfMeeting",
-                    "short": "会議名",
-                    "type": "`$STRING`"
+                    "title": "Name Of Meeting",
+                    "type": "`$STRING`",
+                    "short": "会議名"
                 },
                 {
-                    "format": "uri",
                     "name": "pdfURL",
+                    "title": "Pdf Url",
+                    "type": "`$STRING`",
                     "short": "会議録PDF表示画面のURL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "searchObject",
-                    "short": "検索対象箇所（議事冒頭・本文）",
-                    "type": "`$STRING`"
+                    "title": "Search Object",
+                    "type": "`$STRING`",
+                    "short": "検索対象箇所（議事冒頭・本文）"
                 },
                 {
                     "name": "session",
-                    "short": "国会回次",
-                    "type": "`$INTEGER`"
+                    "title": "Session",
+                    "type": "`$INTEGER`",
+                    "short": "国会回次"
                 },
                 {
                     "name": "speechRecord",
+                    "title": "Speech Record",
                     "type": "`$ARRAY`"
                 }
             ],
@@ -455,155 +473,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "kind": "query",
-                                        "name": "any",
-                                        "orig": "any",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "closing",
-                                        "orig": "closing",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "contents_and_index",
-                                        "orig": "contents_and_index",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "from",
-                                        "orig": "from",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_from",
-                                        "orig": "issue_from",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_id",
-                                        "orig": "issue_id",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_to",
-                                        "orig": "issue_to",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 30,
-                                        "kind": "query",
-                                        "name": "maximum_record",
-                                        "orig": "maximum_record",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "name_of_house",
-                                        "orig": "name_of_house",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "name_of_meeting",
-                                        "orig": "name_of_meeting",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "xml",
-                                        "kind": "query",
-                                        "name": "record_packing",
-                                        "orig": "record_packing",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "冒頭・本文",
-                                        "kind": "query",
-                                        "name": "search_range",
-                                        "orig": "search_range",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "session_from",
-                                        "orig": "session_from",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "session_to",
-                                        "orig": "session_to",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker",
-                                        "orig": "speaker",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_group",
-                                        "orig": "speaker_group",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_position",
-                                        "orig": "speaker_position",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_role",
-                                        "orig": "speaker_role",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speech_id",
-                                        "orig": "speech_id",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speech_number",
-                                        "orig": "speech_number",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 1,
-                                        "kind": "query",
-                                        "name": "start_record",
-                                        "orig": "start_record",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "supplement_and_appendix",
-                                        "orig": "supplement_and_appendix",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "until",
-                                        "orig": "until",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/meeting_list",
@@ -612,6 +481,163 @@ class Config {
                                     "lit": "meeting_list"
                                 }
                             ],
+                            "parts": [
+                                "meeting_list"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.meetingRecord`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "any",
+                                        "orig": "any",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "closing",
+                                        "orig": "closing",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "contents_and_index",
+                                        "orig": "contents_and_index",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "from",
+                                        "orig": "from",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_from",
+                                        "orig": "issue_from",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_id",
+                                        "orig": "issue_id",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_to",
+                                        "orig": "issue_to",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "maximum_record",
+                                        "orig": "maximum_record",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 30
+                                    },
+                                    {
+                                        "name": "name_of_house",
+                                        "orig": "name_of_house",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "name_of_meeting",
+                                        "orig": "name_of_meeting",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "record_packing",
+                                        "orig": "record_packing",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "xml"
+                                    },
+                                    {
+                                        "name": "search_range",
+                                        "orig": "search_range",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "冒頭・本文"
+                                    },
+                                    {
+                                        "name": "session_from",
+                                        "orig": "session_from",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "session_to",
+                                        "orig": "session_to",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker",
+                                        "orig": "speaker",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_group",
+                                        "orig": "speaker_group",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_position",
+                                        "orig": "speaker_position",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_role",
+                                        "orig": "speaker_role",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speech_id",
+                                        "orig": "speech_id",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speech_number",
+                                        "orig": "speech_number",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "start_record",
+                                        "orig": "start_record",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 1
+                                    },
+                                    {
+                                        "name": "supplement_and_appendix",
+                                        "orig": "supplement_and_appendix",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "until",
+                                        "orig": "until",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "any",
@@ -638,14 +664,7 @@ class Config {
                                     "supplement_and_appendix",
                                     "until"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.meetingRecord`"
-                            },
-                            "parts": [
-                                "meeting_list"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -658,112 +677,133 @@ class Config {
             "fields": [
                 {
                     "name": "closing",
-                    "short": "閉会中フラグ",
-                    "type": "`$BOOLEAN`"
+                    "title": "Closing",
+                    "type": "`$BOOLEAN`",
+                    "short": "閉会中フラグ"
                 },
                 {
-                    "format": "date",
                     "name": "date",
+                    "title": "Date",
+                    "type": "`$STRING`",
                     "short": "開催日付",
-                    "type": "`$STRING`"
+                    "format": "date"
                 },
                 {
                     "name": "imageKind",
-                    "short": "イメージ種別（会議録・目次・索引・附録・追録）",
-                    "type": "`$STRING`"
+                    "title": "Image Kind",
+                    "type": "`$STRING`",
+                    "short": "イメージ種別（会議録・目次・索引・附録・追録）"
                 },
                 {
                     "name": "issue",
-                    "short": "号数",
-                    "type": "`$STRING`"
+                    "title": "Issue",
+                    "type": "`$STRING`",
+                    "short": "号数"
                 },
                 {
                     "name": "issueID",
-                    "short": "会議録ID",
-                    "type": "`$STRING`"
+                    "title": "Issue Id",
+                    "type": "`$STRING`",
+                    "short": "会議録ID"
                 },
                 {
-                    "format": "uri",
                     "name": "meetingURL",
+                    "title": "Meeting Url",
+                    "type": "`$STRING`",
                     "short": "会議録テキスト表示画面のURL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "nameOfHouse",
-                    "short": "院名",
-                    "type": "`$STRING`"
+                    "title": "Name Of House",
+                    "type": "`$STRING`",
+                    "short": "院名"
                 },
                 {
                     "name": "nameOfMeeting",
-                    "short": "会議名",
-                    "type": "`$STRING`"
+                    "title": "Name Of Meeting",
+                    "type": "`$STRING`",
+                    "short": "会議名"
                 },
                 {
-                    "format": "uri",
                     "name": "pdfURL",
+                    "title": "Pdf Url",
+                    "type": "`$STRING`",
                     "short": "会議録PDF表示画面のURL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "searchObject",
-                    "short": "検索対象箇所（議事冒頭・本文）",
-                    "type": "`$STRING`"
+                    "title": "Search Object",
+                    "type": "`$STRING`",
+                    "short": "検索対象箇所（議事冒頭・本文）"
                 },
                 {
                     "name": "session",
-                    "short": "国会回次",
-                    "type": "`$INTEGER`"
+                    "title": "Session",
+                    "type": "`$INTEGER`",
+                    "short": "国会回次"
                 },
                 {
                     "name": "speaker",
-                    "short": "発言者名",
-                    "type": "`$STRING`"
+                    "title": "Speaker",
+                    "type": "`$STRING`",
+                    "short": "発言者名"
                 },
                 {
                     "name": "speakerGroup",
-                    "short": "発言者所属会派",
-                    "type": "`$STRING`"
+                    "title": "Speaker Group",
+                    "type": "`$STRING`",
+                    "short": "発言者所属会派"
                 },
                 {
                     "name": "speakerPosition",
-                    "short": "発言者肩書き",
-                    "type": "`$STRING`"
+                    "title": "Speaker Position",
+                    "type": "`$STRING`",
+                    "short": "発言者肩書き"
                 },
                 {
                     "name": "speakerRole",
-                    "short": "発言者役割",
-                    "type": "`$STRING`"
+                    "title": "Speaker Role",
+                    "type": "`$STRING`",
+                    "short": "発言者役割"
                 },
                 {
                     "name": "speakerYomi",
-                    "short": "発言者よみ",
-                    "type": "`$STRING`"
+                    "title": "Speaker Yomi",
+                    "type": "`$STRING`",
+                    "short": "発言者よみ"
                 },
                 {
                     "name": "speech",
-                    "short": "発言",
-                    "type": "`$STRING`"
+                    "title": "Speech",
+                    "type": "`$STRING`",
+                    "short": "発言"
                 },
                 {
                     "name": "speechID",
-                    "short": "発言ID",
-                    "type": "`$STRING`"
+                    "title": "Speech Id",
+                    "type": "`$STRING`",
+                    "short": "発言ID"
                 },
                 {
                     "name": "speechOrder",
-                    "short": "発言番号",
-                    "type": "`$INTEGER`"
+                    "title": "Speech Order",
+                    "type": "`$INTEGER`",
+                    "short": "発言番号"
                 },
                 {
-                    "format": "uri",
                     "name": "speechURL",
+                    "title": "Speech Url",
+                    "type": "`$STRING`",
                     "short": "発言URL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "startPage",
-                    "short": "発言が掲載されている開始ページ",
-                    "type": "`$INTEGER`"
+                    "title": "Start Page",
+                    "type": "`$INTEGER`",
+                    "short": "発言が掲載されている開始ページ"
                 }
             ],
             "name": "speech",
@@ -773,155 +813,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "kind": "query",
-                                        "name": "any",
-                                        "orig": "any",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "closing",
-                                        "orig": "closing",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "contents_and_index",
-                                        "orig": "contents_and_index",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "from",
-                                        "orig": "from",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_from",
-                                        "orig": "issue_from",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_id",
-                                        "orig": "issue_id",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "issue_to",
-                                        "orig": "issue_to",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 30,
-                                        "kind": "query",
-                                        "name": "maximum_record",
-                                        "orig": "maximum_record",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "name_of_house",
-                                        "orig": "name_of_house",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "name_of_meeting",
-                                        "orig": "name_of_meeting",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "xml",
-                                        "kind": "query",
-                                        "name": "record_packing",
-                                        "orig": "record_packing",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "example": "冒頭・本文",
-                                        "kind": "query",
-                                        "name": "search_range",
-                                        "orig": "search_range",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "session_from",
-                                        "orig": "session_from",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "session_to",
-                                        "orig": "session_to",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker",
-                                        "orig": "speaker",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_group",
-                                        "orig": "speaker_group",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_position",
-                                        "orig": "speaker_position",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speaker_role",
-                                        "orig": "speaker_role",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speech_id",
-                                        "orig": "speech_id",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "speech_number",
-                                        "orig": "speech_number",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": 1,
-                                        "kind": "query",
-                                        "name": "start_record",
-                                        "orig": "start_record",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": false,
-                                        "kind": "query",
-                                        "name": "supplement_and_appendix",
-                                        "orig": "supplement_and_appendix",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "until",
-                                        "orig": "until",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/speech",
@@ -930,6 +821,163 @@ class Config {
                                     "lit": "speech"
                                 }
                             ],
+                            "parts": [
+                                "speech"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.speechRecord`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "any",
+                                        "orig": "any",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "closing",
+                                        "orig": "closing",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "contents_and_index",
+                                        "orig": "contents_and_index",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "from",
+                                        "orig": "from",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_from",
+                                        "orig": "issue_from",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_id",
+                                        "orig": "issue_id",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "issue_to",
+                                        "orig": "issue_to",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "maximum_record",
+                                        "orig": "maximum_record",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 30
+                                    },
+                                    {
+                                        "name": "name_of_house",
+                                        "orig": "name_of_house",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "name_of_meeting",
+                                        "orig": "name_of_meeting",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "record_packing",
+                                        "orig": "record_packing",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "xml"
+                                    },
+                                    {
+                                        "name": "search_range",
+                                        "orig": "search_range",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "冒頭・本文"
+                                    },
+                                    {
+                                        "name": "session_from",
+                                        "orig": "session_from",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "session_to",
+                                        "orig": "session_to",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker",
+                                        "orig": "speaker",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_group",
+                                        "orig": "speaker_group",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_position",
+                                        "orig": "speaker_position",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speaker_role",
+                                        "orig": "speaker_role",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speech_id",
+                                        "orig": "speech_id",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "speech_number",
+                                        "orig": "speech_number",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "start_record",
+                                        "orig": "start_record",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 1
+                                    },
+                                    {
+                                        "name": "supplement_and_appendix",
+                                        "orig": "supplement_and_appendix",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query",
+                                        "example": false
+                                    },
+                                    {
+                                        "name": "until",
+                                        "orig": "until",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "any",
@@ -956,14 +1004,7 @@ class Config {
                                     "supplement_and_appendix",
                                     "until"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.speechRecord`"
-                            },
-                            "parts": [
-                                "speech"
-                            ]
+                            }
                         }
                     ]
                 }

@@ -1,0 +1,324 @@
+# Entity: meeting
+
+main: kit: entity: meeting: {
+
+  alias: field: {}
+
+  fields: {
+    closing: {
+      h: "Closing"
+      n: "closing"
+      r: false
+      sh: "閉会中フラグ"
+      t: "`$BOOLEAN`"
+    }
+    date: {
+      fo: "date"
+      h: "Date"
+      n: "date"
+      r: false
+      sh: "開催日付"
+      t: "`$STRING`"
+    }
+    imageKind: {
+      h: "Image Kind"
+      n: "imageKind"
+      r: false
+      sh: "イメージ種別（会議録・目次・索引・附録・追録）"
+      t: "`$STRING`"
+    }
+    issue: {
+      h: "Issue"
+      n: "issue"
+      r: false
+      sh: "号数"
+      t: "`$STRING`"
+    }
+    issueID: {
+      h: "Issue Id"
+      n: "issueID"
+      r: false
+      sh: "会議録ID"
+      t: "`$STRING`"
+    }
+    meetingURL: {
+      fo: "uri"
+      h: "Meeting Url"
+      n: "meetingURL"
+      r: false
+      sh: "会議録テキスト表示画面のURL"
+      t: "`$STRING`"
+    }
+    nameOfHouse: {
+      h: "Name Of House"
+      n: "nameOfHouse"
+      r: false
+      sh: "院名"
+      t: "`$STRING`"
+    }
+    nameOfMeeting: {
+      h: "Name Of Meeting"
+      n: "nameOfMeeting"
+      r: false
+      sh: "会議名"
+      t: "`$STRING`"
+    }
+    pdfURL: {
+      fo: "uri"
+      h: "Pdf Url"
+      n: "pdfURL"
+      r: false
+      sh: "会議録PDF表示画面のURL"
+      t: "`$STRING`"
+    }
+    searchObject: {
+      h: "Search Object"
+      n: "searchObject"
+      r: false
+      sh: "検索対象箇所（議事冒頭・本文）"
+      t: "`$STRING`"
+    }
+    session: {
+      h: "Session"
+      n: "session"
+      r: false
+      sh: "国会回次"
+      t: "`$INTEGER`"
+    }
+    speechRecord: {
+      h: "Speech Record"
+      n: "speechRecord"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "meeting"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /meeting"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "any"
+                or: "any"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "closing"
+                or: "closing"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "contents_and_index"
+                or: "contents_and_index"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "from"
+                or: "from"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "issue_from"
+                or: "issue_from"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "issue_id"
+                or: "issue_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "issue_to"
+                or: "issue_to"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 3
+                k: "query"
+                n: "maximum_record"
+                or: "maximum_record"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "name_of_house"
+                or: "name_of_house"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "name_of_meeting"
+                or: "name_of_meeting"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "xml"
+                k: "query"
+                n: "record_packing"
+                or: "record_packing"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "冒頭・本文"
+                k: "query"
+                n: "search_range"
+                or: "search_range"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "session_from"
+                or: "session_from"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "session_to"
+                or: "session_to"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "speaker"
+                or: "speaker"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "speaker_group"
+                or: "speaker_group"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "speaker_position"
+                or: "speaker_position"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "speaker_role"
+                or: "speaker_role"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "speech_id"
+                or: "speech_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "speech_number"
+                or: "speech_number"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "start_record"
+                or: "start_record"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "supplement_and_appendix"
+                or: "supplement_and_appendix"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "until"
+                or: "until"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/meeting"
+          q: {
+            exist: [
+              "any"
+              "closing"
+              "contents_and_index"
+              "from"
+              "issue_from"
+              "issue_id"
+              "issue_to"
+              "maximum_record"
+              "name_of_house"
+              "name_of_meeting"
+              "record_packing"
+              "search_range"
+              "session_from"
+              "session_to"
+              "speaker"
+              "speaker_group"
+              "speaker_position"
+              "speaker_role"
+              "speech_id"
+              "speech_number"
+              "start_record"
+              "supplement_and_appendix"
+              "until"
+            ]
+          }
+          s: [
+            {
+              lit: "meeting"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.meetingRecord`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
