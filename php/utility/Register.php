@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 KokkaiKaigirokuApiUtility::setRegistrar(function (KokkaiKaigirokuApiUtility $u): void {
     $u->clean = [KokkaiKaigirokuApiClean::class, 'call'];
+    $u->clean_add = [KokkaiKaigirokuApiClean::class, 'add'];
+    $u->clean_explain = [KokkaiKaigirokuApiDone::class, 'clean_explain'];
     $u->done = [KokkaiKaigirokuApiDone::class, 'call'];
     $u->make_error = [KokkaiKaigirokuApiMakeError::class, 'call'];
     $u->feature_add = [KokkaiKaigirokuApiFeatureAdd::class, 'call'];

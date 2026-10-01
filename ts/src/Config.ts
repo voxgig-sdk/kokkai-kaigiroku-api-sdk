@@ -251,7 +251,7 @@ class Config {
                   },
                   {
                     "name": "contents_and_index",
-                    "orig": "contents_and_index",
+                    "orig": "contentsAndIndex",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
                     "example": false
@@ -264,64 +264,64 @@ class Config {
                   },
                   {
                     "name": "issue_from",
-                    "orig": "issue_from",
+                    "orig": "issueFrom",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "issue_id",
-                    "orig": "issue_id",
+                    "orig": "issueID",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "issue_to",
-                    "orig": "issue_to",
+                    "orig": "issueTo",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "maximum_record",
-                    "orig": "maximum_record",
+                    "orig": "maximumRecords",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 3
                   },
                   {
                     "name": "name_of_house",
-                    "orig": "name_of_house",
+                    "orig": "nameOfHouse",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "name_of_meeting",
-                    "orig": "name_of_meeting",
+                    "orig": "nameOfMeeting",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "record_packing",
-                    "orig": "record_packing",
+                    "orig": "recordPacking",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "xml"
                   },
                   {
                     "name": "search_range",
-                    "orig": "search_range",
+                    "orig": "searchRange",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "冒頭・本文"
                   },
                   {
                     "name": "session_from",
-                    "orig": "session_from",
+                    "orig": "sessionFrom",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "session_to",
-                    "orig": "session_to",
+                    "orig": "sessionTo",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
@@ -333,44 +333,44 @@ class Config {
                   },
                   {
                     "name": "speaker_group",
-                    "orig": "speaker_group",
+                    "orig": "speakerGroup",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speaker_position",
-                    "orig": "speaker_position",
+                    "orig": "speakerPosition",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speaker_role",
-                    "orig": "speaker_role",
+                    "orig": "speakerRole",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speech_id",
-                    "orig": "speech_id",
+                    "orig": "speechID",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speech_number",
-                    "orig": "speech_number",
+                    "orig": "speechNumber",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "start_record",
-                    "orig": "start_record",
+                    "orig": "startRecord",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 1
                   },
                   {
                     "name": "supplement_and_appendix",
-                    "orig": "supplement_and_appendix",
+                    "orig": "supplementAndAppendix",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
                     "example": false
@@ -535,7 +535,7 @@ class Config {
                   },
                   {
                     "name": "contents_and_index",
-                    "orig": "contents_and_index",
+                    "orig": "contentsAndIndex",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
                     "example": false
@@ -548,64 +548,64 @@ class Config {
                   },
                   {
                     "name": "issue_from",
-                    "orig": "issue_from",
+                    "orig": "issueFrom",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "issue_id",
-                    "orig": "issue_id",
+                    "orig": "issueID",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "issue_to",
-                    "orig": "issue_to",
+                    "orig": "issueTo",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "maximum_record",
-                    "orig": "maximum_record",
+                    "orig": "maximumRecords",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 30
                   },
                   {
                     "name": "name_of_house",
-                    "orig": "name_of_house",
+                    "orig": "nameOfHouse",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "name_of_meeting",
-                    "orig": "name_of_meeting",
+                    "orig": "nameOfMeeting",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "record_packing",
-                    "orig": "record_packing",
+                    "orig": "recordPacking",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "xml"
                   },
                   {
                     "name": "search_range",
-                    "orig": "search_range",
+                    "orig": "searchRange",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "冒頭・本文"
                   },
                   {
                     "name": "session_from",
-                    "orig": "session_from",
+                    "orig": "sessionFrom",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "session_to",
-                    "orig": "session_to",
+                    "orig": "sessionTo",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
@@ -617,44 +617,44 @@ class Config {
                   },
                   {
                     "name": "speaker_group",
-                    "orig": "speaker_group",
+                    "orig": "speakerGroup",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speaker_position",
-                    "orig": "speaker_position",
+                    "orig": "speakerPosition",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speaker_role",
-                    "orig": "speaker_role",
+                    "orig": "speakerRole",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speech_id",
-                    "orig": "speech_id",
+                    "orig": "speechID",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speech_number",
-                    "orig": "speech_number",
+                    "orig": "speechNumber",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "start_record",
-                    "orig": "start_record",
+                    "orig": "startRecord",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 1
                   },
                   {
                     "name": "supplement_and_appendix",
-                    "orig": "supplement_and_appendix",
+                    "orig": "supplementAndAppendix",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
                     "example": false
@@ -875,7 +875,7 @@ class Config {
                   },
                   {
                     "name": "contents_and_index",
-                    "orig": "contents_and_index",
+                    "orig": "contentsAndIndex",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
                     "example": false
@@ -888,64 +888,64 @@ class Config {
                   },
                   {
                     "name": "issue_from",
-                    "orig": "issue_from",
+                    "orig": "issueFrom",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "issue_id",
-                    "orig": "issue_id",
+                    "orig": "issueID",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "issue_to",
-                    "orig": "issue_to",
+                    "orig": "issueTo",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "maximum_record",
-                    "orig": "maximum_record",
+                    "orig": "maximumRecords",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 30
                   },
                   {
                     "name": "name_of_house",
-                    "orig": "name_of_house",
+                    "orig": "nameOfHouse",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "name_of_meeting",
-                    "orig": "name_of_meeting",
+                    "orig": "nameOfMeeting",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "record_packing",
-                    "orig": "record_packing",
+                    "orig": "recordPacking",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "xml"
                   },
                   {
                     "name": "search_range",
-                    "orig": "search_range",
+                    "orig": "searchRange",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "冒頭・本文"
                   },
                   {
                     "name": "session_from",
-                    "orig": "session_from",
+                    "orig": "sessionFrom",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "session_to",
-                    "orig": "session_to",
+                    "orig": "sessionTo",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
@@ -957,44 +957,44 @@ class Config {
                   },
                   {
                     "name": "speaker_group",
-                    "orig": "speaker_group",
+                    "orig": "speakerGroup",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speaker_position",
-                    "orig": "speaker_position",
+                    "orig": "speakerPosition",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speaker_role",
-                    "orig": "speaker_role",
+                    "orig": "speakerRole",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speech_id",
-                    "orig": "speech_id",
+                    "orig": "speechID",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "speech_number",
-                    "orig": "speech_number",
+                    "orig": "speechNumber",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "start_record",
-                    "orig": "start_record",
+                    "orig": "startRecord",
                     "type": "`$INTEGER`",
                     "kind": "query",
                     "example": 1
                   },
                   {
                     "name": "supplement_and_appendix",
-                    "orig": "supplement_and_appendix",
+                    "orig": "supplementAndAppendix",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
                     "example": false

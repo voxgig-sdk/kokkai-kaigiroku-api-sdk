@@ -233,7 +233,7 @@
                         "ex": false,
                         "k": "query",
                         "n": "contents_and_index",
-                        "or": "contents_and_index",
+                        "or": "contentsAndIndex",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -249,7 +249,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_from",
-                        "or": "issue_from",
+                        "or": "issueFrom",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -257,7 +257,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_id",
-                        "or": "issue_id",
+                        "or": "issueID",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -265,7 +265,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_to",
-                        "or": "issue_to",
+                        "or": "issueTo",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -274,7 +274,7 @@
                         "ex": 3,
                         "k": "query",
                         "n": "maximum_record",
-                        "or": "maximum_record",
+                        "or": "maximumRecords",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -282,7 +282,7 @@
                         "a": true,
                         "k": "query",
                         "n": "name_of_house",
-                        "or": "name_of_house",
+                        "or": "nameOfHouse",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -290,7 +290,7 @@
                         "a": true,
                         "k": "query",
                         "n": "name_of_meeting",
-                        "or": "name_of_meeting",
+                        "or": "nameOfMeeting",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -299,7 +299,7 @@
                         "ex": "xml",
                         "k": "query",
                         "n": "record_packing",
-                        "or": "record_packing",
+                        "or": "recordPacking",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -308,7 +308,7 @@
                         "ex": "冒頭・本文",
                         "k": "query",
                         "n": "search_range",
-                        "or": "search_range",
+                        "or": "searchRange",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -316,7 +316,7 @@
                         "a": true,
                         "k": "query",
                         "n": "session_from",
-                        "or": "session_from",
+                        "or": "sessionFrom",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -324,7 +324,7 @@
                         "a": true,
                         "k": "query",
                         "n": "session_to",
-                        "or": "session_to",
+                        "or": "sessionTo",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -340,7 +340,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_group",
-                        "or": "speaker_group",
+                        "or": "speakerGroup",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -348,7 +348,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_position",
-                        "or": "speaker_position",
+                        "or": "speakerPosition",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -356,7 +356,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_role",
-                        "or": "speaker_role",
+                        "or": "speakerRole",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -364,7 +364,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speech_id",
-                        "or": "speech_id",
+                        "or": "speechID",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -372,7 +372,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speech_number",
-                        "or": "speech_number",
+                        "or": "speechNumber",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -381,7 +381,7 @@
                         "ex": 1,
                         "k": "query",
                         "n": "start_record",
-                        "or": "start_record",
+                        "or": "startRecord",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -390,7 +390,7 @@
                         "ex": false,
                         "k": "query",
                         "n": "supplement_and_appendix",
-                        "or": "supplement_and_appendix",
+                        "or": "supplementAndAppendix",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -594,7 +594,7 @@
                         "ex": false,
                         "k": "query",
                         "n": "contents_and_index",
-                        "or": "contents_and_index",
+                        "or": "contentsAndIndex",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -610,7 +610,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_from",
-                        "or": "issue_from",
+                        "or": "issueFrom",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -618,7 +618,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_id",
-                        "or": "issue_id",
+                        "or": "issueID",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -626,7 +626,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_to",
-                        "or": "issue_to",
+                        "or": "issueTo",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -635,7 +635,7 @@
                         "ex": 30,
                         "k": "query",
                         "n": "maximum_record",
-                        "or": "maximum_record",
+                        "or": "maximumRecords",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -643,7 +643,7 @@
                         "a": true,
                         "k": "query",
                         "n": "name_of_house",
-                        "or": "name_of_house",
+                        "or": "nameOfHouse",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -651,7 +651,7 @@
                         "a": true,
                         "k": "query",
                         "n": "name_of_meeting",
-                        "or": "name_of_meeting",
+                        "or": "nameOfMeeting",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -660,7 +660,7 @@
                         "ex": "xml",
                         "k": "query",
                         "n": "record_packing",
-                        "or": "record_packing",
+                        "or": "recordPacking",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -669,7 +669,7 @@
                         "ex": "冒頭・本文",
                         "k": "query",
                         "n": "search_range",
-                        "or": "search_range",
+                        "or": "searchRange",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -677,7 +677,7 @@
                         "a": true,
                         "k": "query",
                         "n": "session_from",
-                        "or": "session_from",
+                        "or": "sessionFrom",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -685,7 +685,7 @@
                         "a": true,
                         "k": "query",
                         "n": "session_to",
-                        "or": "session_to",
+                        "or": "sessionTo",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -701,7 +701,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_group",
-                        "or": "speaker_group",
+                        "or": "speakerGroup",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -709,7 +709,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_position",
-                        "or": "speaker_position",
+                        "or": "speakerPosition",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -717,7 +717,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_role",
-                        "or": "speaker_role",
+                        "or": "speakerRole",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -725,7 +725,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speech_id",
-                        "or": "speech_id",
+                        "or": "speechID",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -733,7 +733,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speech_number",
-                        "or": "speech_number",
+                        "or": "speechNumber",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -742,7 +742,7 @@
                         "ex": 1,
                         "k": "query",
                         "n": "start_record",
-                        "or": "start_record",
+                        "or": "startRecord",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -751,7 +751,7 @@
                         "ex": false,
                         "k": "query",
                         "n": "supplement_and_appendix",
-                        "or": "supplement_and_appendix",
+                        "or": "supplementAndAppendix",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -1029,7 +1029,7 @@
                         "ex": false,
                         "k": "query",
                         "n": "contents_and_index",
-                        "or": "contents_and_index",
+                        "or": "contentsAndIndex",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -1045,7 +1045,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_from",
-                        "or": "issue_from",
+                        "or": "issueFrom",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1053,7 +1053,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_id",
-                        "or": "issue_id",
+                        "or": "issueID",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1061,7 +1061,7 @@
                         "a": true,
                         "k": "query",
                         "n": "issue_to",
-                        "or": "issue_to",
+                        "or": "issueTo",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1070,7 +1070,7 @@
                         "ex": 30,
                         "k": "query",
                         "n": "maximum_record",
-                        "or": "maximum_record",
+                        "or": "maximumRecords",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1078,7 +1078,7 @@
                         "a": true,
                         "k": "query",
                         "n": "name_of_house",
-                        "or": "name_of_house",
+                        "or": "nameOfHouse",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1086,7 +1086,7 @@
                         "a": true,
                         "k": "query",
                         "n": "name_of_meeting",
-                        "or": "name_of_meeting",
+                        "or": "nameOfMeeting",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1095,7 +1095,7 @@
                         "ex": "xml",
                         "k": "query",
                         "n": "record_packing",
-                        "or": "record_packing",
+                        "or": "recordPacking",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1104,7 +1104,7 @@
                         "ex": "冒頭・本文",
                         "k": "query",
                         "n": "search_range",
-                        "or": "search_range",
+                        "or": "searchRange",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1112,7 +1112,7 @@
                         "a": true,
                         "k": "query",
                         "n": "session_from",
-                        "or": "session_from",
+                        "or": "sessionFrom",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1120,7 +1120,7 @@
                         "a": true,
                         "k": "query",
                         "n": "session_to",
-                        "or": "session_to",
+                        "or": "sessionTo",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1136,7 +1136,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_group",
-                        "or": "speaker_group",
+                        "or": "speakerGroup",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1144,7 +1144,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_position",
-                        "or": "speaker_position",
+                        "or": "speakerPosition",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1152,7 +1152,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speaker_role",
-                        "or": "speaker_role",
+                        "or": "speakerRole",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1160,7 +1160,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speech_id",
-                        "or": "speech_id",
+                        "or": "speechID",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -1168,7 +1168,7 @@
                         "a": true,
                         "k": "query",
                         "n": "speech_number",
-                        "or": "speech_number",
+                        "or": "speechNumber",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1177,7 +1177,7 @@
                         "ex": 1,
                         "k": "query",
                         "n": "start_record",
-                        "or": "start_record",
+                        "or": "startRecord",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -1186,7 +1186,7 @@
                         "ex": false,
                         "k": "query",
                         "n": "supplement_and_appendix",
-                        "or": "supplement_and_appendix",
+                        "or": "supplementAndAppendix",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -1773,7 +1773,12 @@
         },
         "base": "http://localhost:8000",
         "clean": {
-          "keys": "key,token,id"
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
         },
         "entity": {
           "`$CHILD`": {

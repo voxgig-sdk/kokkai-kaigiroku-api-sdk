@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 KokkaiKaigirokuApiUtility.registrar = ->(u) {
   u.clean = KokkaiKaigirokuApiUtilities::Clean
+  u.clean_add = KokkaiKaigirokuApiUtilities::CleanAdd
+  u.clean_explain = KokkaiKaigirokuApiUtilities::CleanExplain
   u.done = KokkaiKaigirokuApiUtilities::Done
   u.make_error = KokkaiKaigirokuApiUtilities::MakeError
   u.feature_add = KokkaiKaigirokuApiUtilities::FeatureAdd
