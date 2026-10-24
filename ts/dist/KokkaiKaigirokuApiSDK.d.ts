@@ -9,6 +9,19 @@ import { KokkaiKaigirokuApiEntityBase } from './KokkaiKaigirokuApiEntityBase';
 import { Utility } from './utility/Utility';
 import { BaseFeature } from './feature/base/BaseFeature';
 declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
 declare class KokkaiKaigirokuApiSDK {
     _mode: string;
     _options: any;
@@ -19,32 +32,8 @@ declare class KokkaiKaigirokuApiSDK {
     options(): any;
     utility(): any;
     prepare(fetchargs?: any): Promise<any>;
-    direct(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
-    _rawRequest(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
     Meeting(entopts?: Record<string, any>): MeetingEntity;
     MeetingList(entopts?: Record<string, any>): MeetingListEntity;
@@ -59,3 +48,4 @@ declare class KokkaiKaigirokuApiSDK {
 }
 declare const SDK: typeof KokkaiKaigirokuApiSDK;
 export { stdutil, config, BaseFeature, KokkaiKaigirokuApiEntityBase, KokkaiKaigirokuApiSDK, SDK, };
+export type { DirectResult };

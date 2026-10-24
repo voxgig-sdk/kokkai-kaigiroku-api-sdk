@@ -31,29 +31,31 @@ class Meeting(TypedDict, total=False):
     speechRecord: list
 
 
-class MeetingListMatch(TypedDict, total=False):
-    any: str
-    closing: bool
-    contents_and_index: bool
-    issue_from: int
-    issue_id: str
-    issue_to: int
-    maximum_record: int
-    name_of_house: str
-    name_of_meeting: str
-    record_packing: str
-    search_range: str
-    session_from: int
-    session_to: int
-    speaker: str
-    speaker_group: str
-    speaker_position: str
-    speaker_role: str
-    speech_id: str
-    speech_number: int
-    start_record: int
-    supplement_and_appendix: bool
-    until: str
+MeetingListMatch = TypedDict('MeetingListMatch', {
+    "any": str,
+    "closing": bool,
+    "contents_and_index": bool,
+    "from": str,
+    "issue_from": int,
+    "issue_id": str,
+    "issue_to": int,
+    "maximum_record": int,
+    "name_of_house": str,
+    "name_of_meeting": str,
+    "record_packing": str,
+    "search_range": str,
+    "session_from": int,
+    "session_to": int,
+    "speaker": str,
+    "speaker_group": str,
+    "speaker_position": str,
+    "speaker_role": str,
+    "speech_id": str,
+    "speech_number": int,
+    "start_record": int,
+    "supplement_and_appendix": bool,
+    "until": str,
+}, total=False)
 
 
 class MeetingList(TypedDict, total=False):
@@ -71,29 +73,31 @@ class MeetingList(TypedDict, total=False):
     speechRecord: list
 
 
-class MeetingListListMatch(TypedDict, total=False):
-    any: str
-    closing: bool
-    contents_and_index: bool
-    issue_from: int
-    issue_id: str
-    issue_to: int
-    maximum_record: int
-    name_of_house: str
-    name_of_meeting: str
-    record_packing: str
-    search_range: str
-    session_from: int
-    session_to: int
-    speaker: str
-    speaker_group: str
-    speaker_position: str
-    speaker_role: str
-    speech_id: str
-    speech_number: int
-    start_record: int
-    supplement_and_appendix: bool
-    until: str
+MeetingListListMatch = TypedDict('MeetingListListMatch', {
+    "any": str,
+    "closing": bool,
+    "contents_and_index": bool,
+    "from": str,
+    "issue_from": int,
+    "issue_id": str,
+    "issue_to": int,
+    "maximum_record": int,
+    "name_of_house": str,
+    "name_of_meeting": str,
+    "record_packing": str,
+    "search_range": str,
+    "session_from": int,
+    "session_to": int,
+    "speaker": str,
+    "speaker_group": str,
+    "speaker_position": str,
+    "speaker_role": str,
+    "speech_id": str,
+    "speech_number": int,
+    "start_record": int,
+    "supplement_and_appendix": bool,
+    "until": str,
+}, total=False)
 
 
 class Speech(TypedDict, total=False):
@@ -120,26 +124,28 @@ class Speech(TypedDict, total=False):
     startPage: int
 
 
-class SpeechListMatch(TypedDict, total=False):
-    any: str
-    closing: bool
-    contents_and_index: bool
-    issue_from: int
-    issue_id: str
-    issue_to: int
-    maximum_record: int
-    name_of_house: str
-    name_of_meeting: str
-    record_packing: str
-    search_range: str
-    session_from: int
-    session_to: int
-    speaker: str
-    speaker_group: str
-    speaker_position: str
-    speaker_role: str
-    speech_id: str
-    speech_number: int
-    start_record: int
-    supplement_and_appendix: bool
-    until: str
+SpeechListMatch = TypedDict('SpeechListMatch', {
+    "any": str,
+    "closing": bool,
+    "contents_and_index": bool,
+    "from": str,
+    "issue_from": int,
+    "issue_id": str,
+    "issue_to": int,
+    "maximum_record": int,
+    "name_of_house": str,
+    "name_of_meeting": str,
+    "record_packing": str,
+    "search_range": str,
+    "session_from": int,
+    "session_to": int,
+    "speaker": str,
+    "speaker_group": str,
+    "speaker_position": str,
+    "speaker_role": str,
+    "speech_id": str,
+    "speech_number": int,
+    "start_record": int,
+    "supplement_and_appendix": bool,
+    "until": str,
+}, total=False)

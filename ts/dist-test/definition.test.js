@@ -23,11 +23,11 @@ const PLAN = [
             "issue_from": "v1",
             "issue_id": "v1",
             "issue_to": "v1",
-            "maximum_record": "v1",
+            "maximum_record": 3,
             "name_of_house": "v1",
             "name_of_meeting": "v1",
-            "record_packing": "v1",
-            "search_range": "v1",
+            "record_packing": "xml",
+            "search_range": "冒頭・本文",
             "session_from": "v1",
             "session_to": "v1",
             "speaker": "v1",
@@ -36,11 +36,16 @@ const PLAN = [
             "speaker_role": "v1",
             "speech_id": "v1",
             "speech_number": "v1",
-            "start_record": "v1",
+            "start_record": 1,
             "supplement_and_appendix": "v1",
             "until": "v1"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/xml",
+            "application/json"
+        ],
         "query": [
             "startRecord",
             "maximumRecords",
@@ -66,6 +71,100 @@ const PLAN = [
             "issueTo",
             "recordPacking"
         ],
+        "queryArgs": [
+            {
+                "name": "any",
+                "wire": "any"
+            },
+            {
+                "name": "closing",
+                "wire": "closing"
+            },
+            {
+                "name": "contents_and_index",
+                "wire": "contentsAndIndex"
+            },
+            {
+                "name": "from",
+                "wire": "from"
+            },
+            {
+                "name": "issue_from",
+                "wire": "issueFrom"
+            },
+            {
+                "name": "issue_id",
+                "wire": "issueID"
+            },
+            {
+                "name": "issue_to",
+                "wire": "issueTo"
+            },
+            {
+                "name": "maximum_record",
+                "wire": "maximumRecords"
+            },
+            {
+                "name": "name_of_house",
+                "wire": "nameOfHouse"
+            },
+            {
+                "name": "name_of_meeting",
+                "wire": "nameOfMeeting"
+            },
+            {
+                "name": "record_packing",
+                "wire": "recordPacking"
+            },
+            {
+                "name": "search_range",
+                "wire": "searchRange"
+            },
+            {
+                "name": "session_from",
+                "wire": "sessionFrom"
+            },
+            {
+                "name": "session_to",
+                "wire": "sessionTo"
+            },
+            {
+                "name": "speaker",
+                "wire": "speaker"
+            },
+            {
+                "name": "speaker_group",
+                "wire": "speakerGroup"
+            },
+            {
+                "name": "speaker_position",
+                "wire": "speakerPosition"
+            },
+            {
+                "name": "speaker_role",
+                "wire": "speakerRole"
+            },
+            {
+                "name": "speech_id",
+                "wire": "speechID"
+            },
+            {
+                "name": "speech_number",
+                "wire": "speechNumber"
+            },
+            {
+                "name": "start_record",
+                "wire": "startRecord"
+            },
+            {
+                "name": "supplement_and_appendix",
+                "wire": "supplementAndAppendix"
+            },
+            {
+                "name": "until",
+                "wire": "until"
+            }
+        ],
         "auth": null,
         "status": 200,
         "sample": {
@@ -75,33 +174,33 @@ const PLAN = [
             "nextRecordPosition": 1,
             "meetingRecord": [
                 {
-                    "closing": true,
-                    "date": "2026-01-01",
-                    "imageKind": "x",
-                    "issue": "x",
                     "issueID": "x",
-                    "meetingURL": "x",
-                    "nameOfHouse": "x",
-                    "nameOfMeeting": "x",
-                    "pdfURL": "x",
+                    "imageKind": "x",
                     "searchObject": "x",
                     "session": 1,
+                    "nameOfHouse": "x",
+                    "nameOfMeeting": "x",
+                    "issue": "x",
+                    "date": "2026-01-01",
+                    "closing": true,
                     "speechRecord": [
                         {
-                            "createTime": "2026-01-01T00:00:00Z",
+                            "speechID": "x",
+                            "speechOrder": 1,
                             "speaker": "x",
+                            "speakerYomi": "x",
                             "speakerGroup": "x",
                             "speakerPosition": "x",
                             "speakerRole": "x",
-                            "speakerYomi": "x",
                             "speech": "x",
-                            "speechID": "x",
-                            "speechOrder": 1,
-                            "speechURL": "x",
                             "startPage": 1,
-                            "updateTime": "2026-01-01T00:00:00Z"
+                            "createTime": "2026-01-01T00:00:00Z",
+                            "updateTime": "2026-01-01T00:00:00Z",
+                            "speechURL": "x"
                         }
-                    ]
+                    ],
+                    "meetingURL": "x",
+                    "pdfURL": "x"
                 }
             ]
         },
@@ -122,11 +221,11 @@ const PLAN = [
             "issue_from": "v1",
             "issue_id": "v1",
             "issue_to": "v1",
-            "maximum_record": "v1",
+            "maximum_record": 30,
             "name_of_house": "v1",
             "name_of_meeting": "v1",
-            "record_packing": "v1",
-            "search_range": "v1",
+            "record_packing": "xml",
+            "search_range": "冒頭・本文",
             "session_from": "v1",
             "session_to": "v1",
             "speaker": "v1",
@@ -135,11 +234,16 @@ const PLAN = [
             "speaker_role": "v1",
             "speech_id": "v1",
             "speech_number": "v1",
-            "start_record": "v1",
+            "start_record": 1,
             "supplement_and_appendix": "v1",
             "until": "v1"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/xml",
+            "application/json"
+        ],
         "query": [
             "startRecord",
             "maximumRecords",
@@ -165,6 +269,100 @@ const PLAN = [
             "issueTo",
             "recordPacking"
         ],
+        "queryArgs": [
+            {
+                "name": "any",
+                "wire": "any"
+            },
+            {
+                "name": "closing",
+                "wire": "closing"
+            },
+            {
+                "name": "contents_and_index",
+                "wire": "contentsAndIndex"
+            },
+            {
+                "name": "from",
+                "wire": "from"
+            },
+            {
+                "name": "issue_from",
+                "wire": "issueFrom"
+            },
+            {
+                "name": "issue_id",
+                "wire": "issueID"
+            },
+            {
+                "name": "issue_to",
+                "wire": "issueTo"
+            },
+            {
+                "name": "maximum_record",
+                "wire": "maximumRecords"
+            },
+            {
+                "name": "name_of_house",
+                "wire": "nameOfHouse"
+            },
+            {
+                "name": "name_of_meeting",
+                "wire": "nameOfMeeting"
+            },
+            {
+                "name": "record_packing",
+                "wire": "recordPacking"
+            },
+            {
+                "name": "search_range",
+                "wire": "searchRange"
+            },
+            {
+                "name": "session_from",
+                "wire": "sessionFrom"
+            },
+            {
+                "name": "session_to",
+                "wire": "sessionTo"
+            },
+            {
+                "name": "speaker",
+                "wire": "speaker"
+            },
+            {
+                "name": "speaker_group",
+                "wire": "speakerGroup"
+            },
+            {
+                "name": "speaker_position",
+                "wire": "speakerPosition"
+            },
+            {
+                "name": "speaker_role",
+                "wire": "speakerRole"
+            },
+            {
+                "name": "speech_id",
+                "wire": "speechID"
+            },
+            {
+                "name": "speech_number",
+                "wire": "speechNumber"
+            },
+            {
+                "name": "start_record",
+                "wire": "startRecord"
+            },
+            {
+                "name": "supplement_and_appendix",
+                "wire": "supplementAndAppendix"
+            },
+            {
+                "name": "until",
+                "wire": "until"
+            }
+        ],
         "auth": null,
         "status": 200,
         "sample": {
@@ -174,25 +372,25 @@ const PLAN = [
             "nextRecordPosition": 1,
             "meetingRecord": [
                 {
-                    "closing": true,
-                    "date": "2026-01-01",
-                    "imageKind": "x",
-                    "issue": "x",
                     "issueID": "x",
-                    "meetingURL": "x",
-                    "nameOfHouse": "x",
-                    "nameOfMeeting": "x",
-                    "pdfURL": "x",
+                    "imageKind": "x",
                     "searchObject": "x",
                     "session": 1,
+                    "nameOfHouse": "x",
+                    "nameOfMeeting": "x",
+                    "issue": "x",
+                    "date": "2026-01-01",
+                    "closing": true,
                     "speechRecord": [
                         {
-                            "speaker": "x",
                             "speechID": "x",
                             "speechOrder": 1,
+                            "speaker": "x",
                             "speechURL": "x"
                         }
-                    ]
+                    ],
+                    "meetingURL": "x",
+                    "pdfURL": "x"
                 }
             ]
         },
@@ -213,11 +411,11 @@ const PLAN = [
             "issue_from": "v1",
             "issue_id": "v1",
             "issue_to": "v1",
-            "maximum_record": "v1",
+            "maximum_record": 30,
             "name_of_house": "v1",
             "name_of_meeting": "v1",
-            "record_packing": "v1",
-            "search_range": "v1",
+            "record_packing": "xml",
+            "search_range": "冒頭・本文",
             "session_from": "v1",
             "session_to": "v1",
             "speaker": "v1",
@@ -226,11 +424,16 @@ const PLAN = [
             "speaker_role": "v1",
             "speech_id": "v1",
             "speech_number": "v1",
-            "start_record": "v1",
+            "start_record": 1,
             "supplement_and_appendix": "v1",
             "until": "v1"
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/xml",
+            "application/json"
+        ],
         "query": [
             "startRecord",
             "maximumRecords",
@@ -256,6 +459,100 @@ const PLAN = [
             "issueTo",
             "recordPacking"
         ],
+        "queryArgs": [
+            {
+                "name": "any",
+                "wire": "any"
+            },
+            {
+                "name": "closing",
+                "wire": "closing"
+            },
+            {
+                "name": "contents_and_index",
+                "wire": "contentsAndIndex"
+            },
+            {
+                "name": "from",
+                "wire": "from"
+            },
+            {
+                "name": "issue_from",
+                "wire": "issueFrom"
+            },
+            {
+                "name": "issue_id",
+                "wire": "issueID"
+            },
+            {
+                "name": "issue_to",
+                "wire": "issueTo"
+            },
+            {
+                "name": "maximum_record",
+                "wire": "maximumRecords"
+            },
+            {
+                "name": "name_of_house",
+                "wire": "nameOfHouse"
+            },
+            {
+                "name": "name_of_meeting",
+                "wire": "nameOfMeeting"
+            },
+            {
+                "name": "record_packing",
+                "wire": "recordPacking"
+            },
+            {
+                "name": "search_range",
+                "wire": "searchRange"
+            },
+            {
+                "name": "session_from",
+                "wire": "sessionFrom"
+            },
+            {
+                "name": "session_to",
+                "wire": "sessionTo"
+            },
+            {
+                "name": "speaker",
+                "wire": "speaker"
+            },
+            {
+                "name": "speaker_group",
+                "wire": "speakerGroup"
+            },
+            {
+                "name": "speaker_position",
+                "wire": "speakerPosition"
+            },
+            {
+                "name": "speaker_role",
+                "wire": "speakerRole"
+            },
+            {
+                "name": "speech_id",
+                "wire": "speechID"
+            },
+            {
+                "name": "speech_number",
+                "wire": "speechNumber"
+            },
+            {
+                "name": "start_record",
+                "wire": "startRecord"
+            },
+            {
+                "name": "supplement_and_appendix",
+                "wire": "supplementAndAppendix"
+            },
+            {
+                "name": "until",
+                "wire": "until"
+            }
+        ],
         "auth": null,
         "status": 200,
         "sample": {
@@ -265,27 +562,27 @@ const PLAN = [
             "nextRecordPosition": 1,
             "speechRecord": [
                 {
-                    "closing": true,
-                    "date": "2026-01-01",
-                    "imageKind": "x",
-                    "issue": "x",
+                    "speechID": "x",
                     "issueID": "x",
-                    "meetingURL": "x",
-                    "nameOfHouse": "x",
-                    "nameOfMeeting": "x",
-                    "pdfURL": "x",
+                    "imageKind": "x",
                     "searchObject": "x",
                     "session": 1,
+                    "nameOfHouse": "x",
+                    "nameOfMeeting": "x",
+                    "issue": "x",
+                    "date": "2026-01-01",
+                    "closing": true,
+                    "speechOrder": 1,
                     "speaker": "x",
+                    "speakerYomi": "x",
                     "speakerGroup": "x",
                     "speakerPosition": "x",
                     "speakerRole": "x",
-                    "speakerYomi": "x",
                     "speech": "x",
-                    "speechID": "x",
-                    "speechOrder": 1,
+                    "startPage": 1,
                     "speechURL": "x",
-                    "startPage": 1
+                    "meetingURL": "x",
+                    "pdfURL": "x"
                 }
             ]
         },

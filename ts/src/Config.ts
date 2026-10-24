@@ -102,6 +102,7 @@ class Config {
       },
       "optspec": {
         "clearTimer": "`$FUNCTION`",
+        "now": "`$FUNCTION`",
         "setTimer": "`$FUNCTION`"
       },
       "strict": false,
@@ -247,7 +248,8 @@ class Config {
                     "orig": "closing",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
-                    "example": false
+                    "example": false,
+                    "field": true
                   },
                   {
                     "name": "contents_and_index",
@@ -383,32 +385,16 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "any",
-                  "closing",
-                  "contents_and_index",
-                  "from",
-                  "issue_from",
-                  "issue_id",
-                  "issue_to",
-                  "maximum_record",
-                  "name_of_house",
-                  "name_of_meeting",
-                  "record_packing",
-                  "search_range",
-                  "session_from",
-                  "session_to",
-                  "speaker",
-                  "speaker_group",
-                  "speaker_position",
-                  "speaker_role",
-                  "speech_id",
-                  "speech_number",
-                  "start_record",
-                  "supplement_and_appendix",
-                  "until"
-                ]
+              "select": {},
+              "response": {
+                "alternatives": [
+                  {
+                    "kind": "raw",
+                    "media": "application/xml"
+                  }
+                ],
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -531,7 +517,8 @@ class Config {
                     "orig": "closing",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
-                    "example": false
+                    "example": false,
+                    "field": true
                   },
                   {
                     "name": "contents_and_index",
@@ -667,32 +654,16 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "any",
-                  "closing",
-                  "contents_and_index",
-                  "from",
-                  "issue_from",
-                  "issue_id",
-                  "issue_to",
-                  "maximum_record",
-                  "name_of_house",
-                  "name_of_meeting",
-                  "record_packing",
-                  "search_range",
-                  "session_from",
-                  "session_to",
-                  "speaker",
-                  "speaker_group",
-                  "speaker_position",
-                  "speaker_role",
-                  "speech_id",
-                  "speech_number",
-                  "start_record",
-                  "supplement_and_appendix",
-                  "until"
-                ]
+              "select": {},
+              "response": {
+                "alternatives": [
+                  {
+                    "kind": "raw",
+                    "media": "application/xml"
+                  }
+                ],
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -871,7 +842,8 @@ class Config {
                     "orig": "closing",
                     "type": "`$BOOLEAN`",
                     "kind": "query",
-                    "example": false
+                    "example": false,
+                    "field": true
                   },
                   {
                     "name": "contents_and_index",
@@ -953,7 +925,8 @@ class Config {
                     "name": "speaker",
                     "orig": "speaker",
                     "type": "`$STRING`",
-                    "kind": "query"
+                    "kind": "query",
+                    "field": true
                   },
                   {
                     "name": "speaker_group",
@@ -1007,32 +980,16 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "any",
-                  "closing",
-                  "contents_and_index",
-                  "from",
-                  "issue_from",
-                  "issue_id",
-                  "issue_to",
-                  "maximum_record",
-                  "name_of_house",
-                  "name_of_meeting",
-                  "record_packing",
-                  "search_range",
-                  "session_from",
-                  "session_to",
-                  "speaker",
-                  "speaker_group",
-                  "speaker_position",
-                  "speaker_role",
-                  "speech_id",
-                  "speech_number",
-                  "start_record",
-                  "supplement_and_appendix",
-                  "until"
-                ]
+              "select": {},
+              "response": {
+                "alternatives": [
+                  {
+                    "kind": "raw",
+                    "media": "application/xml"
+                  }
+                ],
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]

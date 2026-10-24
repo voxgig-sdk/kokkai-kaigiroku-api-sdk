@@ -343,32 +343,15 @@ main: kit: entity: speech: {
           }
           m: "GET"
           o: "/speech"
-          q: {
-            exist: [
-              "any"
-              "closing"
-              "contents_and_index"
-              "from"
-              "issue_from"
-              "issue_id"
-              "issue_to"
-              "maximum_record"
-              "name_of_house"
-              "name_of_meeting"
-              "record_packing"
-              "search_range"
-              "session_from"
-              "session_to"
-              "speaker"
-              "speaker_group"
-              "speaker_position"
-              "speaker_role"
-              "speech_id"
-              "speech_number"
-              "start_record"
-              "supplement_and_appendix"
-              "until"
+          rs: {
+            alternatives: [
+              {
+                kind: "raw"
+                media: "application/xml"
+              }
             ]
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
